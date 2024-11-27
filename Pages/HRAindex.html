@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRA Calculator</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+   <header>
+        <div class="header-content" style="text-decoration: none;color:inherit;">
+            <div class="logo">
+               <a href="../AHL CALCI/index.html"> <!-- Replace 'index.html' with your homepage URL -->
+                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
+            </a>
+        </div>
+    </header>
+    <h1 style="text-align: center;">HRA Calculator</h1>
+    <main>
+        <div class="main-container">
+            <!-- Left Section -->
+            <section class="left-section">
+                <div class="calculator-section">
+                    <form id="hraForm">
+                        <div class="input-field">
+                            <label for="basicSalary">Basic Salary (₹):</label>
+                            <input type="number" id="basicSalary" placeholder="Enter basic salary"min="1000" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="HRA">HRA Received (₹):</label>
+                            <input type="number" id="HRA" placeholder="Enter HRA received" min="1000" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="DA">Dearness Allowance:</label>
+                            <input type="number" id="DA" value="0" />
+                            </div>
+                        <div class="input-field">
+                            <label for="rentPaid">Rent Paid (₹):</label>
+                            <input type="number" id="rentPaid" placeholder="Enter rent paid"min="1000" required>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin: 20px 0; font-family: Arial, sans-serif;">
+                            <span style="font-size: 16px;">Are you working in a metro city?</span>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <input type="radio" id="yes" name="metro" value="yes" style="margin: 0;">
+                                    <label for="yes" style="margin: 0; font-size: 16px;">Yes</label>
+                                    <input type="radio" id="no" name="metro" value="no" style="margin: 0;">
+                                <label for="no" style="margin: 0; font-size: 16px;">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                
+
+                <div class="result-section" style="margin-top: 20px;">
+                    <h2 style="color: red;">Results</h2>
+                            <div class="calculated-result" style="margin-bottom: 5px;">
+                                <p id="result">Exempted HRA: ₹0.00</p>
+                            </div>
+                            <div class="calculated-result" style="margin-bottom: 5px;">
+                                <p id="resultTAXABLE">Taxable HRA: ₹0.00</p>
+                            </div>
+                </div>
+                
+
+                <section class="description-section">
+  <h3>Description</h3>
+  <p>House rent allowance (HRA) is one of the important components of your salary. All employers have to provide HRA as compensation for house rental expenses. However, most of us are not aware of the fact that we can also save tax on it. The HRA amount is decided based on factors like the employee’s salary structure, actual salary, and the city in which he/she is residing. If you are a salaried employee living in a rented place, then you can calculate your tax liability using our HRA calculator.</p>
+
+  <h3>What is an HRA Calculator?</h3>
+  <p>In most Indian cities, the cost of living has risen considerably over the last decade or so. This is partly due to an increase in disposable income besides inflation. To ensure the welfare of their employees, many organizations provide a House Rent Allowance or HRA to the ones living in a rented home. This HRA calculator will help you determine the amount you receive as an allowance.</p>
+  <p>After the recommendation of the 7th Pay Commission, the HRA slabs across India have been changed to a great extent. Cities have now been categorized into 3 distinct slabs. Slab X has the most urban cities where you clearly need an HRA exemption calculator. Slab Y covers marginally low-cost cities.</p>
+
+  <h3>How can an HRA Calculator Help You?</h3>
+  <p>Using an HRA calculator online is of great benefit to those who receive a housing rental allowance from their employer.</p>
+  <ul>
+    <li>You have to be salaried and the HRA must be a part of the salary. You cannot use this calculator if you are a self-employed individual.</li>
+    <li>You must reside in rented premises.</li>
+    <li>The HRA has to exceed 10 percent of your salary.</li>
+  </ul>
+  <p>You can use the HRA calculator that we provide to evaluate how much tax you have to pay on your HRA. Here are several other advantages:</p>
+  <ul>
+    <li>Depending on the city you live in, you can claim HRA based on the calculated amounts. Slab X cities are more expensive to reside in while the costs go down with Slab Y and Z.</li>
+    <li>The house rent allowance exemption calculator will help determine how much tax you need to pay in a financial year.</li>
+    <li>HRA slabs also depend on the city you stay in. For example, if you stay in Calcutta, Ahmedabad, Mumbai, New Delhi, or Chennai, the HRA allowance may go up to 27%. The figure may go down to 18% and 9% for the tier-2 and tier-3 cities.</li>
+    <li>Depending on the quantum of your salary allocated as HRA, you can easily plan for the future using our HRA calculator.</li>
+  </ul>
+
+  <h3>How to Calculate HRA in India?</h3>
+  <p>Groww uses a standard formula to determine the total House Rent Allowance payable. When it comes to HRA calculation, salary refers to the basic sum plus the Dearness Allowance, and other variable commissions.</p>
+  <p>Our product also works as an excellent HRA tax benefit calculator. The actual exemption limit will be the lowest of the 3 main heads below:</p>
+  <ul>
+    <li>The total (actual) rent paid minus 10% basic salary for each individual.</li>
+    <li>The total (gross) HRA that the employer provides to the employee.</li>
+    <li>Depending on how expensive the residential conditions are, 40 to 50% of the basic salary.</li>
+  </ul>
+  <p>We can use a fictional example of Person A to identify the HRA payable. If we consider that he lives in Delhi at accommodated premises for which he has to spend Rs 12,000 every month, the following is his pay structure breakdown based on our HRA calculator:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Salary component</th>
+        <th>Total amount (each month)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Basic salary</td>
+        <td>Rs 23,000</td>
+      </tr>
+      <tr>
+        <td>HRA</td>
+        <td>Rs 15,000</td>
+      </tr>
+      <tr>
+        <td>Conveyance allowance</td>
+        <td>Rs 3,000</td>
+      </tr>
+      <tr>
+        <td>Medical allowance</td>
+        <td>Rs 1,250</td>
+      </tr>
+      <tr>
+        <td>Special allowance under other heads</td>
+        <td>Rs 2,300</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Adding the components, we identify that Individual A has a monthly salary of Rs 44,500.</p>
+  <p>Based on the three heads mentioned above, using our HRA allowance calculator, the figures that are churned out are:</p>
+  <ul>
+    <li>Actual rent paid minus 10% basic or Rs 9,700</li>
+    <li>HRA the employer offers is Rs 15,000</li>
+    <li>50% of the basic salary is Rs 11,500</li>
+  </ul>
+  <p>Since the least of these 3 sums is calculated as HRA, Individual A has to pay Rs 9,700 as HRA. It will be exempted from his taxable income.</p>
+
+  <h3>How to Use the HRA Calculator?</h3>
+  <p>It is easy to use our HRA calculator when you know the steps:</p>
+  <ol>
+    <li>Step 1: Enter your basic salary and HRA you get as per your salary slip.</li>
+    <li>Step 2: Enter the actual rent paid and specify whether you live in a metro city or not from the drop-down.</li>
+  </ol>
+  <p>The HRA calculation for income tax makes it easy for the employees to save tax.</p>
+
+  <h3>Benefits of using an HRA calculator</h3>
+  <p>The primary advantages that using a reliable HRA calculator in India are:</p>
+  <ul>
+    <li>The calculator never makes errors. You can use it as many times as you wish.</li>
+    <li>You can claim tax exemptions based on the calculations.</li>
+    <li>Finally, the calculator takes care of all the variables which are present as part of the HRA calculation.</li>
+  </ul>
+</section>
+
+            </section>
+
+            <!-- Right Section -->
+            <aside class="right-section">
+                <div class="image-banner">
+                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
+                </div>
+                <div class="cta-links">
+                    <a href="../index.html">Calculator Page</a> 
+                        <br>
+                    <a href="../Pages/cagrIndex.html">EMI Calculator</a>
+                        <br>
+                    <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
+                    <br>
+                    <a href="../Pages/gratuityIndex.html">Home Loan EMI Calculator</a>
+                    <br>
+                    <a href="../Pages/homeEMIindex.html">HRA Calculator</a>
+                    <br>
+                    <a href="../Pages/PPFindex.html">PPF Calculator</a>
+                     <br>
+                </div>
+            </aside>
+  
+
+
+        </div>
+    </main>
+    <section class="faq-section">
+        <div class="faq">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is a senior living home?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Senior Living Homes or retirement homes are independent homes for seniors who want to lead a dignified life after retirement. These homes are designed with age-specific amenities.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How is senior living different from an old age home?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Senior living homes are designed for independent living, whereas old age homes are often institutional facilities providing basic care for the elderly.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is the difference between a premium home and a senior living project?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Premium homes cater to luxury needs, while senior living projects focus on providing a safe and supportive environment with amenities for seniors.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What kind of medical assistance is available in Ashiana Senior Living?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ashiana Senior Living provides on-call medical assistance, tie-ups with nearby hospitals, and 24/7 emergency services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blogs">
+        <h2>Blogs</h2>
+        <div class="blog-carousel">
+            <div class="blog-card">
+                <img src="../calculator image.jpg" alt="Blog Image">
+                <h3>How to Save Effectively?</h3>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="placeholder.png" alt="Blog Image">
+                <h3>Maximizing PPF Returns</h3>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="placeholder.png" alt="Blog Image">
+                <h3>Top Tax Saving Tips</h3>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+    <script src="../assets/HRAscript.js"></script>
+</body>
+</html>
