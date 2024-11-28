@@ -21,23 +21,48 @@
             <!-- Left Section -->
             <section class="left-section">
                 <div class="calculator-section">
-                    <form id="ppfForm">
-                        <div class="input-field">
-                            <label for="deposit">Yearly Deposit (₹):</label>
-                            <input type="number" id="deposit" placeholder="Enter yearly deposit" min="500" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" placeholder="Enter interest rate" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="tenure">Tenure (Years):</label>
-                            <input type="number" id="tenure" placeholder="Enter tenure"min="15" required>
-                        </div>
-                        
-                    </form>
-                
-                <div class="result-section">
+                        <form id="ppfForm">
+  <div class="input-field">
+    <label for="deposit">Yearly Deposit (₹):</label>
+    <input
+      type="number"
+      id="deposit"
+      placeholder="Enter yearly deposit"
+      min="500"
+      required
+    />
+    <input
+      type="range"
+      id="depositRange"
+      min="500"
+      max="150000"
+      step="500"
+    />
+  </div>
+  <div class="input-field">
+    <label for="interestRate">Interest Rate (%):</label>
+    <input type="number" id="interestRate" value="7.1" readonly />
+  </div>
+  <div class="input-field">
+    <label for="tenure">Tenure (Years):</label>
+    <input
+      type="number"
+      id="tenure"
+      placeholder="Enter tenure"
+      min="15"
+      required
+    />
+    <input
+      type="range"
+      id="tenureRange"
+      min="15"
+      max="50"
+      step="1"
+    />
+  </div>
+</form>
+
+                            <div class="result-section">
                     <h2>Results</h2>
                     <div class="calculated-result">
                         <p id="result">Your result will appear here.</p>
@@ -111,26 +136,19 @@
             </section>
 
            <aside class="right-section">
-                <div class="image-banner">
-                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-                </div>
-                <div class="cta-links">
-                    <a href="../index.html">Calculator Page</a> 
-                        <br>
-                    <a href="../Pages/cagrIndex.html">EMI Calculator</a>
-                        <br>
-                    <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
-                    <br>
-                    <a href="../Pages/gratuityIndex.html">Home Loan EMI Calculator</a>
-                    <br>
-                    <a href="../Pages/homeEMIindex.html">HRA Calculator</a>
-                    <br>
-                    <a href="../Pages/HRAindex.html">PPF Calculator</a>
-                     <br>
-                </div>
-            </aside>
+    <div class="image-banner">
+        <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
+    </div>
+    <div class="cta-links">
+        <a href="../index.html">Calculator Page</a>
+        <a href="../Pages/cagrIndex.html">EMI Calculator</a>
+        <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
+        <a href="../Pages/gratuityIndex.html">Home Loan EMI Calculator</a>
+        <a href="../Pages/homeEMIindex.html">HRA Calculator</a>
+        <a href="../Pages/HRAindex.html">PPF Calculator</a>
+    </div>
+</aside>
 
-        </div>
     </main>
     <section class="faq-section">
         <div class="faq">

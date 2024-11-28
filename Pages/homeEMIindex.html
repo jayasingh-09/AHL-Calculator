@@ -25,15 +25,18 @@
                     <form id="emiForm">
                         <div class="input-field">
                             <label for="loan">Loan Amount (₹):</label>
-                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" required>
+                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" required oninput="syncInput('loan', 'loanRange')">
+                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" oninput="syncInput('loanRange','loan')">
                         </div>
                         <div class="input-field">
                             <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" required>
+                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" required oninput="syncInput('interestRate', 'interestRateRange')">
+                            <input type="range" id="interestRateRange" min="1" max="100" step="1" oninput="syncInput('interestRateRange','interestRate')">
                         </div>
                         <div class="input-field">
                             <label for="tenure">Tenure (Years):</label>
-                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" required>
+                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" required oninput="syncInput('tenure', 'tenureRange')">
+                            <input type="range" id="tenureRange" min="1" max="100" step="1" oninput="syncInput('tenureRange','tenure')">
                         </div>
                 </form>
                 <div class="result-section">
@@ -43,7 +46,7 @@
                     </div>
                 </div>
                 </div>
-                
+                                
             <section class="description-section">
     <h3>Description</h3>
     <p>The credit market in India is steadily on the rise.</p>

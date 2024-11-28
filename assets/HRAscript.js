@@ -1,3 +1,14 @@
+function syncInput(inputId, value) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.value = value;
+  calculateHRA();
+}
+
+function syncRange(rangeId, value) {
+  const rangeElement = document.getElementById(rangeId);
+  rangeElement.value = value;
+  calculateHRA();
+}
 document.getElementById("basicSalary").value = 1000;
 document.getElementById("HRA").value = 1000;
 document.getElementById("rentPaid").value = 1000;
@@ -72,6 +83,15 @@ document
 
 // Trigger initial calculation
 calculateHRA();
+document.querySelectorAll(".faq-item").forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+    document
+      .querySelectorAll(".faq-item")
+      .forEach((i) => i.classList.remove("active"));
+    if (!isActive) item.classList.add("active");
+  });
+});
 document.querySelectorAll(".faq-item").forEach((item) => {
   item.querySelector(".faq-question").addEventListener("click", () => {
     const isActive = item.classList.contains("active");

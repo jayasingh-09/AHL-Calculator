@@ -1,16 +1,23 @@
-document.getElementById("loan").value = 100000;
+function syncInput(sourceId, targetId) {
+  const sourceElement = document.getElementById(sourceId);
+  const targetElement = document.getElementById(targetId);
+  targetElement.value = sourceElement.value;
+  calculateEMI();
+}
+
+document.getElementById("loan").value = 1000;
 document.getElementById("interestRate").value = 1;
 document.getElementById("tenure").value = 1;
+document.getElementById("loanRange").value = 1000;
+document.getElementById("interestRateRange").value = 1;
+document.getElementById("tenureRange").value = 1;
 
-// Function to calculate EMI dynamically
 function calculateEMI() {
-  let loanAmount = parseFloat(document.getElementById("loan").value);
-  let annualInterestRate = parseFloat(
-    document.getElementById("interestRate").value
-  );
-  let tenure = parseInt(document.getElementById("tenure").value);
+  let loanAmount = parseFloat(document.getElementById("loan").value) || 1000;
+  let annualInterestRate =
+    parseFloat(document.getElementById("interestRate").value) || 1;
+  let tenure = parseInt(document.getElementById("tenure").value) || 1;
 
-  // Apply default values if fields are empty
   if (isNaN(loanAmount) || loanAmount < 100000) loanAmount = 100000;
   if (isNaN(annualInterestRate) || annualInterestRate < 1)
     annualInterestRate = 1;
@@ -36,13 +43,21 @@ function calculateEMI() {
   `;
 }
 
-// Attach event listeners to input fields to trigger calculation dynamically
 document.querySelectorAll("#loan, #interestRate, #tenure").forEach((input) => {
   input.addEventListener("input", calculateEMI);
 });
 
-// Trigger calculation on page load to show initial values
 calculateEMI();
+
+document.querySelectorAll(".faq-item").forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+    document
+      .querySelectorAll(".faq-item")
+      .forEach((i) => i.classList.remove("active"));
+    if (!isActive) item.classList.add("active");
+  });
+});
 document.querySelectorAll(".faq-item").forEach((item) => {
   item.querySelector(".faq-question").addEventListener("click", () => {
     const isActive = item.classList.contains("active");

@@ -10,7 +10,7 @@
     <header>
         <div class="header-content" style="text-decoration: none;color:inherit;">
             <div class="logo">
-               <a href="../AHL CALCI/index.html"> <!-- Replace 'index.html' with your homepage URL -->
+               <a href="../index.html"> <!-- Replace 'index.html' with your homepage URL -->
                 <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
             </a>
         </div>
@@ -25,24 +25,26 @@
                     <form id="cagrForm">
                         <div class="input-field">
                             <label for="beginningValue">Beginning Value (₹):</label>
-                            <input type="number" id="beginningValue" placeholder="Enter Beginning Value" min="1000" required>
+                            <input type="number" id="beginningValue" placeholder="Enter Beginning Value" min="1000" max="1000000" step="1000" required oninput="syncRange('beginningValueRange', this.value)">
+                            <input type="range" id="beginningValueRange" min="1000" max="1000000" step="1000" oninput="syncInput('beginningValue', this.value)">
                         </div>
                         <div class="input-field">
                             <label for="endingValue">Ending Value (₹):</label>
-                            <input type="number" id="endingValue" placeholder="Enter Ending Value" min="1000" required>
+                            <input type="number" id="endingValue" placeholder="Enter Ending Value" min="1000" max="1000000" step="1000" required oninput="syncRange('endingValueRange', this.value)">
+                            <input type="range" id="endingValueRange" min="1000" max="1000000" step="1000" oninput="syncInput('endingValue', this.value)">
                         </div>
                         <div class="input-field">
-                            <label for="years">Number of Years:</label>
-                            <input type="number" id="years" placeholder="Enter Number of Years" min="1" required>
+                        <label for="years">Number of Years:</label>
+                        <input type="number" id="years" placeholder="Enter Number of Years" min="1" max="50" step="1" required oninput="syncRange('yearsRange', this.value)">
+                        <input type="range" id="yearsRange" min="1" max="50" step="1" oninput="syncInput('years', this.value)">
                         </div>
                     </form>
-                
+                </div>
                 <div class="result-section">
                     <h2 style="color:#d31f26;">Results</h2>
                     <div class="calculated-result">
                         <p id="result"></p>
                     </div>
-                </div>
                 </div>
               <section class="description-section">
     <h3>Description</h3>
