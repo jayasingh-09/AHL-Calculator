@@ -4,6 +4,11 @@ function syncInput(sourceId, targetId) {
   targetElement.value = sourceElement.value;
   calculateEMI();
 }
+function syncRange(rangeId, value) {
+  const rangeElement = document.getElementById(rangeId);
+  rangeElement.value = value;
+  calculateEMI();
+}
 
 document.getElementById("loan").value = 1000;
 document.getElementById("interestRate").value = 1;

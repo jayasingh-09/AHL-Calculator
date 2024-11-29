@@ -67,22 +67,17 @@ function calculateResults() {
   const investedAmount = deposit * tenure;
 
   document.getElementById("result").innerHTML = `
-    <div class="result-item">
-      <span>Invested amount: </span><span>₹${investedAmount.toLocaleString(
-        "en-IN"
-      )}</span>
-    </div>
-    <div class="result-item">
-      <span>Total interest: </span><span>₹${totalInterest.toLocaleString(
-        "en-IN"
-      )}</span>
-    </div>
-    <div class="result-item">
-      <span>Maturity value: </span><span>₹${maturityAmount.toLocaleString(
-        "en-IN"
-      )}</span>
-    </div>
-  `;
+    <p><strong>Invested amount: </strong> ₹${investedAmount.toLocaleString(
+      "en-IN"
+    )}</p>
+    <p><strong>Total interest: </strong> ₹${totalInterest.toLocaleString(
+      "en-IN"
+    )}</p>
+    <p><strong>Maturity value: </strong> ₹${maturityAmount.toLocaleString(
+      "en-IN"
+    )}</p>
+`;
+
 }
 document.querySelectorAll(".faq-item").forEach((item) => {
   item.querySelector(".faq-question").addEventListener("click", () => {
