@@ -20,37 +20,39 @@
         <div class="main-container">
             <!-- Left Section -->
             <section class="left-section">
-                <div class="calculator-section">
-                    <form id="hraForm">
-                        <div class="input-field">
-                            <label for="basicSalary">Basic Salary (₹):</label>
-                            <input type="number" id="basicSalary" placeholder="Enter basic salary"min="1000" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="HRA">HRA Received (₹):</label>
-                            <input type="number" id="HRA" placeholder="Enter HRA received" min="1000" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="DA">Dearness Allowance:</label>
-                            <input type="number" id="DA" value="0" />
-                            </div>
-                        <div class="input-field">
-                            <label for="rentPaid">Rent Paid (₹):</label>
-                            <input type="number" id="rentPaid" placeholder="Enter rent paid"min="1000" required>
-                        </div>
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin: 20px 0; font-family: Arial, sans-serif;">
-                            <span style="font-size: 16px;">Are you working in a metro city?</span>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <input type="radio" id="yes" name="metro" value="yes" style="margin-right: 20px;">
-                                    <label for="yes" style="margin: ; font-size: 16px;">Yes</label>
-                                    <input type="radio" id="no" name="metro" value="no" style="margin-right: 20px;">
-                                <label for="no" style="margin: 10px; font-size: 16px;">No</label>
-                            </div>
-                        </div>
-                    </div>
-                    </form>
-                
-
+    <div class="calculator-section">
+        <form id="hraForm">
+            <div class="input-field">
+                <label for="basicSalary">Basic Salary (₹):</label>
+                <input type="number" id="basicSalary" placeholder="Enter basic salary" min="1000" max="1000000" required>
+                <input type="range" id="basicSalaryRange" min="1000" max="1000000" value="1000">
+            </div>
+            <div class="input-field">
+                <label for="HRA">HRA Received (₹):</label>
+                <input type="number" id="HRA" placeholder="Enter HRA received" min="1000" max="1000000" required>
+                <input type="range" id="HRARange" min="1000" max="1000000" value="1000">
+            </div>
+            <div class="input-field">
+                <label for="DA">Dearness Allowance (₹):</label>
+                <input type="number" id="DA" value="0" min="0" max="50000">
+                <input type="range" id="DARange" min="0" max="50000" value="0">
+            </div>
+            <div class="input-field">
+                <label for="rentPaid">Rent Paid (₹):</label>
+                <input type="number" id="rentPaid" placeholder="Enter rent paid" min="1000" max="1000000" required>
+                <input type="range" id="rentPaidRange" min="1000" max="1000000" value="1000">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin: 20px 0; font-family: Arial, sans-serif;">
+                <span style="font-size: 16px;">Are you working in a metro city?</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="radio" id="yes" name="metro" value="yes" style="margin-right: 20px;">
+                    <label for="yes" style="margin: 10px;; font-size: 16px;">Yes</label>
+                    <input type="radio" id="no" name="metro" value="no" style="margin-right: 20px;">
+                    <label for="no" style="margin: 10px; font-size: 16px;">No</label>
+                </div>
+            </div>
+        </form>
+    </div>
                 <div class="result-section" style="margin-top: 20px;">
                     <h2 style="color: red;">Results</h2>
                             <div class="calculated-result" style="margin-bottom: 5px;">

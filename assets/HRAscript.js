@@ -9,15 +9,32 @@ function syncRange(rangeId, value) {
   rangeElement.value = value;
   calculateHRA();
 }
+
 document.getElementById("basicSalary").value = 1000;
 document.getElementById("HRA").value = 1000;
 document.getElementById("rentPaid").value = 1000;
 document.getElementById("DA").value = 0;
 document.querySelector('input[name="metro"][value="yes"]').checked = true;
+
+document
+  .getElementById("basicSalaryRange")
+  .addEventListener("input", function () {
+    syncInput("basicSalary", this.value);
+  });
+document.getElementById("HRARange").addEventListener("input", function () {
+  syncInput("HRA", this.value);
+});
+document.getElementById("DARange").addEventListener("input", function () {
+  syncInput("DA", this.value);
+});
+document.getElementById("rentPaidRange").addEventListener("input", function () {
+  syncInput("rentPaid", this.value);
+});
+
 function calculateHRA() {
   const basicSalary =
     parseFloat(document.getElementById("basicSalary").value) || 1000;
-  const DA = parseFloat(document.getElementById("DA").value) || 0; // Default to 0 if DA is not entered
+  const DA = parseFloat(document.getElementById("DA").value) || 0;
   const HRA = parseFloat(document.getElementById("HRA").value) || 1000;
   const rentPaid =
     parseFloat(document.getElementById("rentPaid").value) || 1000;
@@ -35,8 +52,8 @@ function calculateHRA() {
     return;
   }
 
-  const salaryWithDA = basicSalary + DA; // Basic Salary + DA
-  const exemptedHRA = rentPaid - 0.1 * salaryWithDA;
+  const salaryWithDA = basicSalary + DA;
+  const exemptedHRA = Math.max(rentPaid - 0.1 * salaryWithDA, HRA); // Ensure non-negative exempted HRA
   const metroExemptedHRA = 0.5 * salaryWithDA;
   const nonMetroExemptedHRA = 0.4 * salaryWithDA;
 
@@ -81,23 +98,4 @@ document
     input.addEventListener("input", calculateHRA);
   });
 
-// Trigger initial calculation
 calculateHRA();
-document.querySelectorAll(".faq-item").forEach((item) => {
-  item.querySelector(".faq-question").addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
-    document
-      .querySelectorAll(".faq-item")
-      .forEach((i) => i.classList.remove("active"));
-    if (!isActive) item.classList.add("active");
-  });
-});
-document.querySelectorAll(".faq-item").forEach((item) => {
-  item.querySelector(".faq-question").addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
-    document
-      .querySelectorAll(".faq-item")
-      .forEach((i) => i.classList.remove("active"));
-    if (!isActive) item.classList.add("active");
-  });
-});

@@ -46,7 +46,7 @@ document
 
 document
   .querySelectorAll("#beginningValueRange, #endingValueRange, #yearsRange")
-  .forEach((range) => {
+  .forEach((range) => { 
     range.addEventListener("input", (event) => {
       const inputId = event.target.id.replace("Range", "");
       syncInput(inputId, event.target.value);

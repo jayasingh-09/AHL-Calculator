@@ -17,24 +17,24 @@
     </header>
 
     <h1 style="text-align: center;">Gratuity Calculator</h1>
-
     <main>
         <div class="main-container">
             <!-- Left Section -->
             <section class="left-section">
                 <div class="calculator-section">
                     <form id="ppfForm">
-  <div class="input-field">
-    <label for="monthlySalary">Monthly Salary (Basic+DA) (₹):</label>
-    <input type="number" id="monthlySalary" placeholder="Enter your monthly salary" min="10000" required oninput="syncRange('monthlySalary', 'monthlySalaryRange')">
-    <input type="range" id="monthlySalaryRange" min="10000" max="1000000" step="1000" oninput="syncInput('monthlySalaryRange', 'monthlySalary')">
-  </div>
-  <div class="input-field">
-    <label for="yearsOfservice">Years of Service:</label>
-    <input type="number" id="yearsOfservice" placeholder="Enter Years of Service" min="5" required oninput="syncRange('yearsOfservice', 'yearsOfserviceRange')">
-    <input type="range" id="yearsOfserviceRange" min="5" max="100" step="1" oninput="syncInput('yearsOfserviceRange', 'yearsOfservice')">
-  </div>
-</form>
+                    <div class="input-field">
+                            <label for="monthlySalary">Monthly Salary (Basic+DA) (₹):</label>
+                            <input type="number" id="monthlySalary" placeholder="Enter your monthly salary" min="10000" required oninput="syncRange('monthlySalary', 'monthlySalaryRange')">
+                            <input type="range" id="monthlySalaryRange" min="10000" max="1000000" step="1000" oninput="syncInput('monthlySalaryRange', 'monthlySalary')">
+                    </div>
+                    <div class="input-field">
+                        <label for="yearsOfservice">Years of Service:</label>
+                        <input type="number" id="yearsOfservice" placeholder="Enter Years of Service" min="5" required oninput="syncRange('yearsOfservice', 'yearsOfserviceRange')">
+                        <input type="range" id="yearsOfserviceRange" min="5" max="100" step="1" oninput="syncInput('yearsOfserviceRange', 'yearsOfservice')">
+                    </div>
+                    </form>
+                </div>
 
                     <div class="result-section">
                         <h2>Results</h2>
@@ -42,7 +42,6 @@
                             <p id="result">Your result will appear here.</p>
                         </div>
                     </div>
-                </div>
 
                 <section class="description-section">
                     <h3>Description</h3>
@@ -129,7 +128,8 @@
                         </ul>
                     </ul>
                 </section>
-            </section>
+                </section>
+           
 
             <!-- Right Section -->
             <aside class="right-section">
