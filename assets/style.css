@@ -197,7 +197,7 @@ button#calculateButton:hover {
 
 .cta-links a {
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     color: #ffff;
     padding: 10px;
     background-color: #0000;
@@ -228,7 +228,13 @@ button#calculateButton:hover {
         max-width: 100%;
         background-color: white;
     }
-
+    .right-section h3{
+        margin-bottom:0px;
+        text-align:left;
+        margin-radius:5px;
+        //background-color:black;
+        padding:10px;
+    }
     .blog-card {
         width: calc(50% - 20px);
     }
@@ -344,8 +350,9 @@ button#calculateButton:hover {
 }
 
 .blog-card img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 5px;
+    max-height: 100px;
 }
 
 @media (max-width: 768px) {
