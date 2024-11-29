@@ -19,7 +19,7 @@ function calculateEMI() {
   let tenure = parseInt(document.getElementById("tenure").value) || 1;
 
   // Validate input values
-  if (isNaN(loanAmount) || loanAmount < 1000) {
+  if (isNaN(loanAmount) || loanAmount < 1000 || loanAmount === 0) {
     document.getElementById("result").innerHTML =
       "<p><strong>Loan amount must be at least ₹1000</strong></p>";
     return;
