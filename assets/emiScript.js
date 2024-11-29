@@ -25,18 +25,6 @@ function calculateEMI() {
     return;
   }
 
-  if (isNaN(annualInterestRate) || annualInterestRate <= 0) {
-    document.getElementById("result").innerHTML =
-      "<p><strong>Interest rate must be at least 1%</strong></p>";
-    return;
-  }
-
-  if (isNaN(tenure) || tenure <=0) {
-    document.getElementById("result").innerHTML =
-      "<p><strong>Tenure must be at least 1 year</strong></p>";
-    return;
-  }
-
   const monthlyInterestRate = annualInterestRate / 12 / 100;
   const totalMonths = tenure * 12;
 
@@ -50,7 +38,7 @@ function calculateEMI() {
   const totalInterest = totalPayment - loanAmount;
 
   // Check for valid results
-  if (emi > 0 && totalInterest >= 0) {
+  if (emi > 0 && totalInterest > 0) {
     document.getElementById("result").innerHTML = `
       <p><strong>Monthly EMI:</strong> ₹${emi.toFixed(2)}</p>
       <p><strong>Principal amount:</strong> ₹${loanAmount.toLocaleString()}</p>

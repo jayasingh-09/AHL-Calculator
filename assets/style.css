@@ -272,12 +272,12 @@ button#calculateButton:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    text-align: center;
+    
 }
 
 .faq-section {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -289,7 +289,9 @@ button#calculateButton:hover {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.15);
+    //border: 1px solid #c4c4c4;
+    //border:3px solid rgba(0, 0, 0,0.1);
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
@@ -389,4 +391,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+.input-error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
