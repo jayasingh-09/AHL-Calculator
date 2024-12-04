@@ -14,6 +14,7 @@
                 <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
             </a>
         </div>
+        </div>
     </header>
 
     <h1 style="text-align: center;">Gratuity Calculator</h1>
@@ -24,113 +25,122 @@
                 <div class="calculator-section">
                     <form id="ppfForm">
                     <div class="input-field">
-                            <label for="monthlySalary">Monthly Salary (Basic+DA) (₹):</label>
-                            <input type="number" id="monthlySalary" placeholder="Enter your monthly salary" min="10000" required oninput="syncRange('monthlySalary', 'monthlySalaryRange')">
-                            <input type="range" id="monthlySalaryRange" min="10000" max="1000000" step="1000" oninput="syncInput('monthlySalaryRange', 'monthlySalary')">
+                        <label for="monthlySalary">Monthly Salary (Basic+DA) (₹):</label>
+                        <input type="number" id="monthlySalary" placeholder="Enter your monthly salary" min="10000" value="60000" required oninput="syncRange('monthlySalary', 'monthlySalaryRange')">
+                        <input type="range" id="monthlySalaryRange" min="10000" max="1000000" step="1000" value="60000" oninput="syncInput('monthlySalaryRange', 'monthlySalary')">
                     </div>
                     <div class="input-field">
                         <label for="yearsOfservice">Years of Service:</label>
-                        <input type="number" id="yearsOfservice" placeholder="Enter Years of Service" min="5" required oninput="syncRange('yearsOfservice', 'yearsOfserviceRange')">
-                        <input type="range" id="yearsOfserviceRange" min="5" max="100" step="1" oninput="syncInput('yearsOfserviceRange', 'yearsOfservice')">
+                        <input type="number" id="yearsOfservice" placeholder="Enter Years of Service" min="5" value="20" required oninput="syncRange('yearsOfservice', 'yearsOfserviceRange')">
+                        <input type="range" id="yearsOfserviceRange" min="5" max="100" step="1" value="20" oninput="syncInput('yearsOfserviceRange', 'yearsOfservice')">
                     </div>
                     </form>
                 </div>
-
-                    <div class="result-section">
+                <div class="result-section">
                         <h2>Results</h2>
                         <div class="calculated-result">
                             <p id="result">Your result will appear here.</p>
                         </div>
-                    </div>
-
+                </div>
                 <section class="description-section">
-                    <h3>Description</h3>
-                    <p>Any employee of a private company that provides EPF facilities is eligible to receive an amount as gratuity after completing 5 years of service. However, an employee is also eligible to get the gratuity before five years if he/she gets injured and disabled in an accident or due to a disease. Groww provides you with a free <strong>gratuity calculator</strong> which you can use and calculate how much your organization owes you. All gratuity payments are controlled by the laws laid down under the Payment of Gratuity Act 1972. The amount depends on the last drawn salary and the years of service served to the company.</p>
-                    <p>If you are eligible for payment of gratuity, you must first check how much you are eligible for. Our online gratuity calculator will help you in that aspect too.</p>
+                        <h3>Description</h3>
+                        <p>
+                            Employees of private companies that offer EPF benefits are eligible for gratuity after completing 5 years of service. However, certain conditions, like disability due to an accident or illness, may allow for earlier eligibility. 
+                        </p>
+                        <p>
+                            To calculate your potential gratuity amount, you can use a free online gratuity calculator like the one provided by Ashiana Housing. This tool helps you determine the amount you may be entitled to, based on your last drawn salary and years of service. 
+                        </p>
 
-                    <h3>Gratuity Calculation Formula</h3>
-                    <p>Groww uses a proprietary formula that is benchmarked with other similar offerings. The formula used by our <strong>online gratuity calculator</strong> is:</p>
-                    <pre>
-    G = n * b * 15 / 26
-                    </pre>
-                    <p>In the formula, the values are the following:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Variable</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>N/n</td>
-                                <td>The number of years you have worked in the concerned organization</td>
-                            </tr>
-                            <tr>
-                                <td>B/b</td>
-                                <td>Last drawn basic salary plus Dearness Allowance (DA)</td>
-                            </tr>
-                            <tr>
-                                <td>G</td>
-                                <td>Gratuity amount you are eligible for</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>For example, if individual A has worked with an organization for 5 years, and your basic salary plus DA amounted to Rs. 30,000 every month, you are eligible to receive:</p>
-                    <pre>
-    5 * 30,000 * 15 / 26 = Rs. 86,538.46 as gratuity.
-                    </pre>
-                    <p>Note that under the existing laws:</p>
-                    <ul>
-                        <li>Your gratuity cannot exceed Rs. 10 Lakh in its entirety. Any amount beyond this upper limit is called <strong>ex gratia</strong> payment.</li>
-                        <li>Also, if you have worked for, say, 17 years and 6 months, the figure will be rounded off to the nearest single digit or 18 years.</li>
-                    </ul>
+                        <h3>Gratuity Calculation Formula</h3>
+                        <p>
+                            The formula used to calculate gratuity is:
+                        </p>
+                        <pre>
+                            G = n * b * 15 / 26
+                        </pre>
+                        <p>
+                            Where:
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>N/n</td>
+                                    <td>Number of years of service</td>
+                                </tr>
+                                <tr>
+                                    <td>B/b</td>
+                                    <td>Last drawn basic salary + Dearness Allowance (DA)</td>
+                                </tr>
+                                <tr>
+                                    <td>G</td>
+                                    <td>Gratuity amount</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                    <h3>How can a Gratuity Calculator Help You?</h3>
-                    <p>Under the Payment of Gratuity Act of 1972, you are eligible to receive the gratuity amount provided:</p>
-                    <ul>
-                        <li>You are near the age of superannuation.</li>
-                        <li>You have completed 5 years of work in the same organization continuously.</li>
-                        <li>You do not have any other full-time employer.</li>
-                    </ul>
-                    <p>In such cases, a <strong>gratuity calculator online in India</strong> is useful because:</p>
-                    <ul>
-                        <li>It helps you ascertain the precise amount due to you.</li>
-                        <li>It saves you valuable time and other resources.</li>
-                        <li>You can use it from the comfort of your home.</li>
-                        <li>It helps you in long-term financial planning.</li>
-                    </ul>
+                        <h3>Example of Gratuity Calculation</h3>
+                        <p>
+                            For instance, if you've worked for 5 years with a last drawn salary + DA of ₹30,000 per month, your eligible gratuity would be:
+                        </p>
+                        <pre>
+                            5 * 30,000 * 15 / 26 = ₹86,538.46
+                        </pre>
 
-                    <h3>How to Use Groww’s Gratuity Calculator?</h3>
-                    <p>Follow these simple steps to use the gratuity calculator:</p>
-                    <ol>
-                        <li>Step 1: Keep all essential details about your employment history handy.</li>
-                        <li>Step 2: Enter the basic pay + dearness allowance value and the gratuity value will be reflected within seconds.</li>
-                    </ol>
-
-                    <h3>Advantages of Using Groww’s Gratuity Calculator</h3>
-                    <p>As a market leader in financial affairs, Groww provides you with the most sophisticated tools in the market. Here are the reasons why our <strong>Gratuity Calculator</strong> is helpful for you:</p>
-                    <ul>
-                        <li>Data security is of paramount importance. Our servers are secure and safe for use.</li>
-                        <li>Our calculator is easy to use and you do not need any technical expertise.</li>
-                        <li>Groww’s gratuity calculator is never wrong. You can trust our product.</li>
-                    </ul>
-
-                    <h3>Taxation Rules for Gratuity</h3>
-                    <p>The taxes applicable to the gratuity amount depend on the type of employee:</p>
-                    <ul>
-                        <li>The gratuity amount received by any government employee is exempt from the income tax.</li>
-                        <li>For private-sector employees, the least of the following three amounts will be exempt from income tax provided that the employer is covered under the Payment of Gratuity Act:</li>
+                        Note:
                         <ul>
-                            <li>Rs 20 lakh.</li>
-                            <li>The actual gratuity amount received.</li>
-                            <li>The eligible gratuity.</li>
+                            <li>The maximum gratuity exempt from tax is ₹20 lakh.</li>
+                            <li>Years of service are rounded to the nearest whole number.</li>
                         </ul>
-                    </ul>
-                </section>
-                </section>
-           
 
+                        <h3>How Can a Gratuity Calculator Help You?</h3>
+                        <p>
+                            A gratuity calculator is helpful if you:
+                            <ul>
+                                <li>Are nearing retirement age.</li>
+                                <li>Have completed 5 or more years of continuous service.</li>
+                                <li>Do not have any other full-time employment.</li>
+                            </ul>
+                        </p>
+                        <p>
+                            The benefits of using a gratuity calculator include:
+                            <ul>
+                                <li><strong>Accurate calculations</strong></li>
+                                <li><strong>Time-saving</strong></li>
+                                <strong>Easy to use</strong>
+                                <li><strong>Financial planning</strong></li>
+                            </ul>
+
+                        <h3>How to Use a Gratuity Calculator</h3>
+                        <p>
+                            To use a gratuity calculator:
+                            <ol>
+                                <li>Gather information about your employment history.</li>
+                                <li>Enter your last drawn salary + DA.</li>
+                                <li>The calculator will display your estimated gratuity amount.</li>
+                            </ol>
+
+                        <h3>Taxation Rules for Gratuity</h3>
+                        <p>
+                            Gratuity taxation depends on your employment type:
+                            <ul>
+                                <li><strong>Government employees:</strong> Gratuity is generally tax-exempt.</li>
+                                <li><strong>Private sector employees:</strong> The lesser of the following is tax-exempt:
+                                    <ul>
+                                        <li>₹20 lakh</li>
+                                        <li>Actual gratuity received</li>
+                                        <li>Eligible gratuity calculated using the formula</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                </section>
+            </section>
             <!-- Right Section -->
             <aside class="right-section">
                 <div class="image-banner">
@@ -138,8 +148,8 @@
                 </div>
                 <div class="cta-links">
                     <a href="../index.html">Calculator Page</a> 
-                    <a href="../Pages/cagrIndex.html">EMI Calculator</a>
-                    <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
+                    <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+                    <a href="../Pages/emiIndex.html">EMI Calculator</a>
                     <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
                     <a href="../Pages/HRAindex.html">HRA Calculator</a>
                     <a href="../Pages/PPFindex.html">PPF Calculator</a>
@@ -147,7 +157,6 @@
             </aside>
         </div>
     </main>
-
     <section class="faq-section">
             <h1 style="text-align: center;">Frequently Asked Questions</h1>
             <div class="faq-item">

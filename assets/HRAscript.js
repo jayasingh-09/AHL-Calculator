@@ -10,10 +10,15 @@ function syncRange(rangeId, value) {
   calculateHRA();
 }
 
-document.getElementById("basicSalary").value = 1000;
-document.getElementById("HRA").value = 1000;
-document.getElementById("rentPaid").value = 1000;
+// Set default values
+document.getElementById("basicSalary").value = 5400000;
+document.getElementById("basicSalaryRange").value = 5400000;
+document.getElementById("HRA").value = 100000;
+document.getElementById("HRARange").value = 100000;
 document.getElementById("DA").value = 0;
+document.getElementById("DARange").value = 0;
+document.getElementById("rentPaid").value = 300000;
+document.getElementById("rentPaidRange").value = 300000;
 document.querySelector('input[name="metro"][value="yes"]').checked = true;
 
 document
@@ -33,69 +38,55 @@ document.getElementById("rentPaidRange").addEventListener("input", function () {
 
 function calculateHRA() {
   const basicSalary =
-    parseFloat(document.getElementById("basicSalary").value) || 1000;
+    parseFloat(document.getElementById("basicSalary").value) || 0;
   const DA = parseFloat(document.getElementById("DA").value) || 0;
-  const HRA = parseFloat(document.getElementById("HRA").value) || 1000;
-  const rentPaid =
-    parseFloat(document.getElementById("rentPaid").value) || 1000;
+  const HRA = parseFloat(document.getElementById("HRA").value) || 0;
+  const rentPaid = parseFloat(document.getElementById("rentPaid").value) || 0;
 
-  if (
-    isNaN(basicSalary) ||
-    isNaN(DA) ||
-    isNaN(HRA) ||
-    isNaN(rentPaid) ||
-    rentPaid <= 0
-  ) {
-    document.getElementById("result").innerText =
-      "Please fill out all fields correctly.";
-    document.getElementById("resultTAXABLE").innerText = "";
-    return;
-  }
+  const salaryWithDA = basicSalary + DA; // Basic salary + DA
+  const rentExcess = rentPaid - 0.1 * salaryWithDA; // Rent Paid - 10% of Basic Salary + DA
+  const metroLimit = 0.5 * salaryWithDA; // 50% for Metro Cities
+  const nonMetroLimit = 0.4 * salaryWithDA; // 40% for Non-Metro Cities
 
-  const salaryWithDA = basicSalary + DA;
-  const exemptedHRA = Math.max(rentPaid - 0.1 * salaryWithDA, HRA); // Ensure non-negative exempted HRA
-  const metroExemptedHRA = 0.5 * salaryWithDA;
-  const nonMetroExemptedHRA = 0.4 * salaryWithDA;
-
+  // Determine if metro or non-metro
   const metroRadio = document.querySelector('input[name="metro"]:checked');
+  const cityLimit = metroRadio.value === "yes" ? metroLimit : nonMetroLimit;
 
-  if (metroRadio) {
-    if (metroRadio.value === "yes") {
-      const metroHRAExempted = Math.min(exemptedHRA, HRA, metroExemptedHRA);
-      const metroTaxableHRA = HRA - metroHRAExempted;
+  // Exempted HRA is the minimum of the three conditions
+  const exemptedHRA = Math.min(HRA, rentExcess > 0 ? rentExcess : 0, cityLimit);
 
-      document.getElementById(
-        "result"
-      ).innerText = `Exempted HRA: ₹${metroHRAExempted.toFixed(2)}`;
-      document.getElementById(
-        "resultTAXABLE"
-      ).innerText = `Taxable HRA: ₹${metroTaxableHRA.toFixed(2)}`;
-    } else if (metroRadio.value === "no") {
-      const nonMetroHRAExempted = Math.min(
-        exemptedHRA,
-        HRA,
-        nonMetroExemptedHRA
-      );
-      const nonMetroTaxableHRA = HRA - nonMetroHRAExempted;
+  // Taxable HRA
+  const taxableHRA = HRA - exemptedHRA;
 
-      document.getElementById(
-        "result"
-      ).innerText = `Exempted HRA: ₹${nonMetroHRAExempted.toFixed(2)}`;
-      document.getElementById(
-        "resultTAXABLE"
-      ).innerText = `Taxable HRA: ₹${nonMetroTaxableHRA.toFixed(2)}`;
-    }
-  } else {
-    document.getElementById("result").innerText =
-      "Please select if you live in a metro or non-metro city.";
-    document.getElementById("resultTAXABLE").innerText = "";
-  }
+  // Update the results
+  document.getElementById("result").innerText = `Exempted HRA: ₹${Math.max(
+    0,
+    exemptedHRA
+  ).toLocaleString("en-IN")}`;
+  document.getElementById(
+    "resultTAXABLE"
+  ).innerText = `Taxable HRA: ₹${Math.max(0, taxableHRA).toLocaleString(
+    "en-IN"
+  )}`;
 }
 
+// Add event listeners
 document
   .querySelectorAll("#basicSalary, #DA, #HRA, #rentPaid, input[name='metro']")
   .forEach((input) => {
     input.addEventListener("input", calculateHRA);
   });
 
+// Initial calculation
 calculateHRA();
+
+
+document.querySelectorAll(".faq-item").forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+    document
+      .querySelectorAll(".faq-item")
+      .forEach((i) => i.classList.remove("active"));
+    if (!isActive) item.classList.add("active");
+  });
+});

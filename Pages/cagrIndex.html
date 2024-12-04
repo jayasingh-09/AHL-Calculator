@@ -14,6 +14,7 @@
                 <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
             </a>
         </div>
+        </div>
     </header>
 
     <h1 style="text-align: center;">CAGR Calculator</h1>
@@ -25,18 +26,18 @@
                     <form id="cagrForm">
                         <div class="input-field">
                             <label for="beginningValue">Beginning Value (₹):</label>
-                            <input type="number" id="beginningValue" placeholder="Enter Beginning Value" min="1000" max="1000000" step="1000" required oninput="syncRange('beginningValueRange', this.value)">
-                            <input type="range" id="beginningValueRange" min="1000" max="1000000" step="1000" oninput="syncInput('beginningValue', this.value)">
-                        </div>
-                        <div class="input-field">
+                            <input type="number" id="beginningValue" placeholder="Enter Beginning Value" min="1000" max="1000000" step="1000" value="5000" required oninput="syncRange('beginningValueRange', this.value)">
+                            <input type="range" id="beginningValueRange" min="1000" max="1000000" step="1000" value="5000" oninput="syncInput('beginningValue', this.value)">
+                            </div>
+                            <div class="input-field">
                             <label for="endingValue">Ending Value (₹):</label>
-                            <input type="number" id="endingValue" placeholder="Enter Ending Value" min="1000" max="1000000" step="1000" required oninput="syncRange('endingValueRange', this.value)">
-                            <input type="range" id="endingValueRange" min="1000" max="1000000" step="1000" oninput="syncInput('endingValue', this.value)">
-                        </div>
-                        <div class="input-field">
-                        <label for="years">Number of Years:</label>
-                        <input type="number" id="years" placeholder="Enter Number of Years" min="1" max="50" step="1" required oninput="syncRange('yearsRange', this.value)">
-                        <input type="range" id="yearsRange" min="1" max="50" step="1" oninput="syncInput('years', this.value)">
+                            <input type="number" id="endingValue" placeholder="Enter Ending Value" min="1000" max="1000000" step="1000" value="25000" required oninput="syncRange('endingValueRange', this.value)">
+                            <input type="range" id="endingValueRange" min="1000" max="1000000" step="1000" value="25000" oninput="syncInput('endingValue', this.value)">
+                            </div>
+                            <div class="input-field">
+                            <label for="years">Number of Years:</label>
+                            <input type="number" id="years" placeholder="Enter Number of Years" min="1" max="50" step="1" value="5" required oninput="syncRange('yearsRange', this.value)">
+                            <input type="range" id="yearsRange" min="1" max="50" step="1" value="5" oninput="syncInput('years', this.value)">
                         </div>
                     </form>
                 </div>
@@ -46,88 +47,95 @@
                         <p id="result" ></p>
                     </div>
                 </div>
-              <section class="description-section">
-    <h3>Description</h3>
-    <p>
-        CAGR is an acronym for <strong>Compound Annual Growth Rate</strong>, commonly used in determining how well a business is performing in the fiercely competitive market. It represents the growth of an organization, and you can easily make out the growth rate, or the lack of it, using a <strong>CAGR calculator</strong>.
-    </p>
-    <p>
-        Such a calculator is easily available online, but user-friendliness is important while calculating CAGR returns. Groww’s online CAGR calculator brings you an organized and accurate approach to calculate your business’ CAGR.
-    </p>
-    <h3>How can a CAGR Calculator Help You?</h3>
-    <p>
-        If you own a business, the CAGR can indicate a lot of factors that are otherwise overlooked. Unlike the concept of ‘absolute returns’, growth based on <strong>CAGR</strong> takes into account the element of time. It is thus a better indicator of growth over a period.
-    </p>
-    <ul>
-        <li>Your business is growing with time and whether the profits thus generated is being invested correctly.</li>
-        <li>It will enable you to evaluate your investment options. For example, if stock A is not working as well as Stock B based on their respective CAGR indices, you can invest in Stock B instead.</li>
-        <li>The relative growth of your organization with respect to the market leaders in your business segment.</li>
-    </ul>
-    <h3>How to Calculate CAGR?</h3>
-    <p>
-        The CAGR formula to calculate the investments is represented by:
-    </p>
-    <p><strong>CAGR = (FV / PV) ^ (1 / n) - 1</strong></p>
-    <p>
-        It is a mathematical calculation that determines the real-time CAGR for any organization. The values stand for the following:
-    </p>
-    <table>
-        <thead>
-            <tr>
-                <th>Term</th>
-                <th>Definition</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>FV</td>
-                <td>Future Value</td>
-            </tr>
-            <tr>
-                <td>PV</td>
-                <td>Present Value</td>
-            </tr>
-            <tr>
-                <td>n</td>
-                <td>Time period in years</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>An example of CAGR calculation</h3>
-    <p>
-        If you have an initial investment of Rs. 1 Lakh in a business, it constitutes the PV. If the total investment has swollen to Rs 10 Lakh (FV) after 5 years (N), the CAGR is:
-    </p>
-    <p><strong>CAGR = (10,00,000 / 1,00,000) ^ (1 / 5) - 1</strong></p>
-    <p>Thus, the CAGR percentage is CAGR x 100 or <strong>58.9%</strong>.</p>
-    <h3>How to use Groww’s CAGR calculator?</h3>
-    <ol>
-        <li>Enter your initial investment amount.</li>
-        <li>Enter the expected value of the investment after a certain period of time.</li>
-        <li>Enter the number of years or months for which you wish to use the CAGR calculator.</li>
-    </ol>
-    <p>
-        The CAGR calculator will generate the results within seconds as soon as you input the values.
-    </p>
-    <h3>Advantages of Groww’s online CAGR calculator</h3>
-    <ul>
-        <li>It provides a detailed outlook of your ROI.</li>
-        <li>
-            If you are a potential investor, you can also use our service of a mutual fund CAGR calculator. It will help you determine how much you need to invest to maximize returns over a certain period.
-        </li>
-        <li>Compare your business’ returns with benchmark options and evaluate the performance.</li>
-        <li>Make long-term capital influx plans.</li>
-    </ul>
-</section>
+             <section class="description-section">
+                <h3>Description</h3>
+                <p>
+                    CAGR, or Compound Annual Growth Rate, is a crucial metric for assessing business performance and investment returns. It measures the average annual growth rate of an investment over a specific period, considering the impact of compounding.
+                </p>
+                <p>
+                    While there are numerous online CAGR calculators, choosing a user-friendly and accurate tool like Ashiana Housing's calculator can significantly simplify the process.
+                </p>
 
+                <h3>How Can a CAGR Calculator Help You?</h3>
+                <p>
+                    A CAGR calculator offers several benefits:
+                </p>
+                <ul>
+                    <li><strong>Evaluate Business Performance:**</strong> It helps assess your business's growth trajectory and identify areas for improvement.</li>
+                    <li><strong>Compare Investment Options:**</strong> By calculating the CAGR of different investments, you can make informed decisions about where to allocate your funds.</li>
+                    <li><strong>Measure Relative Performance:**</strong> Compare your business's growth to industry benchmarks or competitors.</li>
+                </ul>
 
+                <h3>How to Calculate CAGR?</h3>
+                <p>
+                    The CAGR formula is:
+                </p>
+                <p><strong>= (FV / PV)^(1/n) - 1</strong>     </p>
+                <p>
+                    Where:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FV</td>
+                            <td>Future Value</td>
+                        </tr>
+                        <tr>
+                            <td>PV</td>
+                            <td>Present Value</td>
+                        </tr>
+                        <tr>
+                            <td>n</td>
+                            <td>Number of years</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Example of CAGR Calculation</h3>
+                <p>
+                    Let's say you invested ₹1 lakh (PV) and it grew to ₹10 lakh (FV) over 5 years (n). The CAGR would be:
+                </p>
+                <p>
+                    <strong>= (10,00,000 / 1,00,000)^(1/5) - 1</strong> 
+                </p>
+                <p>
+                    This calculates to a CAGR of approximately 58.9%.
+                </p>
+
+                <h3>Using an Online CAGR Calculator</h3>
+                <p>
+                    To use a CAGR calculator like Ashiana Housing's:
+                </p>
+                <ol>
+                    <li>Enter the initial investment amount (PV).</li>
+                    <li>Input the final value of the investment (FV).</li>
+                    <li>Specify the number of years (n).
+                </ol>
+                <p>
+                    The calculator will quickly compute the CAGR.
+                </p>
+
+                <h3>Benefits of Using an Online CAGR Calculator</h3>
+                <ul>
+                    <li><strong>Accurate Calculations:</strong> Ensures precise CAGR calculations, saving time and effort.</li>
+                    <li><strong>Easy to Use:</strong> User-friendly interface simplifies the process.</li>
+                    <li><strong>Quick Results:</strong> Instantaneous calculations provide timely insights.</li>
+                    <li><strong>Informed Decision-Making:</strong> Helps you make informed financial decisions based on data-driven analysis.</li>
+                </ul>
             </section>
+        </section>
 
             <!-- Right Section -->
             <aside class="right-section">
                 <div class="image-banner">
                     <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
                 </div>
-                <h3 >Popular Calculator</h3>
                 <div class="cta-links">
                     <a href="../index.html">Calculator Page</a>     
                     <a href="../Pages/emiIndex.html">EMI Calculator</a>   

@@ -4,24 +4,27 @@ function syncInput(sourceId, targetId) {
   targetElement.value = sourceElement.value;
   calculateEMI();
 }
+
 function syncRange(rangeId, value) {
   const rangeElement = document.getElementById(rangeId);
   rangeElement.value = value;
   calculateEMI();
 }
 
-document.getElementById("loan").value = 1000;
-document.getElementById("interestRate").value = 1;
-document.getElementById("tenure").value = 1;
-document.getElementById("loanRange").value = 1000;
-document.getElementById("interestRateRange").value = 1;
-document.getElementById("tenureRange").value = 1;
+// Set default values for Loan Amount, Interest Rate, and Tenure
+document.getElementById("loan").value = 100000;
+document.getElementById("interestRate").value = 6.5;
+document.getElementById("tenure").value = 5;
+
+document.getElementById("loanRange").value = 100000;
+document.getElementById("interestRateRange").value = 6.5;
+document.getElementById("tenureRange").value = 5;
 
 function calculateEMI() {
-  let loanAmount = parseFloat(document.getElementById("loan").value) || 1000;
+  let loanAmount = parseFloat(document.getElementById("loan").value) || 100000;
   let annualInterestRate =
-    parseFloat(document.getElementById("interestRate").value) || 1;
-  let tenure = parseInt(document.getElementById("tenure").value) || 1;
+    parseFloat(document.getElementById("interestRate").value) || 6.5;
+  let tenure = parseInt(document.getElementById("tenure").value) || 5;
 
   // Validate input values
   if (isNaN(loanAmount) || loanAmount < 1000 || loanAmount === 0) {
@@ -33,6 +36,7 @@ function calculateEMI() {
   const monthlyInterestRate = annualInterestRate / 12 / 100;
   const totalMonths = tenure * 12;
 
+  // Perform calculations with full precision
   const emi =
     (loanAmount *
       monthlyInterestRate *
@@ -42,13 +46,18 @@ function calculateEMI() {
   const totalPayment = emi * totalMonths;
   const totalInterest = totalPayment - loanAmount;
 
+  // Round the final results to the nearest integer
+  const roundedEMI = Math.round(emi);
+  const roundedTotalPayment = Math.round(totalPayment);
+  const roundedTotalInterest = Math.round(totalInterest);
+
   // Check for valid results
   if (emi > 0 && totalInterest > 0) {
     document.getElementById("result").innerHTML = `
-      <p><strong>Monthly EMI:</strong> ₹${emi.toFixed(2)}</p>
+      <p><strong>Monthly EMI:</strong> ₹${roundedEMI.toLocaleString()}</p>
       <p><strong>Principal amount:</strong> ₹${loanAmount.toLocaleString()}</p>
-      <p><strong>Total interest:</strong> ₹${totalInterest.toLocaleString()}</p>
-      <p><strong>Total amount:</strong> ₹${totalPayment.toLocaleString()}</p>
+      <p><strong>Total interest:</strong> ₹${roundedTotalInterest.toLocaleString()}</p>
+      <p><strong>Total amount:</strong> ₹${roundedTotalPayment.toLocaleString()}</p>
     `;
   } else {
     document.getElementById("result").innerHTML =

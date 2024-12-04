@@ -97,7 +97,7 @@ header h1 {
 .calculators h2 {
     font-size: 30px;
     margin-bottom: 20px;
-    color: #d31f26;
+    color: #da3227;
     text-align: center;
     text-decoration: none;
 }
@@ -127,7 +127,7 @@ header h1 {
 
 .calculator-box h3 {
     font-size: 18px;
-    color: #d31f26;
+    color: #da3227;
     margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
@@ -195,7 +195,7 @@ header h1 {
 .faq-toggle {
     font-size: 20px;
     font-weight: bold;
-    color: #ff6600;
+    color: #da3227;
     transition: transform 0.3s ease;
 }
 

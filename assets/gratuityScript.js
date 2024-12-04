@@ -13,18 +13,20 @@ function syncRange(inputId, rangeId) {
   rangeElement.value = inputElement.value;
   calculateGratuity();
 }
-document.getElementById("monthlySalary").value=10000;
-document.getElementById("monthlySalaryRange").value=10000;
-document.getElementById("yearsOfservice").value = 5;
-document.getElementById("yearsOfserviceRange").value = 5;
+
+// Set default values for Monthly Salary and Years of Service
+document.getElementById("monthlySalary").value = 60000;
+document.getElementById("monthlySalaryRange").value = 60000;
+document.getElementById("yearsOfservice").value = 20;
+document.getElementById("yearsOfserviceRange").value = 20;
 
 // Function to calculate gratuity based on monthly salary and years of service
 function calculateGratuity() {
   const monthlySalary = parseFloat(
-    document.getElementById("monthlySalary").value || 10000
+    document.getElementById("monthlySalary").value || 60000
   );
   const yearsOfservice = parseInt(
-    document.getElementById("yearsOfservice").value || 5
+    document.getElementById("yearsOfservice").value || 20
   );
 
   // Check for valid input values
@@ -35,12 +37,14 @@ function calculateGratuity() {
   }
 
   // Calculate gratuity amount
-  const gratuityAmount = (monthlySalary * yearsOfservice * 15) / 26;
+  const gratuityAmount = Math.round(
+    (monthlySalary * yearsOfservice * 15) / 26
+  );
 
   // Display gratuity amount
   document.getElementById(
     "result"
-  ).innerText = `Gratuity Amount: ₹${gratuityAmount.toFixed(2)}`;
+  ).innerText = `Gratuity Amount: ₹${gratuityAmount.toLocaleString()}`;
 }
 
 // Event listener to update gratuity calculation when the user interacts with input fields

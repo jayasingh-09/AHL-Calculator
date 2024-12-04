@@ -22,134 +22,149 @@
             <section class="left-section">
                 <div class="calculator-section">
                         <form id="ppfForm">
-  <div class="input-field">
-    <label for="deposit">Yearly Deposit (₹):</label>
-    <input
-      type="number"
-      id="deposit"
-      placeholder="Enter yearly deposit"
-      min="500"
-      required
-    />
-    <input
-      type="range"
-      id="depositRange"
-      min="500"
-      max="150000"
-      step="500"
-    />
-  </div>
-  <div class="input-field">
-    <label for="interestRate">Interest Rate (%):</label>
-    <input type="number" id="interestRate" value="7.1" readonly />
-  </div>
-  <div class="input-field">
-    <label for="tenure">Tenure (Years):</label>
-    <input
-      type="number"
-      id="tenure"
-      placeholder="Enter tenure"
-      min="15"
-      required
-    />
-    <input
-      type="range"
-      id="tenureRange"
-      min="15"
-      max="50"
-      step="1"
-    />
-  </div>
-</form>
-                </div>
-
-                            <div class="result-section">
-                    <h2>Results</h2>
-                    <div class="calculated-result">
-                        <p id="result">Your result will appear here.</p>
+                          <div class="input-field">
+                          <label for="deposit">Yearly Deposit (₹):</label>
+                          <input
+                            type="number"
+                            id="deposit"
+                            placeholder="Enter yearly deposit"
+                            min="500"
+                            value="10000"
+                            required
+                          />
+                          <input
+                            type="range"
+                            id="depositRange"
+                            min="500"
+                            max="150000"
+                            step="500"
+                            value="10000"
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label for="interestRate">Interest Rate (%):</label>
+                          <input type="number" id="interestRate" value="7.1" readonly />
+                        </div>
+                        <div class="input-field">
+                          <label for="tenure">Tenure (Years):</label>
+                          <input
+                            type="number"
+                            id="tenure"
+                            placeholder="Enter tenure"
+                            min="15"
+                            value="15"
+                            required
+                          />
+                          <input
+                            type="range"
+                            id="tenureRange"
+                            min="15"
+                            max="50"
+                            step="1"
+                            value="15"
+                          />
+                        </div>
+                      </form>
                     </div>
-                </div>
-                
+                    <div class="result-section">
+                      <h2 style="color: white;">Results</h2>
+                      <div class="calculated-result">
+                          <p id="result">Your result will appear here.</p>
+                      </div>
+                    </div>
                 <section class="description-section">
-                    <h3>Description</h3>
-  <p>The first step towards wealth management is accumulating savings. You will find a lot of options for savings accounts; however, look for the ones that guarantee substantial returns risk-free. PPF accounts are one of the most common features which come into the picture. <strong>PPF account</strong> refers to Public Provident Fund account and is meant to invest your valuable capital.</p>
-  <p>If you are a new employee or a responsible parent who wishes to save for the future, then PPF is ideal for you. Calculating the interest rates and returns on your PPF account turns a bit difficult. To make these difficult calculations easy, <strong>PPF account calculator</strong> can be used.</p>
+                  <h3>Description</h3>
+                  <p>
+                      The first step towards wealth management is accumulating savings. Public Provident Fund (PPF) accounts are a popular investment option for long-term savings and tax benefits. To simplify the calculations involved in PPF, a **PPF calculator** is a valuable tool.
+                  </p>
 
-  <h3>How can a PPF calculator help you?</h3>
-  <p>This financial tool allows one to resolve their queries related to Public Provident Fund account. There are certain specifications that are to be abided by while calculating maturity amount after a certain point of time. It keeps a track on the growth of your capital. Those who already have a PPF savings account know that interest rates change on a monthly basis.</p>
-  <p>Nowadays, it is easier to keep a check on changing rates. However, with the discovery of <strong>public provident fund calculator</strong>, account holders find it easier to find out monthly changes made in interest. In the market, you may find a lot of user-friendly PPF calculators and for choosing trustworthy ones, Groww is simply the option.</p>
+                  <h3>How a PPF Calculator Can Help</h3>
+                  <p>
+                      A PPF calculator helps you:
+                  </p>
+                  <ul>
+                      <li><strong>Estimate Maturity Amount:**</li> 
+                      <li><strong>Track Investment Growth:**</li> 
+                      <li><strong>Assess the Impact of Interest Rate Changes:**</li> 
+                      <li><strong>Plan for Financial Goals:**</li> 
+                  </ul>
 
-  <h3>Formula used for calculating PPF</h3>
-  <p>Groww uses a formula to compute the deposited amount, interest, etc. This formula has been given below:</p>
-  <pre>
-    F = P [((1+i)^n - 1) / i]
-  </pre>
-  <p>This formula represents the following variables:</p>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>I</td>
-        <td>Rate of interest</td>
-      </tr>
-      <tr>
-        <td>F</td>
-        <td>Maturity of PPF</td>
-      </tr>
-      <tr>
-        <td>N</td>
-        <td>Total number of years</td>
-      </tr>
-      <tr>
-        <td>P</td>
-        <td>Annual instalments</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>In order to clear your concept about PPF calculation, an example has been given. This calculation becomes easier once you buy <strong>PPF calculator</strong>.</p>
-  <p>Suppose, an individual pays an annual amount of Rs. 1,50,000 in their PPF investment for a period of 15 years at an interest rate of 7.1%, then his/her maturity sum at the closing year will be equal to Rs. 40,68,209.</p>
-  <p>A quick check on opening balance, closing balance, withdraw amount and also rate of interest will definitely help you out. Have a look at the given below table.</p>
+                  <h3>Formula Used for Calculating PPF</h3>
+                  <p>
+                      The formula used to calculate the maturity amount of a PPF account is:
+                  </p>
+                  <pre>
+                      F = P * (((1+i)^n - 1) / i)
+                  </pre>
+                  <p>
+                      Where:
+                  </p>
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Variable</th>
+                              <th>Description</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>F</td>
+                              <td>Maturity amount</td>
+                          </tr>
+                          <tr>
+                              <td>P</td>
+                              <td>Annual investment</td>
+                          </tr>
+                          <tr>
+                              <td>i</td>
+                              <td>Interest rate per period</td>
+                          </tr>
+                          <tr>
+                              <td>n</td>
+                              <td>Number of periods</td>
+                          </tr>
+                      </tbody>
+                  </table>
 
-  <h3>How to use PPF calculator?</h3>
-  <p>To enjoy this computing tool to the maximum, you need to understand how it works. Its user-friendly and accurate information makes it a device worthy of purchase. The only job of the user is to put values within specific columns and you are good to go. Details that are to be provided to this <strong>PPF amount calculator</strong> include tenure, total amount invested, interest earned and also amount invested monthly or yearly.</p>
-  <ul>
-    <li>Enter the values in the requisite fields and the total maturity amount will be reflected within seconds.</li>
-    <li>If an individual deposits amount on 1st of April then interest will be calculated based on financial year. Inflation might affect this interest rate.</li>
-  </ul>
+                  <h3>How to Use a PPF Calculator</h3>
+                  <p>
+                      To use a PPF calculator, you typically need to provide the following information:
+                  </p>
+                  <ul>
+                      <li><strong>Annual Investment Amount:**</li> 
+                      <li><strong>Interest Rate:**</li> 
+                      <li><strong>Investment Tenure:**</li> 
+                  </ul>
+                  <p>
+                      The calculator will then use the formula to determine the estimated maturity amount.
+                  </p>
 
-  <h3>Advantages of using PPF calculator</h3>
-  <p>The list below demonstrates benefits of using <strong>online PPF calculator</strong>. Have a look at it.</p>
-  <ul>
-    <li>This computing device allows users to make a clear idea about how much interest can be earned with the investment of a certain amount of money.</li>
-    <li>With the assistance of this calculator, you can be saved from paying hefty tax.</li>
-    <li>We often find it difficult to decide on maturity period of their investment and this problem is easily solved with the use of <strong>PPF calculator India</strong>.</li>
-    <li>It also offers estimation on total investment in a financial year.</li>
-    <li>To ensure that the user is able to get accurate result, it is essential to provide the computing device with deposited amount along with type of deposit i.e. fixed or variable.</li>
-  </ul>
-</section>
-
-
+                  <h3>Advantages of Using a PPF Calculator</h3>
+                  <p>
+                      Using a PPF calculator offers several benefits:
+                  </p>
+                  <ul>
+                      <li><strong>Accurate Calculations:**</strong> Ensures precise calculations and avoids errors.</li>
+                      <li><strong>Time-Saving:**</strong> Quickly calculates maturity amounts without manual computations.</li>
+                      <li><strong>Financial Planning:**</li> 
+                      <li><strong>Informed Decision-Making:**</li> 
+                  </ul>
+              </section>
             </section>
 
            <aside class="right-section">
-    <div class="image-banner">
-        <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-    </div>
-    <div class="cta-links">
-        <a href="../index.html">Calculator Page</a>
-        <a href="../Pages/cagrIndex.html">EMI Calculator</a>
-        <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
-        <a href="../Pages/gratuityIndex.html">Home Loan EMI Calculator</a>
-        <a href="../Pages/homeEMIindex.html">HRA Calculator</a>
-        <a href="../Pages/HRAindex.html">PPF Calculator</a>
-    </div>
-</aside>
-
+              <div class="image-banner">
+                  <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
+              </div>
+              <div class="cta-links">
+                  <a href="../index.html">Calculator Page</a>
+                  <a href="../Pages/cagrIndex.html">EMI Calculator</a>
+                  <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
+                  <a href="../Pages/gratuityIndex.html">Home Loan EMI Calculator</a>
+                  <a href="../Pages/homeEMIindex.html">HRA Calculator</a>
+                  <a href="../Pages/HRAindex.html">PPF Calculator</a>
+              </div>
+          </aside>
     </main>
     <section class="faq-section">
             <h1 style="text-align: center;">Frequently Asked Questions</h1>
@@ -213,7 +228,6 @@
     <footer>
         <p>Footer Content</p>
     </footer>
-
     <script src="../assets/PPFscript.js"></script>
 </body>
 </html>

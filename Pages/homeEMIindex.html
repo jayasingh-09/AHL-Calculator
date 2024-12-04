@@ -25,18 +25,18 @@
                     <form id="emiForm">
                         <div class="input-field">
                             <label for="loan">Loan Amount (₹):</label>
-                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" required oninput="syncInput('loan', 'loanRange')">
-                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" oninput="syncInput('loanRange','loan')">
+                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" value="1000000" required oninput="syncInput('loan', 'loanRange')">
+                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" value="1000000" oninput="syncInput('loanRange', 'loan')">
                         </div>
                         <div class="input-field">
                             <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" required oninput="syncInput('interestRate', 'interestRateRange')">
-                            <input type="range" id="interestRateRange" min="1" max="100" step="1" oninput="syncInput('interestRateRange','interestRate')">
+                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" max="100" value="6.5" required oninput="syncInput('interestRate', 'interestRateRange')">
+                            <input type="range" id="interestRateRange" min="1" max="100" step="0.1" value="6.5" oninput="syncInput('interestRateRange', 'interestRate')">
                         </div>
                         <div class="input-field">
                             <label for="tenure">Tenure (Years):</label>
-                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" required oninput="syncInput('tenure', 'tenureRange')">
-                            <input type="range" id="tenureRange" min="1" max="100" step="1" oninput="syncInput('tenureRange','tenure')">
+                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" max="30" value="5" required oninput="syncInput('tenure', 'tenureRange')">
+                            <input type="range" id="tenureRange" min="1" max="30" step="1" value="5" oninput="syncInput('tenureRange', 'tenure')">
                         </div>
                     </form>
                 </div>
@@ -47,113 +47,47 @@
                     </div>
                 </div>          
             <section class="description-section">
-    <h3>Description</h3>
-    <p>The credit market in India is steadily on the rise.</p>
-    <p>
-        It is currently the 4th largest credit industry in the world, recording a CAGR of over 11% year on year. A vast majority of these advances are short-term credits such as personal loans and credit cards. Combined, these two financial products account for 78% of all credit lending in India. Loan repayments include EMIs, and borrowers should consider the EMI amount to accurately plan their current and future finances.
-    </p>
-    <p>
-        There are several EMI calculators available online; one must choose an accurate <strong>EMI calculator</strong> and learn its usage to calculate the exact EMI amount they are liable to pay for a loan.
-    </p>
-    <h3>Factors Affecting Your Due Amount</h3>
-    <p>
-        There are certain factors you need to consider while planning for applying for a loan. Based upon your financial and repayment capacity, you will be required to calculate equated monthly installments (EMI). Here are a few factors to consider:
-    </p>
-    <ul>
-        <li>
-            <strong>Term of the Loan</strong>
-            <p>
-                A loan’s tenure may get reduced or extended. Subsequently, there will be an increase or a decrease in the EMI amount as well. Thus, considering the term of a loan is also an important factor that may affect your due amount.
-            </p>
-        </li>
-        <li>
-            <strong>Rate of Interest</strong>
-            <p>
-                The rate of interest is a vital factor that will help to assess the installment amount owed. You can compare the product and opt for one which has a lower rate of interest so that your overall repayment stays low.
-            </p>
-        </li>
-        <li>
-            <strong>Amount of Loan</strong>
-            <p>
-                Choosing the loan amount is another significant factor for determining your EMI. Based on the loan amount you choose, your equated monthly installment will be calculated accordingly.
-            </p>
-        </li>
-    </ul>
-    <h3>How can an online EMI calculator help you?</h3>
-    <p>
-        The number of credit accounts is growing at an even higher CAGR of 28% and has reached 107 million accounts at the end of FY18.
-    </p>
-    <p>
-        Regardless of the type of loan you want to avail of, be it a secured or unsecured advance, it is paramount that you know how much monthly installment you have to make before you avail it. That is where an <strong>EMI calculator in India</strong> can be immensely helpful.
-    </p>
-    <ul>
-        <li>
-            It helps you get an accurate estimate of your EMI amount so that you can plan your finances accordingly. Make sure that your debt-to-income ratio is below 50% to maximize your chances of loan approval.
-        </li>
-        <li>
-            A <strong>loan EMI calculator</strong> helps you save valuable time. You don’t have to do complex calculations manually, which can be quite time-consuming.
-        </li>
-        <li>
-            It eliminates any chance of a miscalculation, providing you with an accurate estimate every time.
-        </li>
-        <li>
-            It is highly specific for each type of loan. The EMI breakup of a home loan, for example, is different from that of a personal loan.
-        </li>
-    </ul>
-    <h3>The formula to determine loan EMI amount</h3>
-    <p>
-        There is a specific formula that Groww uses to compute the EMI amount for a loan:
-    </p>
-    <p>
-        <strong>EMI = [P x R x (1+R) ^N] / [(1+R) ^ (N-1)]</strong>, where –
-    </p>
-    <ul>
-        <li>P is the principal amount</li>
-        <li>R is the rate of interest</li>
-        <li>N is the loan tenure</li>
-    </ul>
-    <p>
-        This is the standardized formula used by any <strong>online loan calculator</strong>. Some variables may be added based on the type of loan.
-    </p>
-    <h3>Types Of EMI Calculator</h3>
-    <p>
-        There are numerous types of EMI Calculators that you can use on Groww to calculate your equated monthly installments for home loans, personal loans, car loans, etc.
-    </p>
-    <h4>Home Loan EMI Calculator</h4>
-    <p>
-        Home loans usually have a huge loan principal amount and a long tenure. It requires strategic planning for its repayment. You can use the Home Loan EMI Calculator of Groww to calculate your EMI. It is a user-friendly designed calculator that can help you calculate and assess your home loan EMIs immediately. All you need to do is enter your loan amount, loan tenure, and rate of interest and the results will be calculated instantly.
-    </p>
-    <h4>Car Loan EMI Calculator</h4>
-    <p>
-        Buying a car is one of the major investments one can make. You may require a car loan to fund this substantial investment. Often, a car loan’s EMI is supposed to be repaid with due interest within a stipulated time to the lender. On failure, your car may be taken away and put up for auction to recover the balance amount left to be paid. Thus, to calculate a precise EMI amount that you can afford to pay comfortably, you can use the Car Loan EMI Calculator of Groww. You just need to enter your loan amount, interest rate, and loan tenure, and you will get the monthly EMI amount instantly.
-    </p>
-    <h4>Personal Loan EMI Calculator</h4>
-    <p>
-        Personal loans are mostly taken to serve multiple purposes like medical emergencies, vacations, relocation, weddings, home renovations, etc. Since they are an unsecured loan, they have a relatively higher interest rate and a shorter tenure. You can use the Personal Loan EMI Calculator of Groww to assess the loan and EMI amount that you can pay with ease. By entering your loan amount, rate of interest, and loan tenure, you can calculate your EMI.
-    </p>
-    <h4>Education Loan EMI Calculator</h4>
-    <p>
-        Affording good education in recent times has been quite a task for parents as its cost has risen at a rapid pace. To finance this cost, an education loan is one of the best options a parent can opt for. Such loans can be taken for a student’s education within the country or even overseas. The loan’s EMI is required to be repaid with interest after a moratorium period. By entering the loan amount, rate of interest, and loan tenure in the Education Loan EMI Calculator, you can calculate the sum of the EMI amount which you need to repay.
-    </p>
-    <h4>Loan against Property EMI Calculator</h4>
-    <p>
-        A loan against property is a type of secured loan that one can avail against a property owned by them. Be it residential, commercial, or land, any property can be mortgaged with the lender against a loan. For calculating the EMI amount which you can repay without any financial strain, you can use a Loan against Property EMI Calculator.
-    </p>
-    <h3>How to use Groww online EMI calculator?</h3>
-    <p>
-        The Groww online calculator is easy-to-use and takes just a few seconds of your time. Here’s how:
-    </p>
-    <ul>
-        <li>Insert the variable vis-à-vis principal, tenure, and rate of interest.</li>
-        <li>The calculated EMI value will be displayed immediately.</li>
-    </ul>
-    <h3>Advantages of using Groww calculator</h3>
-    <ul>
-        <li>It is entirely free of charge. Anyone can use it at any time, as many times as they want.</li>
-        <li>Our <strong>loan calculator online</strong> is 100% accurate every time.</li>
-        <li>It’s fast and provides an accurate estimate instantaneously.</li>
-    </ul>
-</section>
+                <h3>Description</h3>
+                <p>Understanding Home Loan EMIs</p>
+                <p>
+                    A home loan is a significant financial commitment. To effectively manage your finances, it's crucial to understand Equated Monthly Installments (EMIs) and how they impact your budget. EMIs are fixed monthly payments that cover both the principal amount and interest on your home loan.
+                </p>
+
+                <h3>Factors Affecting Home Loan EMIs</h3>
+                <p>Several factors influence the calculation of your home loan EMIs:</p>
+                <ul>
+                    <li><strong>Loan Amount:**</strong> A larger loan amount generally results in higher EMIs.</li>
+                    <li><strong>Interest Rate:**</strong> Lower interest rates reduce your monthly payments.</li>
+                    <li><strong>Loan Tenure:**</strong> A longer tenure results in lower EMIs but extends the repayment period.</li>
+                </ul>
+
+                <h3>The Power of Online Home Loan EMI Calculators</h3>
+                <p>Online home loan EMI calculators are invaluable tools for prospective homebuyers. They offer numerous benefits:</p>
+                <ul>
+                    <li><strong>Accurate EMI Estimates:**</strong> These calculators provide precise EMI calculations based on your input parameters.</li>
+                    <li><strong>Quick Calculations:**</strong> They eliminate the need for manual calculations, saving you time and effort.</li>
+                    <li><strong>Financial Planning:**</strong> By understanding your monthly payments, you can better plan your finances and budget accordingly.</li>
+                    <li><strong>Comparison Tool:**</strong> You can compare different loan options and choose the best deal based on your financial situation.</li>
+                </ul>
+
+                <h3>How Home Loan EMI Calculators Work</h3>
+                <p>
+                    Online home loan EMI calculators use a standardized formula to determine your monthly payments:
+                </p>
+                <p>
+                    EMI = [P x R x (1+R)^N] / [(1+R)^N-1]
+                </p>
+                <p>
+                    Where:
+                </p>
+                <ul>
+                    <li>P = Principal loan amount</li>
+                    <li>R = Interest rate per month (monthly interest rate = annual interest rate/12/100)</li>
+                    <li>N = Number of monthly installments (loan tenure in months)</li>
+                </ul>
+
+                <p>By inputting your desired loan amount, interest rate, and tenure into the calculator, you can quickly determine your monthly EMI.</p>
+            </section>
 
 
         </section>

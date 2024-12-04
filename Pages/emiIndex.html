@@ -25,107 +25,59 @@
                     <form id="emiForm">
                         <div class="input-field">
                             <label for="loan">Loan Amount (₹):</label>
-                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" required oninput="syncInput('loan', 'loanRange')">
-                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" oninput="syncInput('loanRange','loan')">
+                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" value="100000" required oninput="syncInput('loan', 'loanRange')">
+                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" value="100000" oninput="syncInput('loanRange','loan')">
                         </div>
                         <div class="input-field">
                             <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" required oninput="syncInput('interestRate', 'interestRateRange')">
-                            <input type="range" id="interestRateRange" min="1" max="100" step="1" oninput="syncInput('interestRateRange','interestRate')">
+                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" max="100" value="6.5" required oninput="syncInput('interestRate', 'interestRateRange')">
+                            <input type="range" id="interestRateRange" min="1" max="100" step="0.1" value="6.5" oninput="syncInput('interestRateRange','interestRate')">
                         </div>
                         <div class="input-field">
                             <label for="tenure">Tenure (Years):</label>
-                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" required oninput="syncInput('tenure', 'tenureRange')">
-                            <input type="range" id="tenureRange" min="1" max="100" step="1" oninput="syncInput('tenureRange','tenure')">
+                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" max="30" value="5" required oninput="syncInput('tenure', 'tenureRange')">
+                            <input type="range" id="tenureRange" min="1" max="30" step="1" value="5" oninput="syncInput('tenureRange','tenure')">
                         </div>
-                        </div>
-                        
-                </form>
-                
+                    </form>
+                </div> 
                 <div class="result-section">
                     <h2 style="color:#d31f26;">Results</h2>
                     <div class="calculated-result">
                         <p id="result"></p>
                     </div>
                 </div>
-                
-                
-                       <section class="description-section">
-    <h3>Description</h3>
-    <p>
-        CAGR is an acronym for <strong>Compound Annual Growth Rate</strong>, commonly used in determining how well a business is performing in the fiercely competitive market. It represents the growth of an organization, and you can easily make out the growth rate, or the lack of it, using a <strong>CAGR calculator</strong>.
-    </p>
-    <p>
-        Such a calculator is easily available online, but user-friendliness is important while calculating CAGR returns. Groww’s online CAGR calculator brings you an organized and accurate approach to calculate your business’ CAGR.
-    </p>
-    <h3>How can a CAGR Calculator Help You?</h3>
-    <p>
-        If you own a business, the CAGR can indicate a lot of factors that are otherwise overlooked. Unlike the concept of ‘absolute returns’, growth based on <strong>CAGR</strong> takes into account the element of time. It is thus a better indicator of growth over a period.
-    </p>
-    <ul>
-        <li>Your business is growing with time and whether the profits thus generated is being invested correctly.</li>
-        <li>It will enable you to evaluate your investment options. For example, if stock A is not working as well as Stock B based on their respective CAGR indices, you can invest in Stock B instead.</li>
-        <li>The relative growth of your organization with respect to the market leaders in your business segment.</li>
-    </ul>
-    <h3>How to Calculate CAGR?</h3>
-    <p>
-        The CAGR formula to calculate the investments is represented by:
-    </p>
-    <p><strong>CAGR = (FV / PV) ^ (1 / n) - 1</strong></p>
-    <p>
-        It is a mathematical calculation that determines the real-time CAGR for any organization. The values stand for the following:
-    </p>
-    <table>
-        <thead>
-            <tr>
-                <th>Term</th>
-                <th>Definition</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>FV</td>
-                <td>Future Value</td>
-            </tr>
-            <tr>
-                <td>PV</td>
-                <td>Present Value</td>
-            </tr>
-            <tr>
-                <td>n</td>
-                <td>Time period in years</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>An example of CAGR calculation</h3>
-    <p>
-        If you have an initial investment of Rs. 1 Lakh in a business, it constitutes the PV. If the total investment has swollen to Rs 10 Lakh (FV) after 5 years (N), the CAGR is:
-    </p>
-    <p><strong>CAGR = (10,00,000 / 1,00,000) ^ (1 / 5) - 1</strong></p>
-    <p>Thus, the CAGR percentage is CAGR x 100 or <strong>58.9%</strong>.</p>
-    <h3>How to use Groww’s CAGR calculator?</h3>
-    <ol>
-        <li>Enter your initial investment amount.</li>
-        <li>Enter the expected value of the investment after a certain period of time.</li>
-        <li>Enter the number of years or months for which you wish to use the CAGR calculator.</li>
-    </ol>
-    <p>
-        The CAGR calculator will generate the results within seconds as soon as you input the values.
-    </p>
-    <h3>Advantages of Groww’s online CAGR calculator</h3>
-    <ul>
-        <li>It provides a detailed outlook of your ROI.</li>
-        <li>
-            If you are a potential investor, you can also use our service of a mutual fund CAGR calculator. It will help you determine how much you need to invest to maximize returns over a certain period.
-        </li>
-        <li>Compare your business’ returns with benchmark options and evaluate the performance.</li>
-        <li>Make long-term capital influx plans.</li>
-    </ul>
-</section>
-
-
-
-        </section>
+                <section class="description-section">
+                    <h3>Description</h3>
+                    <p>The Rising Credit Market in India</p>
+                    <p>India's credit market is experiencing significant growth, currently ranking as the 4th largest in the world. With a remarkable CAGR of over 11% year-on-year, a significant portion of this growth is driven by short-term credits like personal loans and credit cards. These two financial products collectively account for a substantial 78% of all credit lending in India.</p>
+                    <h3>Understanding EMIs and Their Impact</h3>
+                    <p>Loan repayments often involve Equated Monthly Installments (EMIs), which are fixed monthly payments that cover both the principal amount and interest. To effectively plan finances, borrowers must accurately calculate their EMI amounts. Online EMI calculators are valuable tools for this purpose.</p>
+                    <h3>Factors Affecting EMI Amounts</h3>
+                    <p>Several key factors influence the calculation of EMI amounts:</p>
+                    <ul>
+                        <li><strong>Loan Tenure:</strong> A shorter tenure results in higher EMIs, while a longer tenure leads to lower EMIs.</li>
+                        <li><strong>Interest Rate:</strong> A lower interest rate reduces the overall EMI amount.</li>
+                        <li><strong>Loan Amount:</strong> A higher loan amount naturally translates to higher EMIs.</li>
+                    </ul>
+                    <h3>The Power of Online EMI Calculators</h3>
+                    <p>With the increasing number of credit accounts, understanding the monthly installment commitment before availing a loan is crucial. Online EMI calculators offer several benefits:</p>
+                    <ul>
+                        <li><strong>Accurate Estimates:</strong> They provide precise EMI calculations based on the input parameters.</li>
+                        <li><strong>Time-Saving:</strong> They eliminate the need for manual calculations, saving valuable time.</li>
+                        <li><strong>Error Reduction:</strong> They minimize the risk of calculation errors, ensuring accuracy.</li>
+                        <li><strong>Loan-Specific Calculations:</strong> They can be tailored to different loan types, such as home loans and personal loans.</li>
+                    </ul>
+                    <h3>The EMI Calculation Formula</h3>
+                    <p>The formula used to calculate EMIs is:</p>
+                    <p>EMI = [P x R x (1+R) ^N]/ [(1+R) ^ (N-1)]</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>P = Principal amount</li>
+                        <li>R = Interest rate per month</li>
+                        <li>N = Number of monthly installments</li>
+                    </ul>
+                    <p>This standardized formula is employed by online EMI calculators to provide accurate estimates.</p></section>
+                </section>
         <!-- Right Section -->
         <aside class="right-section">
                 <div class="image-banner">

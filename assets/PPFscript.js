@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Set initial default values
-  document.getElementById("deposit").value = 500;
+  document.getElementById("deposit").value = 10000;
   document.getElementById("tenure").value = 15;
-  document.getElementById("depositRange").value = 500;
+  document.getElementById("depositRange").value = 10000;
   document.getElementById("tenureRange").value = 15;
 
   // Perform the initial calculation
@@ -39,7 +39,7 @@ function syncRange(rangeId, value) {
 }
 
 function calculateResults() {
-  const deposit = parseFloat(document.getElementById("deposit").value) || 500;
+  const deposit = parseFloat(document.getElementById("deposit").value) || 10000;
   const interestRate = 7.1 / 100;
   const tenure = parseInt(document.getElementById("tenure").value) || 15;
 
@@ -58,13 +58,14 @@ function calculateResults() {
     return;
   }
 
-  maturityAmount =
+  const maturityAmount = Math.round(
     deposit *
-    [((1 + interestRate) ** tenure - 1) / interestRate] *
-    (1 + interestRate);
+      (((1 + interestRate) ** tenure - 1) / interestRate) *
+      (1 + interestRate)
+  );
 
-  const totalInterest = maturityAmount - deposit * tenure;
-  const investedAmount = deposit * tenure;
+  const totalInterest = Math.round(maturityAmount - deposit * tenure);
+  const investedAmount = Math.round(deposit * tenure);
 
   document.getElementById("result").innerHTML = `
     <p><strong>Invested amount: </strong> ₹${investedAmount.toLocaleString(
@@ -76,9 +77,9 @@ function calculateResults() {
     <p><strong>Maturity value: </strong> ₹${maturityAmount.toLocaleString(
       "en-IN"
     )}</p>
-`;
-
+  `;
 }
+
 document.querySelectorAll(".faq-item").forEach((item) => {
   item.querySelector(".faq-question").addEventListener("click", () => {
     const isActive = item.classList.contains("active");
