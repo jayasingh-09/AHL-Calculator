@@ -53,6 +53,15 @@ document
   .forEach((input) => {
     input.addEventListener("input", calculateGratuity);
   });
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    item.querySelector(".faq-question").addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      document
+        .querySelectorAll(".faq-item")
+        .forEach((i) => i.classList.remove("active"));
+      if (!isActive) item.classList.add("active");
+    });
+  });
 
 // Initial trigger to calculate gratuity with default values
 calculateGratuity();
