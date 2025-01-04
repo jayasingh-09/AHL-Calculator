@@ -9,6 +9,22 @@ function syncRange(rangeId, value) {
   rangeElement.value = value;
   calculateHRA();
 }
+document
+  .querySelectorAll(".input-field input[type='range']")
+  .forEach((input) => {
+    input.addEventListener("input", function () {
+      let min = this.min;
+      let max = this.max;
+      let val = this.value;
+      let percentage = ((val - min) / (max - min)) * 100;
+
+      // This applies the progress color dynamically
+      this.style.setProperty("--progress", percentage + "%");
+    });
+
+    // Initialize on page load
+    input.dispatchEvent(new Event("input"));
+  });
 
 // Set default values
 document.getElementById("basicSalary").value = 5400000;

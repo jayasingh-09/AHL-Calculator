@@ -24,28 +24,47 @@
                 <div class="calculator-section">
                     <form id="cagrForm">
                         <div class="input-field">
-                            <label for="beginningValue">Beginning Value (₹):</label>
+                            <label for="beginningValue">Initial Investment (₹):</label>
                             <input type="number" id="beginningValue" placeholder="Enter Beginning Value" min="1000" max="1000000" step="1000" value="5000" required oninput="syncRange('beginningValueRange', this.value)">
                             <input type="range" id="beginningValueRange" min="1000" max="1000000" step="1000" value="5000" oninput="syncInput('beginningValue', this.value)">
                             </div>
                             <div class="input-field">
-                            <label for="endingValue">Ending Value (₹):</label>
+                            <label for="endingValue">Final Investment (₹):</label>
                             <input type="number" id="endingValue" placeholder="Enter Ending Value" min="1000" max="1000000" step="1000" value="25000" required oninput="syncRange('endingValueRange', this.value)">
                             <input type="range" id="endingValueRange" min="1000" max="1000000" step="1000" value="25000" oninput="syncInput('endingValue', this.value)">
                             </div>
                             <div class="input-field">
-                            <label for="years">Number of Years:</label>
+                            <label for="years">Duration of investment :</label>
                             <input type="number" id="years" placeholder="Enter Number of Years" min="1" max="50" step="1" value="5" required oninput="syncRange('yearsRange', this.value)">
                             <input type="range" id="yearsRange" min="1" max="50" step="1" value="5" oninput="syncInput('years', this.value)">
                         </div>
                     </form>
                 </div>
                 <div class="result-section">
-                    <h2 style="color:#d31f26;">Results</h2>
-                    <div class="calculated-result">
-                        <p id="result" ></p>
+                        <!-- Title: Your CAGR Percentage -->
+                        <h3 class="result-title">Your CAGR Percentage is: <span id="cagrValue">0%</span></h3>
+
+                        <!-- Horizontal Line -->
+                        <hr class="divider">
+
+                        <!-- Beginning & Ending Value Section -->
+                        <div class="value-details">
+                            <div class="left">
+                                <p><strong>Initial Investment:</strong> ₹<span id="displayBeginningValue">0</span></p>
+                            </div>
+                            <div class="right">
+                                <p><strong>Final Investment:</strong> ₹<span id="displayEndingValue">0</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Range Bar -->
+                        <div class="result-bar-container">
+                            <div class="result-bar">
+                                <div class="result-filled" id="cagrProgress"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
               <section class="description-section">
                 <h3>Description</h3>
                 <p>
@@ -119,7 +138,8 @@
                     <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
                 </div>
                 <div class="cta-links">
-                    <a href="../index.html">Calculator Page</a>     
+                    <a href="../index.html">Calculator Page</a>  
+                     <a href="../Pages/cagrIndex.html">CAGR Calculator</a>  
                     <a href="../Pages/emiIndex.html">EMI Calculator</a>   
                     <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
                     <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>

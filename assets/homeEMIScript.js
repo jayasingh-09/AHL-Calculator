@@ -12,6 +12,23 @@ document.getElementById("interestRate").value = 6.5;
 document.getElementById("interestRateRange").value = 6.5;
 document.getElementById("tenure").value = 5;
 document.getElementById("tenureRange").value = 5;
+document
+  .querySelectorAll(".input-field input[type='range']")
+  .forEach((input) => {
+    input.addEventListener("input", function () {
+      let min = this.min;
+      let max = this.max;
+      let val = this.value;
+      let percentage = ((val - min) / (max - min)) * 100;
+
+      // This applies the progress color dynamically
+      this.style.setProperty("--progress", percentage + "%");
+    });
+
+    // Initialize on page load
+    input.dispatchEvent(new Event("input"));
+  });
+
 
 function calculateEMI() {
   let loanAmount = parseFloat(document.getElementById("loan").value) || 1000000;
@@ -42,10 +59,16 @@ function calculateEMI() {
   const roundedTotalInterest = Math.round(totalInterest);
 
   document.getElementById("result").innerHTML = `
-    <p><strong>Monthly EMI:</strong> ₹${roundedEMI.toLocaleString()}</p>
-    <p><strong>Principal amount:</strong> ₹${loanAmount.toLocaleString()}</p>
-    <p><strong>Total interest:</strong> ₹${roundedTotalInterest.toLocaleString()}</p>
-    <p><strong>Total amount:</strong> ₹${roundedTotalPayment.toLocaleString()}</p>
+    <p><strong>Monthly EMI:</strong> ₹${roundedEMI.toLocaleString("en-IN")}</p>
+    <p><strong>Principal amount:</strong> ₹${loanAmount.toLocaleString(
+      "en-IN"
+    )}</p>
+    <p><strong>Total interest:</strong> ₹${roundedTotalInterest.toLocaleString(
+      "en-IN"
+    )}</p>
+    <p><strong>Total amount:</strong> ₹${roundedTotalPayment.toLocaleString(
+      "en-IN"
+    )}</p>
   `;
 }
 

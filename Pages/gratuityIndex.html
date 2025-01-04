@@ -5,6 +5,7 @@
     <meta name="Gratuity Calculator- Calculate Your Gratuity Easily with Ashiana Housing" content="Calculate your gratuity amount instantly with Ashiana Housing's Gratuity Calculator. Simplify gratuity calculations for private employees, understand eligibility, and plan for a secure financial future. Try it now!">
     <title>Gratuity Calculator</title>
     <link rel="stylesheet" href="../assets/style.css">
+    
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
             <!-- Left Section -->
             <section class="left-section">
                 <div class="calculator-section">
-                    <form id="ppfForm">
+                    <form id="gratuityForm">
                     <div class="input-field">
                         <label for="monthlySalary">Monthly Salary (Basic+DA) (₹):</label>
                         <input type="number" id="monthlySalary" placeholder="Enter your monthly salary" min="10000" value="60000" required oninput="syncRange('monthlySalary', 'monthlySalaryRange')">
@@ -35,14 +36,23 @@
                     </div>
                     </form>
                 </div>
+                <div class="result-section">
+                        <!-- Title: Your CAGR Percentage -->
+                        <h3 class="result-title">Your Gratuity Amount  <span id="gratuityValue">0%</span></h3>
 
-                    <div class="result-section">
-                        <h2>Results</h2>
-                        <div class="calculated-result">
-                            <p id="result">Your result will appear here.</p>
+                        <!-- Horizontal Line -->
+                        <hr class="divider">
+
+                        <!-- Beginning & Ending Value Section -->
+                        <div class="value-details">
+                            <div class="left">
+                                <p><strong>Monthly Salary:</strong> <span id="displayMonthlySalary">0</span></p>
+                            </div>
+                            <div class="right">
+                                <p><strong>Years of Service:</strong> <span id="displayYearsOfService">0</span></p>
+                            </div>
                         </div>
                     </div>
-
                     <section class="description-section">
                         <h3>Description</h3>
                         <p>If you're an employee of a private company in India, you're eligible to receive gratuity under the Payment of Gratuity Act 1972 after completing five years of service. However, in certain circumstances such as injury or disability due to an accident or disease, you may be eligible for gratuity even before five years. The gratuity amount is calculated based on your last drawn salary, including basic salary and Dearness Allowance (DA), and the number of years you have worked in the company.</p>
@@ -132,12 +142,13 @@
                     <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
                 </div>
                 <div class="cta-links">
-                    <a href="../index.html">Calculator Page</a> 
-                    <a href="../Pages/cagrIndex.html">EMI Calculator</a>
-                    <a href="../Pages/emiIndex.html">Gratuity Calculator</a>
-                    <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                    <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                    <a href="../Pages/PPFindex.html">PPF Calculator</a>
+                  <a href="../index.html">Calculator Page</a>
+                  <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+                  <a href="../Pages/emiIndex.html">EMI Calculator</a>
+                  <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+                  <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+                  <a href="../Pages/HRAindex.html">HRA Calculator</a>
+                  <a href="../Pages/PPFindex.html">PPF Calculator</a>
                 </div>
             </aside>
         </div>
