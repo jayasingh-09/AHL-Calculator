@@ -85,27 +85,43 @@ document.addEventListener("DOMContentLoaded", function () {
     ).innerText = `₹${roundedTotalPayment.toLocaleString("en-IN")}`;
   }
 
+  // // Sync number inputs with range sliders
+  // document
+  //   .querySelectorAll("#loan, #interestRate, #tenure")
+  //   .forEach((input) => {
+  //     input.addEventListener("input", (event) => {
+  //       const rangeId = `${event.target.id}Range`;
+  //       syncRange(rangeId, event.target.id);
+  //       calculateEMI();
+  //     });
+  //   });
+
+  // // Sync range sliders with number inputs
+  // document
+  //   .querySelectorAll("#loanRange, #interestRateRange, #tenureRange")
+  //   .forEach((range) => {
+  //     range.addEventListener("input", (event) => {
+  //       const inputId = event.target.id.replace("Range", "");
+  //       syncInput(inputId, event.target.id);
+  //       calculateEMI();
+  //     });
+  //   });
+
   // Sync number inputs with range sliders
-  document
-    .querySelectorAll("#loan, #interestRate, #tenure")
-    .forEach((input) => {
-      input.addEventListener("input", (event) => {
-        const rangeId = `${event.target.id}Range`;
-        syncRange(rangeId, event.target.id);
-        calculateEMI();
-      });
+  document.querySelectorAll("input[type='number']").forEach((input) => {
+    input.addEventListener("input", (event) => {
+      const rangeId = `${event.target.id}Range`;
+      syncInput(event.target.id, rangeId);
     });
+  });
 
   // Sync range sliders with number inputs
-  document
-    .querySelectorAll("#loanRange, #interestRateRange, #tenureRange")
-    .forEach((range) => {
-      range.addEventListener("input", (event) => {
-        const inputId = event.target.id.replace("Range", "");
-        syncInput(inputId, event.target.id);
-        calculateEMI();
-      });
+  document.querySelectorAll("input[type='range']").forEach((range) => {
+    range.addEventListener("input", (event) => {
+      const inputId = event.target.id.replace("Range", "");
+      syncInput(event.target.id, inputId);
     });
+  });
 
   // Handle Range Bar UI Updates for all range inputs
   document

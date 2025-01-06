@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to sync number input with range slider
+  // Function to sync number input and range slider
   function syncInput(sourceId, targetId) {
     const sourceElement = document.getElementById(sourceId);
     const targetElement = document.getElementById(targetId);
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let tenure = parseInt(document.getElementById("tenure").value) || 5;
 
     // Validate input values
-    if (isNaN(loanAmount) || loanAmount < 1000 || loanAmount === 0) {
+    if (isNaN(loanAmount) || loanAmount < 1000) {
       document.getElementById("emiValue").innerText = "Enter correct input";
       document.getElementById("displayPrincipalAmount").innerText = "N/A";
       document.getElementById("displayTotalInterest").innerText = "N/A";
@@ -85,27 +85,44 @@ document.addEventListener("DOMContentLoaded", function () {
     ).innerText = `₹${roundedTotalPayment.toLocaleString("en-IN")}`;
   }
 
+  // // Sync number inputs with range sliders
+  // document
+  //   .querySelectorAll("#loan, #interestRate, #tenure")
+  //   .forEach((input) => {
+  //     input.addEventListener("input", (event) => {
+  //       const rangeId = `${event.target.id}Range`;
+  //       syncRange(rangeId, event.target.id);
+  //       calculateEMI();
+  //     });
+  //   });
+
+  // // Sync range sliders with number inputs
+  // document
+  //   .querySelectorAll("#loanRange, #interestRateRange, #tenureRange")
+  //   .forEach((range) => {
+  //     range.addEventListener("input", (event) => {
+  //       const inputId = event.target.id.replace("Range", "");
+  //       syncInput(inputId, event.target.id);
+  //       calculateEMI();
+  //     });
+  //   });
+
+
   // Sync number inputs with range sliders
-  document
-    .querySelectorAll("#loan, #interestRate, #tenure")
-    .forEach((input) => {
-      input.addEventListener("input", (event) => {
-        const rangeId = `${event.target.id}Range`;
-        syncRange(rangeId, event.target.id);
-        calculateEMI();
-      });
+  document.querySelectorAll("input[type='number']").forEach((input) => {
+    input.addEventListener("input", (event) => {
+      const rangeId = `${event.target.id}Range`;
+      syncInput(event.target.id, rangeId);
     });
+  });
 
   // Sync range sliders with number inputs
-  document
-    .querySelectorAll("#loanRange, #interestRateRange, #tenureRange")
-    .forEach((range) => {
-      range.addEventListener("input", (event) => {
-        const inputId = event.target.id.replace("Range", "");
-        syncInput(inputId, event.target.id);
-        calculateEMI();
-      });
+  document.querySelectorAll("input[type='range']").forEach((range) => {
+    range.addEventListener("input", (event) => {
+      const inputId = event.target.id.replace("Range", "");
+      syncInput(event.target.id, inputId);
     });
+  });
 
   // Handle Range Bar UI Updates for all range inputs
   document
