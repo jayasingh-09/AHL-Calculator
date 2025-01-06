@@ -1,237 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="EMI Calculator- Plan Your Loan Repayments with Ashiana Housing" content="Calculate your PPF returns effortlessly with Ashiana Housing's PPF Calculator. Plan your savings, track interest, and estimate maturity amounts for a secure financial future. Try it now!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="EMI Calculator- Plan Your Loan Repayments with Ashiana Housing"
+      content="Calculate your PPF returns effortlessly with Ashiana Housing's PPF Calculator. Plan your savings, track interest, and estimate maturity amounts for a secure financial future. Try it now!"
+    />
     <title>EMI Calculator</title>
-    <link rel="stylesheet" href="../assets/style.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content" style="text-decoration: none;color:inherit;">
-            <div class="logo">
-               <a href="../index.html"> <!-- Replace 'index.html' with your homepage URL -->
-                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
-            </a>
+      <div class="header-content" style="text-decoration: none; color: inherit">
+        <div class="logo">
+          <a href="../index.html">
+            <!-- Replace 'index.html' with your homepage URL -->
+            <img
+              src="../assets/img/Ashiana Corporate Logo.pdf.png"
+              alt="LOGO"
+            />
+          </a>
         </div>
+      </div>
     </header>
-    <h1 style="text-align: center;">EMI Calculator</h1>
+    <h1 style="text-align: center">EMI Calculator</h1>
     <main>
-        <div class="main-container">
-            <!-- Left Section -->
-            <section class="left-section">
-                <div class="calculator-section">
-                    <form id="emiForm">
-                        <div class="input-field">
-                            <label for="loan">Loan Amount (₹):</label>
-                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" value="100000" required oninput="syncInput('loan', 'loanRange')">
-                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" value="100000" oninput="syncInput('loanRange','loan')">
-                        </div>
-                        <div class="input-field">
-                            <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" max="100" value="6.5" required oninput="syncInput('interestRate', 'interestRateRange')">
-                            <input type="range" id="interestRateRange" min="1" max="100" step="0.1" value="6.5" oninput="syncInput('interestRateRange','interestRate')">
-                        </div>
-                        <div class="input-field">
-                            <label for="tenure">Tenure (Years):</label>
-                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" max="30" value="5" required oninput="syncInput('tenure', 'tenureRange')">
-                            <input type="range" id="tenureRange" min="1" max="30" step="1" value="5" oninput="syncInput('tenureRange','tenure')">
-                        </div>
-                        </div>
-                        
-                </form>
-                <div class="result-section">
-                    <!-- Title: Your Monthly EMI -->
-                    <h3 class="result-title">Your Monthly EMI is: <span id="emiValue">₹0</span></h3>
+      <div class="main-container">
+        <!-- Left Section -->
+        <section class="left-section">
+          <div class="calculator-section">
+            <form id="emiForm">
+              <div class="input-field">
+                <label for="loan">Loan Amount (₹):</label>
+                <input
+                  type="number"
+                  id="loan"
+                  placeholder="Enter Loan Amount"
+                  min="100000"
+                  value="100000"
+                  required
+                  oninput="syncInput('loan', 'loanRange')"
+                />
+                <input
+                  type="range"
+                  id="loanRange"
+                  min="1000"
+                  max="1000000"
+                  step="1000"
+                  value="100000"
+                  oninput="syncInput('loanRange','loan')"
+                />
+              </div>
+              <div class="input-field">
+                <label for="interestRate">Interest Rate (%):</label>
+                <input
+                  type="number"
+                  id="interestRate"
+                  placeholder="Enter Interest Rate"
+                  min="1"
+                  max="100"
+                  value="6.5"
+                  required
+                  oninput="syncInput('interestRate', 'interestRateRange')"
+                />
+                <input
+                  type="range"
+                  id="interestRateRange"
+                  min="1"
+                  max="100"
+                  step="0.1"
+                  value="6.5"
+                  oninput="syncInput('interestRateRange','interestRate')"
+                />
+              </div>
+              <div class="input-field">
+                <label for="tenure">Tenure (Years):</label>
+                <input
+                  type="number"
+                  id="tenure"
+                  placeholder="Enter Tenure"
+                  min="1"
+                  max="30"
+                  value="5"
+                  required
+                  oninput="syncInput('tenure', 'tenureRange')"
+                />
+                <input
+                  type="range"
+                  id="tenureRange"
+                  min="1"
+                  max="30"
+                  step="1"
+                  value="5"
+                  oninput="syncInput('tenureRange','tenure')"
+                />
+              </div>
+              <!-- </div> -->
+            </form>
+          </div>
+          <div class="result-section">
+            <!-- Title: Your Monthly EMI -->
+            <h3 class="result-title">
+              Your Monthly EMI is: <span id="emiValue">₹0</span>
+            </h3>
 
-                    <!-- Horizontal Line -->
-                    <hr class="divider">
+            <!-- Horizontal Line -->
+            <hr class="divider" />
 
-                    <!-- Principal Amount & Total Interest Section -->
-                    <div class="value-details">
-                        <div class="left">
-                            <p><strong>Principal Amount:</strong></br> <span id="displayPrincipalAmount">0</span></p>
-                        </div>
-                        <div class="center">
-                            <br><strong>Total Interest:</strong> </br><span id="displayTotalInterest">0</span></p>
-                        </div>
-                        <div class="right">
-                            <p><strong>Total Amount:</strong></br> <span id="displayTotalAmount">0</span></p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Principal Amount & Total Interest Section -->
+            <div class="value-details">
+              <div class="left">
+                <p>
+                  <strong>Principal Amount:</strong><br />
+                  <span id="displayPrincipalAmount">0</span>
+                </p>
+              </div>
+              <div class="center">
+                <p>
+                  <strong>Total Interest:</strong> <br /><span
+                    id="displayTotalInterest"
+                    >0</span
+                  >
+                </p>
+              </div>
+              <div class="right">
+                <p>
+                  <strong>Total Amount:</strong><br />
+                  <span id="displayTotalAmount">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
 
-                <section class="description-section">
-                    <h3>Description</h3>
-                    <p>
-                        The credit market in India is witnessing steady growth, with the country being the 4th largest credit industry globally, recording a Compound Annual Growth Rate (CAGR) of over 11%. Personal loans and credit cards dominate this market, accounting for 78% of all credit lending. As the demand for loans rises, it becomes essential for borrowers to accurately plan their finances, particularly with the Equated Monthly Installment (EMI) payments that accompany most loans.
-                    </p>
-                    <p>
-                        An EMI calculator is a vital tool for anyone planning to avail of a loan. Whether you’re taking a home loan, personal loan, or car loan, understanding your EMI is crucial to managing your finances. These calculators help you estimate the EMI amount based on loan parameters like the loan amount, rate of interest, and loan tenure.
-                    </p>
+          <section class="description-section">
+            <h3>Description</h3>
+            <p>
+              The credit market in India is witnessing steady growth, with the
+              country being the 4th largest credit industry globally, recording
+              a Compound Annual Growth Rate (CAGR) of over 11%. Personal loans
+              and credit cards dominate this market, accounting for 78% of all
+              credit lending. As the demand for loans rises, it becomes
+              essential for borrowers to accurately plan their finances,
+              particularly with the Equated Monthly Installment (EMI) payments
+              that accompany most loans.
+            </p>
+            <p>
+              An EMI calculator is a vital tool for anyone planning to avail of
+              a loan. Whether you’re taking a home loan, personal loan, or car
+              loan, understanding your EMI is crucial to managing your finances.
+              These calculators help you estimate the EMI amount based on loan
+              parameters like the loan amount, rate of interest, and loan
+              tenure.
+            </p>
 
-                    <h3>Key Factors Affecting Your EMI Amount</h3>
-                    <p>Several factors impact the EMI you need to pay:</p>
-                    <ul>
-                        <li><strong>Loan Tenure:</strong> The longer the tenure, the lower the EMI, but it may result in paying more interest over time. Conversely, a shorter tenure may increase your EMI but reduce the total interest.</li>
-                        <li><strong>Interest Rate:</strong> The rate of interest significantly affects your EMI. Opting for a loan with a lower interest rate can reduce your monthly payment.</li>
-                        <li><strong>Loan Amount:</strong> The larger the loan, the higher your EMI. It’s essential to balance your borrowing needs with your repayment capacity.</li>
-                    </ul>
+            <h3>Key Factors Affecting Your EMI Amount</h3>
+            <p>Several factors impact the EMI you need to pay:</p>
+            <ul>
+              <li>
+                <strong>Loan Tenure:</strong> The longer the tenure, the lower
+                the EMI, but it may result in paying more interest over time.
+                Conversely, a shorter tenure may increase your EMI but reduce
+                the total interest.
+              </li>
+              <li>
+                <strong>Interest Rate:</strong> The rate of interest
+                significantly affects your EMI. Opting for a loan with a lower
+                interest rate can reduce your monthly payment.
+              </li>
+              <li>
+                <strong>Loan Amount:</strong> The larger the loan, the higher
+                your EMI. It’s essential to balance your borrowing needs with
+                your repayment capacity.
+              </li>
+            </ul>
 
-                    <h3>How an Online EMI Calculator Can Help You</h3>
-                    <p>With more than 107 million credit accounts in India as of FY18, the number of people seeking loans is increasing, and so is the need for an EMI calculator online. Here’s how an EMI calculator can assist you:</p>
-                    <ul>
-                        <li><strong>Accurate Estimates:</strong> It gives you an exact figure for your monthly EMI, helping you plan your finances accordingly.</li>
-                        <li><strong>Time-Saving:</strong> It eliminates manual calculations, saving you valuable time.</li>
-                        <li><strong>Prevents Miscalculations:</strong> With an online calculator, you get a precise result every time, reducing the risk of errors.</li>
-                        <li><strong>Loan-Specific Calculations:</strong> Different types of loans, such as home loans, car loans, and personal loans, have different EMI structures, and a specialized calculator for each ensures accuracy.</li>
-                    </ul>
+            <h3>How an Online EMI Calculator Can Help You</h3>
+            <p>
+              With more than 107 million credit accounts in India as of FY18,
+              the number of people seeking loans is increasing, and so is the
+              need for an EMI calculator online. Here’s how an EMI calculator
+              can assist you:
+            </p>
+            <ul>
+              <li>
+                <strong>Accurate Estimates:</strong> It gives you an exact
+                figure for your monthly EMI, helping you plan your finances
+                accordingly.
+              </li>
+              <li>
+                <strong>Time-Saving:</strong> It eliminates manual calculations,
+                saving you valuable time.
+              </li>
+              <li>
+                <strong>Prevents Miscalculations:</strong> With an online
+                calculator, you get a precise result every time, reducing the
+                risk of errors.
+              </li>
+              <li>
+                <strong>Loan-Specific Calculations:</strong> Different types of
+                loans, such as home loans, car loans, and personal loans, have
+                different EMI structures, and a specialized calculator for each
+                ensures accuracy.
+              </li>
+            </ul>
 
-                    <h3>EMI Calculation Formula</h3>
-                    <p>EMI formula is widely used across loan calculators:</p>
-                    <p><strong>EMI = [P × R × (1 + R) ^ N] / [(1 + R) ^ (N - 1)]</strong></p>
-                    <p>Where:</p>
-                    <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
-                        <thead>
-                            <tr>
-                                <th style="border: 1px solid black; padding: 8px;">Term</th>
-                                <th style="border: 1px solid black; padding: 8px;">Definition</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">P</td>
-                                <td style="border: 1px solid black; padding: 8px;">Principal loan amount</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">R</td>
-                                <td style="border: 1px solid black; padding: 8px;">Rate of interest per month</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">N</td>
-                                <td style="border: 1px solid black; padding: 8px;">Loan tenure (in months)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <h3>EMI Calculation Formula</h3>
+            <p>EMI formula is widely used across loan calculators:</p>
+            <p>
+              <strong>EMI = [P × R × (1 + R) ^ N] / [(1 + R) ^ (N - 1)]</strong>
+            </p>
+            <p>Where:</p>
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid black;
+              "
+            >
+              <thead>
+                <tr>
+                  <th style="border: 1px solid black; padding: 8px">Term</th>
+                  <th style="border: 1px solid black; padding: 8px">
+                    Definition
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">P</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Principal loan amount
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">R</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rate of interest per month
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">N</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Loan tenure (in months)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-                    <h3>Types of EMI Calculators</h3>
-                    <ul>
-                        <li><strong>Home Loan EMI Calculator:</strong> For calculating monthly payments on home loans. Enter your loan amount, interest rate, and tenure to get an instant EMI figure.</li>
-                        <li><strong>Car Loan EMI Calculator:</strong> Use this calculator to calculate your monthly payment for a car loan, based on the loan amount, tenure, and interest rate.</li>
-                        <li><strong>Personal Loan EMI Calculator:</strong> Helps you estimate the EMI for personal loans, which are often unsecured and come with higher interest rates.</li>
-                        <li><strong>Education Loan EMI Calculator:</strong> Use this to calculate the EMI for loans taken to fund education, including the moratorium period before repayments begin.</li>
-                        <li><strong>Loan Against Property EMI Calculator:</strong> For loans secured against property, use this tool to calculate monthly repayments based on the loan amount and tenure.</li>
-                    </ul>
+            <h3>Types of EMI Calculators</h3>
+            <ul>
+              <li>
+                <strong>Home Loan EMI Calculator:</strong> For calculating
+                monthly payments on home loans. Enter your loan amount, interest
+                rate, and tenure to get an instant EMI figure.
+              </li>
+              <li>
+                <strong>Car Loan EMI Calculator:</strong> Use this calculator to
+                calculate your monthly payment for a car loan, based on the loan
+                amount, tenure, and interest rate.
+              </li>
+              <li>
+                <strong>Personal Loan EMI Calculator:</strong> Helps you
+                estimate the EMI for personal loans, which are often unsecured
+                and come with higher interest rates.
+              </li>
+              <li>
+                <strong>Education Loan EMI Calculator:</strong> Use this to
+                calculate the EMI for loans taken to fund education, including
+                the moratorium period before repayments begin.
+              </li>
+              <li>
+                <strong>Loan Against Property EMI Calculator:</strong> For loans
+                secured against property, use this tool to calculate monthly
+                repayments based on the loan amount and tenure.
+              </li>
+            </ul>
 
-                    <h3>How to Use Ashiana Housing’s EMI Calculator</h3>
-                    <ol>
-                        <li><strong>Input Variables:</strong> Enter the loan amount, interest rate, and loan tenure.</li>
-                        <li><strong>Instant Calculation:</strong> The EMI value is calculated and displayed immediately, helping you plan better.</li>
-                    </ol>
+            <h3>How to Use Ashiana Housing’s EMI Calculator</h3>
+            <ol>
+              <li>
+                <strong>Input Variables:</strong> Enter the loan amount,
+                interest rate, and loan tenure.
+              </li>
+              <li>
+                <strong>Instant Calculation:</strong> The EMI value is
+                calculated and displayed immediately, helping you plan better.
+              </li>
+            </ol>
 
-                    <h3>Advantages of Using Ashiana Housing’s EMI Calculator</h3>
-                    <ul>
-                        <li><strong>Free and Accessible:</strong> You can use the EMI calculator India anytime without any cost.</li>
-                        <li><strong>Accuracy:</strong> Trust in the accuracy of our EMI calculator formula.</li>
-                        <li><strong>Fast Results:</strong> Get your EMI amount instantly.</li>
-                        <li><strong>Variety:</strong> Whether you need a personal loan EMI calculator, home loan EMI calculator, or a car EMI calculator, Ashiana Housing offers all types of calculators for your needs.</li>
-                    </ul>
+            <h3>Advantages of Using Ashiana Housing’s EMI Calculator</h3>
+            <ul>
+              <li>
+                <strong>Free and Accessible:</strong> You can use the EMI
+                calculator India anytime without any cost.
+              </li>
+              <li>
+                <strong>Accuracy:</strong> Trust in the accuracy of our EMI
+                calculator formula.
+              </li>
+              <li>
+                <strong>Fast Results:</strong> Get your EMI amount instantly.
+              </li>
+              <li>
+                <strong>Variety:</strong> Whether you need a personal loan EMI
+                calculator, home loan EMI calculator, or a car EMI calculator,
+                Ashiana Housing offers all types of calculators for your needs.
+              </li>
+            </ul>
 
-                    <h3>Why Use Ashiana Housing’s EMI Calculators?</h3>
-                    <ul>
-                        <li><strong>Easy to Use:</strong> The calculators are designed for simplicity and ease of use.</li>
-                        <li><strong>Comprehensive:</strong> From home loan eligibility calculator to personal loan calculator, our calculators cover all your needs.</li>
-                        <li><strong>Accurate and Fast:</strong> Get precise EMI calculations in just a few clicks.</li>
-                    </ul>
+            <h3>Why Use Ashiana Housing’s EMI Calculators?</h3>
+            <ul>
+              <li>
+                <strong>Easy to Use:</strong> The calculators are designed for
+                simplicity and ease of use.
+              </li>
+              <li>
+                <strong>Comprehensive:</strong> From home loan eligibility
+                calculator to personal loan calculator, our calculators cover
+                all your needs.
+              </li>
+              <li>
+                <strong>Accurate and Fast:</strong> Get precise EMI calculations
+                in just a few clicks.
+              </li>
+            </ul>
 
-                    <h3>Conclusion</h3>
-                    <p>Whether you're applying for a housing loan, car loan, or personal loan, it's crucial to calculate your EMI accurately before committing. Ashiana Housing offers a reliable EMI calculator online to ensure you are fully prepared for your loan repayments.</p>
-                    <p>Ashiana Housing’s EMI Calculator is an essential tool for anyone considering a loan in India. By providing accurate, fast, and easy-to-understand calculations, it helps you plan your finances effectively and make informed decisions. Whether you're applying for a home loan, personal loan, or car loan, our calculator ensures that you know exactly what to expect in terms of monthly payments. With a variety of calculators to suit different loan types and needs, Ashiana Housing empowers you to manage your finances with confidence, ensuring your loan repayment journey is smooth and stress-free.</p>
-                </section>
+            <h3>Conclusion</h3>
+            <p>
+              Whether you're applying for a housing loan, car loan, or personal
+              loan, it's crucial to calculate your EMI accurately before
+              committing. Ashiana Housing offers a reliable EMI calculator
+              online to ensure you are fully prepared for your loan repayments.
+            </p>
+            <p>
+              Ashiana Housing’s EMI Calculator is an essential tool for anyone
+              considering a loan in India. By providing accurate, fast, and
+              easy-to-understand calculations, it helps you plan your finances
+              effectively and make informed decisions. Whether you're applying
+              for a home loan, personal loan, or car loan, our calculator
+              ensures that you know exactly what to expect in terms of monthly
+              payments. With a variety of calculators to suit different loan
+              types and needs, Ashiana Housing empowers you to manage your
+              finances with confidence, ensuring your loan repayment journey is
+              smooth and stress-free.
+            </p>
+          </section>
         </section>
         <!-- Right Section -->
         <aside class="right-section">
-                <div class="image-banner">
-                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-                </div>
-                <div class="cta-links">
-                  <a href="../index.html">Calculator Page</a>
-                  <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
-                  <a href="../Pages/emiIndex.html">EMI Calculator</a>
-                  <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
-                  <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                  <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                  <a href="../Pages/PPFindex.html">PPF Calculator</a>
-                </div>
-            </aside>
-        </div>
+          <div class="image-banner">
+            <img
+              src="../assets/img/calculator image.jpg"
+              alt="Image Banner for CTA"
+            />
+          </div>
+          <div class="cta-links">
+            <a href="../index.html" style="margin-top: 20px">Calculator Page</a>
+            <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+            <a href="../Pages/emiIndex.html">EMI Calculator</a>
+            <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+            <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+            <a href="../Pages/HRAindex.html">HRA Calculator</a>
+            <a href="../Pages/PPFindex.html" style="margin-bottom: 20px"
+              >PPF Calculator</a
+            >
+          </div>
+        </aside>
+      </div>
     </main>
     <section class="faq-section">
-            <h1 style="text-align: center;">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Who can use an EMI calculator?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Anyone planning to take a loan, such as a home loan, car loan, or personal loan, can use the calculator to understand their repayment obligations.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What factors affect my EMI amount?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Loan amount: Higher loans result in higher EMIs.<br>
-                        Interest rate: Higher rates increase your EMI.<br>
-                        Loan tenure: Longer tenures lower your EMI but increase the total interest paid.
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What if I miss an EMI payment?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Missing an EMI payment may result in penalties, negatively impact your credit score, and increase the overall loan cost.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How is EMI affected by a balance transfer?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>If you transfer your loan to another lender at a lower interest rate, your EMI may reduce. Use the calculator with the new rate and tenure to estimate the revised EMI.</p>
-                </div>
-            </div>
+      <h1 style="text-align: center">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Who can use an EMI calculator?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Anyone planning to take a loan, such as a home loan, car loan, or
+            personal loan, can use the calculator to understand their repayment
+            obligations.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What factors affect my EMI amount?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Loan amount: Higher loans result in higher EMIs.<br />
+            Interest rate: Higher rates increase your EMI.<br />
+            Loan tenure: Longer tenures lower your EMI but increase the total
+            interest paid.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What if I miss an EMI payment?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Missing an EMI payment may result in penalties, negatively impact
+            your credit score, and increase the overall loan cost.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How is EMI affected by a balance transfer?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            If you transfer your loan to another lender at a lower interest
+            rate, your EMI may reduce. Use the calculator with the new rate and
+            tenure to estimate the revised EMI.
+          </p>
+        </div>
+      </div>
     </section>
     <section class="blogs">
-        <h2>Blogs</h2>
-        <div class="blog-carousel">
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>How to Save Effectively?</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Maximizing PPF Returns</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Top Tax Saving Tips</h3>
-                <a href="#">Read More</a>
-            </div>
+      <h2>Blogs</h2>
+      <div class="blog-carousel">
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>How to Save Effectively?</h3>
+          <a href="#">Read More</a>
         </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Maximizing PPF Returns</h3>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Top Tax Saving Tips</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
     </section>
     <footer>
-        <p>Footer Content</p>
+      <p>Footer Content</p>
     </footer>
     <script src="../assets/emiScript.js"></script>
-</body>
+  </body>
 </html>

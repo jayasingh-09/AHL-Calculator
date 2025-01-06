@@ -1,258 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="HRA Calculator – Calculate Your House Rent Allowance Tax Exemption" content="Save on taxes with Ashiana Housing’s HRA calculator. Calculate your HRA tax exemption based on salary, rent paid, and city of residence. Try our easy-to-use calculator now!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="HRA Calculator – Calculate Your House Rent Allowance Tax Exemption"
+      content="Save on taxes with Ashiana Housing’s HRA calculator. Calculate your HRA tax exemption based on salary, rent paid, and city of residence. Try our easy-to-use calculator now!"
+    />
     <title>HRA Calculator</title>
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
-   <header>
-        <div class="header-content" style="text-decoration: none;color:inherit;">
-            <div class="logo">
-               <a href="../AHL CALCI/index.html"> <!-- Replace 'index.html' with your homepage URL -->
-                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
-            </a>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content" style="text-decoration: none; color: inherit">
+        <div class="logo">
+          <a href="../AHL CALCI/index.html">
+            <!-- Replace 'index.html' with your homepage URL -->
+            <img
+              src="../assets/img/Ashiana Corporate Logo.pdf.png"
+              alt="LOGO"
+            />
+          </a>
         </div>
+      </div>
     </header>
-    <h1 style="text-align: center;">HRA Calculator</h1>
+    <h1 style="text-align: center">HRA Calculator</h1>
     <main>
-        <div class="main-container">
-            <!-- Left Section -->
-            <section class="left-section">
-                <div class="calculator-section">
-                    <form id="hraForm">
-                        <div class="input-field">
-                            <label for="basicSalary">Basic Salary (₹):</label>
-                            <input type="number" id="basicSalary" placeholder="Enter basic salary" min="1000" max="10000000" value="5400000" required>
-                            <input type="range" id="basicSalaryRange" min="1000" max="10000000" value="5400000">
-                        </div>
-                        <div class="input-field">
-                            <label for="DA">Dearness Allowance (₹):</label>
-                            <input type="number" id="DA" value="0" min="0" max="50000">
-                            <input type="range" id="DARange" min="0" max="50000" value="0">
-                        </div>
-                        <div class="input-field">
-                            <label for="HRA">HRA Received (₹):</label>
-                            <input type="number" id="HRA" placeholder="Enter HRA received" min="0" max="1000000" value="100000" required>
-                            <input type="range" id="HRARange" min="0" max="1000000" value="100000">
-                        </div>
-                        <div class="input-field">
-                            <label for="rentPaid">Rent Paid (₹):</label>
-                            <input type="number" id="rentPaid" placeholder="Enter rent paid" min="1000" max="1000000" value="300000" required>
-                            <input type="range" id="rentPaidRange" min="1000" max="1000000" value="300000">
-                        </div>
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin: 20px 0; font-family: Arial, sans-serif;">
-                            <span style="font-size: 16px;">Are you working in a metro city?</span>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <input type="radio" id="yes" name="metro" value="yes" style="margin-right: 20px;" checked>
-                                <label for="yes" style="margin: 10px; font-size: 16px;">Yes</label>
-                                <input type="radio" id="no" name="metro" value="no" style="margin-right: 20px;">
-                                <label for="no" style="margin: 10px; font-size: 16px;">No</label>
-                            </div>
-                        </div>
-                    </form>
+      <div class="main-container">
+        <!-- Left Section -->
+        <section class="left-section">
+          <div class="calculator-section">
+            <form id="hraForm">
+              <div class="input-field">
+                <label for="basicSalary">Basic Salary (₹):</label>
+                <input
+                  type="number"
+                  id="basicSalary"
+                  placeholder="Enter basic salary"
+                  min="1000"
+                  max="10000000"
+                  value="5400000"
+                  required
+                />
+                <input
+                  type="range"
+                  id="basicSalaryRange"
+                  min="1000"
+                  max="10000000"
+                  value="5400000"
+                />
+              </div>
+              <div class="input-field">
+                <label for="DA">Dearness Allowance (₹):</label>
+                <input type="number" id="DA" value="0" min="0" max="50000" />
+                <input
+                  type="range"
+                  id="DARange"
+                  min="0"
+                  max="50000"
+                  value="0"
+                />
+              </div>
+              <div class="input-field">
+                <label for="HRA">HRA Received (₹):</label>
+                <input
+                  type="number"
+                  id="HRA"
+                  placeholder="Enter HRA received"
+                  min="0"
+                  max="1000000"
+                  value="100000"
+                  required
+                />
+                <input
+                  type="range"
+                  id="HRARange"
+                  min="0"
+                  max="1000000"
+                  value="100000"
+                />
+              </div>
+              <div class="input-field">
+                <label for="rentPaid">Rent Paid (₹):</label>
+                <input
+                  type="number"
+                  id="rentPaid"
+                  placeholder="Enter rent paid"
+                  min="1000"
+                  max="1000000"
+                  value="300000"
+                  required
+                />
+                <input
+                  type="range"
+                  id="rentPaidRange"
+                  min="1000"
+                  max="1000000"
+                  value="300000"
+                />
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin: 20px 0;
+                  font-family: Arial, sans-serif;
+                "
+              >
+                <span style="font-size: 16px"
+                  >Are you working in a metro city?</span
+                >
+                <div style="display: flex; align-items: center; gap: 10px">
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="metro"
+                    value="yes"
+                    style="margin-right: 20px"
+                    checked
+                  />
+                  <label for="yes" style="margin: 10px; font-size: 16px"
+                    >Yes</label
+                  >
+                  <input
+                    type="radio"
+                    id="no"
+                    name="metro"
+                    value="no"
+                    style="margin-right: 20px"
+                  />
+                  <label for="no" style="margin: 10px; font-size: 16px"
+                    >No</label
+                  >
                 </div>
-                <div class="result-section" style="margin-top: 20px;">
-                    <h2 style="color: red;">Results</h2>
-                    <div class="calculated-result" style="margin-bottom: 5px;">
-                        <p id="result">Exempted HRA: ₹0.00</p>
-                    </div>
-                    <div class="calculated-result" style="margin-bottom: 5px;">
-                        <p id="resultTAXABLE">Taxable HRA: ₹0.00</p>
-                    </div>
-                </div>
-                <section class="description-section">
-                    <h3>Description</h3>
-                    <p><strong>House Rent Allowance (HRA)</strong> is a key component of your salary, helping you manage rental expenses. However, did you know that you can also save on taxes with the right <strong>HRA tax exemptions</strong>? The HRA amount varies based on your salary structure, the actual rent paid, and the city you live in. For salaried employees living in rented homes, calculating HRA and its associated tax exemptions is crucial. Our <strong>HRA calculator</strong> is designed to help you determine the tax exemptions you can claim.</p>
+              </div>
+            </form>
+          </div>
+          <div class="result-section">
+            <!-- Title: HRA Calculation Results -->
+            <h3 class="result-title">HRA Calculation</h3>
 
-                    <h3>What is an HRA Calculator?</h3>
-                    <p>As the cost of living in many Indian cities continues to rise, many organizations provide <strong>House Rent Allowance (HRA)</strong> as part of their employees' salaries. The <strong>HRA calculator</strong> can help you determine the amount of HRA you are eligible for based on your salary, the rent you pay, and the city you live in.</p>
-                    <p>The HRA slabs in India have been categorized into three distinct groups after the 7th Pay Commission recommendations:</p>
-                    <ul>
-                        <li><strong>Slab X:</strong> Most urban cities where the cost of living is high.</li>
-                        <li><strong>Slab Y:</strong> Marginally lower-cost cities.</li>
-                        <li><strong>Slab Z:</strong> Smaller cities with relatively lower living costs.</li>
-                    </ul>
+            <!-- Horizontal Line -->
+            <hr class="divider" />
 
-                    <h3>How Can the HRA Calculator Help You?</h3>
-                    <p>The <strong>HRA exemption calculator</strong> is a useful tool for salaried employees who receive HRA as part of their salary. It helps calculate the tax-exempt portion of the HRA based on various factors. To claim HRA exemptions, the following conditions must be met:</p>
-                    <ul>
-                        <li><strong>Salaried Status:</strong> You must be a salaried individual receiving HRA.</li>
-                        <li><strong>Rent Paid:</strong> You should be living in a rented accommodation.</li>
-                        <li><strong>Exceeds 10% of Salary:</strong> The HRA must exceed 10% of your basic salary.</li>
-                    </ul>
-                    <p>Using our <strong>HRA tax exemption calculator</strong>, you can determine how much tax you need to pay and how much of your HRA can be claimed as an exemption.</p>
+            <!-- Exempted HRA & Taxable HRA Section -->
+            <div class="value-details">
+              <div class="left">
+                <p>
+                  <strong>Extempted HRA</strong><br />
+                  <span id="taxableHRA">₹0</span>
+                </p>
+              </div>
+              <div class="right">
+                <p>
+                  <strong>Taxable HRA</strong><br />
+                  <span id="exemptedHRA">₹0</span>
+                </p>
+              </div>
+            </div>
+          </div>
 
-                    <h3>How to Calculate HRA in India?</h3>
-                    <p>Groww’s <strong>HRA calculation tool</strong> follows a standard formula to determine the House Rent Allowance payable. The salary components considered for the calculation include Basic Salary, Dearness Allowance, and other variable commissions. The HRA tax exemption is calculated based on the lowest of the following three heads:</p>
-                    <ul>
-                        <li>Actual Rent Paid – 10% of Basic Salary</li>
-                        <li>HRA Provided by Employer</li>
-                        <li>40%-50% of Basic Salary, depending on the city.</li>
-                    </ul>
+          <section class="description-section">
+            <h3>Description</h3>
+            <p>
+              <strong>House Rent Allowance (HRA)</strong> is a key component of
+              your salary, helping you manage rental expenses. However, did you
+              know that you can also save on taxes with the right
+              <strong>HRA tax exemptions</strong>? The HRA amount varies based
+              on your salary structure, the actual rent paid, and the city you
+              live in. For salaried employees living in rented homes,
+              calculating HRA and its associated tax exemptions is crucial. Our
+              <strong>HRA calculator</strong> is designed to help you determine
+              the tax exemptions you can claim.
+            </p>
 
-                    <h3>Example of HRA Calculation</h3>
-                    <p>Let’s take a fictional example of Person A, who lives in Delhi and pays ₹12,000 in rent every month. Here’s his salary breakdown:</p>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Salary component</th>
-                            <th>Total amount (each month)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Basic Salary</td>
-                            <td>₹23,000</td>
-                        </tr>
-                        <tr>
-                            <td>HRA</td>
-                            <td>₹15,000</td>
-                        </tr>
-                        <tr>
-                            <td>Conveyance Allowance</td>
-                            <td>₹3,000</td>
-                        </tr>
-                        <tr>
-                            <td>Medical Allowance</td>
-                            <td>₹1,250</td>
-                        </tr>
-                        <tr>
-                            <td>Special Allowance</td>
-                            <td>₹2,300</td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <h3>What is an HRA Calculator?</h3>
+            <p>
+              As the cost of living in many Indian cities continues to rise,
+              many organizations provide
+              <strong>House Rent Allowance (HRA)</strong> as part of their
+              employees' salaries. The <strong>HRA calculator</strong> can help
+              you determine the amount of HRA you are eligible for based on your
+              salary, the rent you pay, and the city you live in.
+            </p>
+            <p>
+              The HRA slabs in India have been categorized into three distinct
+              groups after the 7th Pay Commission recommendations:
+            </p>
+            <ul>
+              <li>
+                <strong>Slab X:</strong> Most urban cities where the cost of
+                living is high.
+              </li>
+              <li><strong>Slab Y:</strong> Marginally lower-cost cities.</li>
+              <li>
+                <strong>Slab Z:</strong> Smaller cities with relatively lower
+                living costs.
+              </li>
+            </ul>
 
-                    <p>Adding the components, we identify that Individual A has a monthly salary of ₹44,500.</p>
-                    <p>Now, using the <strong>HRA exemption calculator</strong>, the figures are calculated as follows:</p>
-                    <ul>
-                        <li>Actual Rent Paid – 10% of Basic: ₹12,000 – ₹2,300 = ₹9,700</li>
-                        <li>HRA Provided by Employer: ₹15,000</li>
-                        <li>50% of Basic Salary: ₹11,500</li>
-                    </ul>
-                    <p>The lowest amount among these three is ₹9,700, so Person A can claim ₹9,700 as HRA exemption from his taxable income.</p>
+            <h3>How Can the HRA Calculator Help You?</h3>
+            <p>
+              The <strong>HRA exemption calculator</strong> is a useful tool for
+              salaried employees who receive HRA as part of their salary. It
+              helps calculate the tax-exempt portion of the HRA based on various
+              factors. To claim HRA exemptions, the following conditions must be
+              met:
+            </p>
+            <ul>
+              <li>
+                <strong>Salaried Status:</strong> You must be a salaried
+                individual receiving HRA.
+              </li>
+              <li>
+                <strong>Rent Paid:</strong> You should be living in a rented
+                accommodation.
+              </li>
+              <li>
+                <strong>Exceeds 10% of Salary:</strong> The HRA must exceed 10%
+                of your basic salary.
+              </li>
+            </ul>
+            <p>
+              Using our <strong>HRA tax exemption calculator</strong>, you can
+              determine how much tax you need to pay and how much of your HRA
+              can be claimed as an exemption.
+            </p>
 
-                    <h3>How to Use the HRA Calculator?</h3>
-                    <p>To use our <strong>HRA tax exemption calculator</strong>:</p>
-                    <ol>
-                        <li>Enter your basic salary and the HRA you receive as per your salary slip.</li>
-                        <li>Enter the actual rent paid and specify whether you live in a metro city or not using the drop-down menu.</li>
-                    </ol>
-                    <p>This simple tool will instantly calculate your HRA tax exemptions, making it easier to save on taxes.</p>
+            <h3>How to Calculate HRA in India?</h3>
+            <p>
+              Groww’s <strong>HRA calculation tool</strong> follows a standard
+              formula to determine the House Rent Allowance payable. The salary
+              components considered for the calculation include Basic Salary,
+              Dearness Allowance, and other variable commissions. The HRA tax
+              exemption is calculated based on the lowest of the following three
+              heads:
+            </p>
+            <ul>
+              <li>Actual Rent Paid – 10% of Basic Salary</li>
+              <li>HRA Provided by Employer</li>
+              <li>40%-50% of Basic Salary, depending on the city.</li>
+            </ul>
 
-                    <h3>Benefits of Using the HRA Calculator</h3>
-                    <p>The <strong>HRA calculator</strong> provides several advantages:</p>
-                    <ul>
-                        <li><strong>Error-Free Calculations:</strong> The calculator accurately computes your HRA and its exemptions, avoiding any manual errors.</li>
-                        <li><strong>Tax Savings:</strong> By calculating HRA exemptions, you can reduce your taxable income, thereby saving on taxes.</li>
-                        <li><strong>Multiple Uses:</strong> You can use the HRA exemption calculator as many times as needed to evaluate different scenarios.</li>
-                        <li><strong>Quick and Easy:</strong> The calculator simplifies the process of understanding your HRA and ensures you comply with the income tax regulations.</li>
-                    </ul>
+            <h3>Example of HRA Calculation</h3>
+            <p>
+              Let’s take a fictional example of Person A, who lives in Delhi and
+              pays ₹12,000 in rent every month. Here’s his salary breakdown:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Salary component</th>
+                  <th>Total amount (each month)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Basic Salary</td>
+                  <td>₹23,000</td>
+                </tr>
+                <tr>
+                  <td>HRA</td>
+                  <td>₹15,000</td>
+                </tr>
+                <tr>
+                  <td>Conveyance Allowance</td>
+                  <td>₹3,000</td>
+                </tr>
+                <tr>
+                  <td>Medical Allowance</td>
+                  <td>₹1,250</td>
+                </tr>
+                <tr>
+                  <td>Special Allowance</td>
+                  <td>₹2,300</td>
+                </tr>
+              </tbody>
+            </table>
 
-                    <h3>Key HRA Calculation Terms</h3>
-                    <ul>
-                        <li><strong>HRA Tax Exemption:</strong> The amount of HRA that can be claimed as exempt from income tax under Section 10(13A).</li>
-                        <li><strong>HRA Formula:</strong> The standard formula used for calculating HRA based on various components.</li>
-                        <li><strong>HRA Percentage:</strong> The percentage of Basic Salary allocated as HRA by the employer.</li>
-                        <li><strong>HRA Deduction:</strong> The deduction of HRA from your taxable income based on the applicable exemptions.</li>
-                    </ul>
+            <p>
+              Adding the components, we identify that Individual A has a monthly
+              salary of ₹44,500.
+            </p>
+            <p>
+              Now, using the <strong>HRA exemption calculator</strong>, the
+              figures are calculated as follows:
+            </p>
+            <ul>
+              <li>
+                Actual Rent Paid – 10% of Basic: ₹12,000 – ₹2,300 = ₹9,700
+              </li>
+              <li>HRA Provided by Employer: ₹15,000</li>
+              <li>50% of Basic Salary: ₹11,500</li>
+            </ul>
+            <p>
+              The lowest amount among these three is ₹9,700, so Person A can
+              claim ₹9,700 as HRA exemption from his taxable income.
+            </p>
 
-                    <h3>Conclusion</h3>
-                    <p>Whether you live in a metro city or a smaller town, understanding the HRA tax exemption rules can significantly reduce your taxable income. By using Ashiana Housing’s <strong>HRA calculator</strong>, you can easily calculate the HRA exemption you are entitled to, plan your finances better, and save on taxes. Start using our <strong>HRA calculator</strong> online today and ensure you maximize your house rent tax exemptions.</p>
-                </section>
-            </section>
+            <h3>How to Use the HRA Calculator?</h3>
+            <p>To use our <strong>HRA tax exemption calculator</strong>:</p>
+            <ol>
+              <li>
+                Enter your basic salary and the HRA you receive as per your
+                salary slip.
+              </li>
+              <li>
+                Enter the actual rent paid and specify whether you live in a
+                metro city or not using the drop-down menu.
+              </li>
+            </ol>
+            <p>
+              This simple tool will instantly calculate your HRA tax exemptions,
+              making it easier to save on taxes.
+            </p>
 
-            <!-- Right Section -->
-            <aside class="right-section">
-                <div class="image-banner">
-                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-                </div>
-                <div class="cta-links">
-                  <a href="../index.html">Calculator Page</a>
-                  <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
-                  <a href="../Pages/emiIndex.html">EMI Calculator</a>
-                  <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
-                  <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                  <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                  <a href="../Pages/PPFindex.html">PPF Calculator</a>
-                </div>
-            </aside>
-  
+            <h3>Benefits of Using the HRA Calculator</h3>
+            <p>
+              The <strong>HRA calculator</strong> provides several advantages:
+            </p>
+            <ul>
+              <li>
+                <strong>Error-Free Calculations:</strong> The calculator
+                accurately computes your HRA and its exemptions, avoiding any
+                manual errors.
+              </li>
+              <li>
+                <strong>Tax Savings:</strong> By calculating HRA exemptions, you
+                can reduce your taxable income, thereby saving on taxes.
+              </li>
+              <li>
+                <strong>Multiple Uses:</strong> You can use the HRA exemption
+                calculator as many times as needed to evaluate different
+                scenarios.
+              </li>
+              <li>
+                <strong>Quick and Easy:</strong> The calculator simplifies the
+                process of understanding your HRA and ensures you comply with
+                the income tax regulations.
+              </li>
+            </ul>
 
+            <h3>Key HRA Calculation Terms</h3>
+            <ul>
+              <li>
+                <strong>HRA Tax Exemption:</strong> The amount of HRA that can
+                be claimed as exempt from income tax under Section 10(13A).
+              </li>
+              <li>
+                <strong>HRA Formula:</strong> The standard formula used for
+                calculating HRA based on various components.
+              </li>
+              <li>
+                <strong>HRA Percentage:</strong> The percentage of Basic Salary
+                allocated as HRA by the employer.
+              </li>
+              <li>
+                <strong>HRA Deduction:</strong> The deduction of HRA from your
+                taxable income based on the applicable exemptions.
+              </li>
+            </ul>
 
-        </div>
+            <h3>Conclusion</h3>
+            <p>
+              Whether you live in a metro city or a smaller town, understanding
+              the HRA tax exemption rules can significantly reduce your taxable
+              income. By using Ashiana Housing’s
+              <strong>HRA calculator</strong>, you can easily calculate the HRA
+              exemption you are entitled to, plan your finances better, and save
+              on taxes. Start using our <strong>HRA calculator</strong> online
+              today and ensure you maximize your house rent tax exemptions.
+            </p>
+          </section>
+        </section>
+
+        <!-- Right Section -->
+        <aside class="right-section">
+          <div class="image-banner">
+            <img
+              src="../assets/img/calculator image.jpg"
+              alt="Image Banner for CTA"
+            />
+          </div>
+          <div class="cta-links">
+            <a href="../index.html" style="margin-top: 20px">Calculator Page</a>
+            <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+            <a href="../Pages/emiIndex.html">EMI Calculator</a>
+            <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+            <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+            <a href="../Pages/HRAindex.html">HRA Calculator</a>
+            <a href="../Pages/PPFindex.html" style="margin-bottom: 20px"
+              >PPF Calculator</a
+            >
+          </div>
+        </aside>
+      </div>
     </main>
     <section class="faq-section">
-            <h1 style="text-align: center;">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How much of the HRA I earn is tax-exempt?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The following slabs apply in this instance.
-                        <ul>
-                            <li>50% of basic salary for big metros.</li>
-                            <li>40% of basic salary for non-metro locales.</li>
-                        </ul>
-                        Ordinarily, the gross HRA the employer pays is non-taxable.
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Which documents prove I have paid my rent?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Receipts of the rent paid during the last financial year are applicable. If you do not have the receipts, you will have to show financial statements proving you have paid rent.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Who is eligible to use the HRA Calculator?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Salaried employees receiving HRA as part of their salary structure and paying rent are eligible to use the HRA Calculator.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Can self-employed individuals claim HRA?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, HRA is a benefit exclusively for salaried employees. However, self-employed individuals can claim rent deductions under Section 80GG of the Income Tax Act.</p>
-                </div>
-            </div>
+      <h1 style="text-align: center">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Which documents prove I have paid my rent?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Receipts of the rent paid during the last financial year are
+            applicable. If you do not have the receipts, you will have to show
+            financial statements proving you have paid rent.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Who is eligible to use the HRA Calculator?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Salaried employees receiving HRA as part of their salary structure
+            and paying rent are eligible to use the HRA Calculator.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Can self-employed individuals claim HRA?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            No, HRA is a benefit exclusively for salaried employees. However,
+            self-employed individuals can claim rent deductions under Section
+            80GG of the Income Tax Act.
+          </p>
+        </div>
+      </div>
     </section>
     <section class="blogs">
-        <h2>Blogs</h2>
-        <div class="blog-carousel">
-            <div class="blog-card">
-                <img src="../calculator image.jpg" alt="Blog Image">
-                <h3>How to Save Effectively?</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Maximizing PPF Returns</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Top Tax Saving Tips</h3>
-                <a href="#">Read More</a>
-            </div>
+      <h2>Blogs</h2>
+      <div class="blog-carousel">
+        <div class="blog-card">
+          <img src="../calculator image.jpg" alt="Blog Image" />
+          <h3>How to Save Effectively?</h3>
+          <a href="#">Read More</a>
         </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Maximizing PPF Returns</h3>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Top Tax Saving Tips</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <p>Footer Content</p>
+      <p>Footer Content</p>
     </footer>
     <script src="../assets/HRAscript.js"></script>
-</body>
+  </body>
 </html>

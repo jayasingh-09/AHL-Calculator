@@ -75,16 +75,16 @@ function calculateHRA() {
   const taxableHRA = HRA - exemptedHRA;
 
   // Update the results
-  document.getElementById("result").innerText = `Exempted HRA: ₹${Math.max(
-    0,
-    exemptedHRA
-  ).toLocaleString("en-IN")}`;
-  document.getElementById(
-    "resultTAXABLE"
-  ).innerText = `Taxable HRA: ₹${Math.max(0, taxableHRA).toLocaleString(
-    "en-IN"
-  )}`;
+    document.getElementById("exemptedHRA").innerText = `₹${Math.max(
+      0,
+      exemptedHRA
+    ).toLocaleString("en-IN")}`;
+    document.getElementById("taxableHRA").innerText = `₹${Math.max(
+      0,
+      taxableHRA
+    ).toLocaleString("en-IN")}`;
 }
+
 
 // Add event listeners
 document

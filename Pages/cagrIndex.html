@@ -1,208 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="CAGR Calculator: Simplify Your Financial Planning with Ashiana Housing" content="Use Ashiana Housing's CAGR Calculator to evaluate investment growth, compare options, and plan smarter financial decisions. Accurate, user-friendly, and secure—ideal for real estate investors and homebuyers. Calculate CAGR effortlessly today!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="CAGR Calculator: Simplify Your Financial Planning with Ashiana Housing"
+      content="Use Ashiana Housing's CAGR Calculator to evaluate investment growth, compare options, and plan smarter financial decisions. Accurate, user-friendly, and secure—ideal for real estate investors and homebuyers. Calculate CAGR effortlessly today!"
+    />
     <title>CAGR Calculator</title>
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content" style="text-decoration: none;color:inherit;">
-            <div class="logo">
-               <a href="../index.html"> <!-- Replace 'index.html' with your homepage URL -->
-                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
-            </a>
+      <div class="header-content" style="text-decoration: none; color: inherit">
+        <div class="logo">
+          <a href="../index.html">
+            <!-- Replace 'index.html' with your homepage URL -->
+            <img
+              src="../assets/img/Ashiana Corporate Logo.pdf.png"
+              alt="LOGO"
+            />
+          </a>
         </div>
+      </div>
     </header>
 
-    <h1 style="text-align: center;">CAGR Calculator</h1>
+    <h1 style="text-align: center">CAGR Calculator</h1>
     <main>
-        <div class="main-container">
-            <!-- Left Section -->
-            <section class="left-section">
-                <div class="calculator-section">
-                    <form id="cagrForm">
-                        <div class="input-field">
-                            <label for="beginningValue">Initial Investment (₹):</label>
-                            <input type="number" id="beginningValue" placeholder="Enter Beginning Value" min="1000" max="1000000" step="1000" value="5000" required oninput="syncRange('beginningValueRange', this.value)">
-                            <input type="range" id="beginningValueRange" min="1000" max="1000000" step="1000" value="5000" oninput="syncInput('beginningValue', this.value)">
-                            </div>
-                            <div class="input-field">
-                            <label for="endingValue">Final Investment (₹):</label>
-                            <input type="number" id="endingValue" placeholder="Enter Ending Value" min="1000" max="1000000" step="1000" value="25000" required oninput="syncRange('endingValueRange', this.value)">
-                            <input type="range" id="endingValueRange" min="1000" max="1000000" step="1000" value="25000" oninput="syncInput('endingValue', this.value)">
-                            </div>
-                            <div class="input-field">
-                            <label for="years">Duration of investment :</label>
-                            <input type="number" id="years" placeholder="Enter Number of Years" min="1" max="50" step="1" value="5" required oninput="syncRange('yearsRange', this.value)">
-                            <input type="range" id="yearsRange" min="1" max="50" step="1" value="5" oninput="syncInput('years', this.value)">
-                        </div>
-                    </form>
-                </div>
-                <div class="result-section">
-                        <!-- Title: Your CAGR Percentage -->
-                        <h3 class="result-title">Your CAGR Percentage is: <span id="cagrValue">0%</span></h3>
+      <div class="main-container">
+        <!-- Left Section -->
+        <section class="left-section">
+          <div class="calculator-section">
+            <form id="cagrForm">
+              <div class="input-field">
+                <label for="beginningValue">Initial Investment (₹):</label>
+                <input
+                  type="number"
+                  id="beginningValue"
+                  placeholder="Enter Beginning Value"
+                  min="1000"
+                  max="1000000"
+                  step="1000"
+                  value="5000"
+                  required
+                  oninput="syncRange('beginningValueRange', this.value)"
+                />
+                <input
+                  type="range"
+                  id="beginningValueRange"
+                  min="1000"
+                  max="1000000"
+                  step="1000"
+                  value="5000"
+                  oninput="syncInput('beginningValue', this.value)"
+                />
+              </div>
+              <div class="input-field">
+                <label for="endingValue">Final Investment (₹):</label>
+                <input
+                  type="number"
+                  id="endingValue"
+                  placeholder="Enter Ending Value"
+                  min="1000"
+                  max="1000000"
+                  step="1000"
+                  value="25000"
+                  required
+                  oninput="syncRange('endingValueRange', this.value)"
+                />
+                <input
+                  type="range"
+                  id="endingValueRange"
+                  min="1000"
+                  max="1000000"
+                  step="1000"
+                  value="25000"
+                  oninput="syncInput('endingValue', this.value)"
+                />
+              </div>
+              <div class="input-field">
+                <label for="years">Duration of investment :</label>
+                <input
+                  type="number"
+                  id="years"
+                  placeholder="Enter Number of Years"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value="5"
+                  required
+                  oninput="syncRange('yearsRange', this.value)"
+                />
+                <input
+                  type="range"
+                  id="yearsRange"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value="5"
+                  oninput="syncInput('years', this.value)"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="result-section">
+            <!-- Title: Your CAGR Percentage -->
+            <h3 class="result-title">
+              Your CAGR Percentage is: <span id="cagrValue">0%</span>
+            </h3>
 
-                        <!-- Horizontal Line -->
-                        <hr class="divider">
+            <!-- Horizontal Line -->
+            <hr class="divider" />
 
-                        <!-- Beginning & Ending Value Section -->
-                        <div class="value-details">
-                            <div class="left">
-                                <p><strong>Initial Investment:</strong> ₹<span id="displayBeginningValue">0</span></p>
-                            </div>
-                            <div class="right">
-                                <p><strong>Final Investment:</strong> ₹<span id="displayEndingValue">0</span></p>
-                            </div>
-                        </div>
-
-                        <!-- Dynamic Range Bar -->
-                        <div class="result-bar-container">
-                            <div class="result-bar">
-                                <div class="result-filled" id="cagrProgress"></div>
-                            </div>
-                        </div>
-                    </div>
-
-              <section class="description-section">
-                <h3>Description</h3>
+            <!-- Beginning & Ending Value Section -->
+            <div class="value-details">
+              <div class="left">
                 <p>
-                    The <strong>CAGR (Compound Annual Growth Rate)</strong> is an essential tool for assessing the growth of your investments or business over time. For homeowners, real estate investors, and businesses alike, understanding your financial growth rate helps you make informed decisions. Ashiana Housing's online<strong> CAGR Calculator </strong>is here to make the process simple, accurate, and user-friendly.
+                  <strong>Initial Investment:</strong> ₹<span
+                    id="displayBeginningValue"
+                    >0</span
+                  >
                 </p>
-                <h3>What is CAGR?</h3>
+              </div>
+              <div class="right">
                 <p>
-                    CAGR represents the average annual growth rate of an investment over a specified period, assuming consistent reinvestment of returns. Unlike absolute returns, CAGR accounts for the time factor, offering a better understanding of your financial progress.
+                  <strong>Final Investment:</strong> ₹<span
+                    id="displayEndingValue"
+                    >0</span
+                  >
                 </p>
-                <h3>Benefits of Ashiana Housing’s CAGR Calculator</h3>
-                <p>Using our CAGR Calculator allows you to:</p>
-                <ol>
-                    <li><strong>Evaluate Investment Growth:</strong> Measure the growth of your real estate investments over time.</li>
-                    <li><strong>Compare Investment Options:</strong>Determine which property or financial option offers better returns.</li>
-                    <li><strong>Track Business Growth:</strong>Analyze how your profits are being reinvested and the overall growth of your ventures.</li>
-                    <li><strong>Plan Future Investments:</strong>Develop a roadmap for long-term capital planning based on accurate insights.</li>
-                </ol>
-                <h3>How to Calculate CAGR?</h3>
-                <p>The CAGR formula is:</p>
-                <p><strong>CAGR = (FV / PV) ^ (1 / n) – 1</strong></p>
-                <p>Where:</p>
-                <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
-                    </thead>
-                    <tbody >
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;"><strong>FV:</strong></td>
-                            <td style="border: 1px solid black; padding: 8px;">Future Value</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;"><strong>PV:</strong></td>
-                            <td style="border: 1px solid black; padding: 8px;">Present Value</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;"><strong>n:</strong></td>
-                            <td style="border: 1px solid black; padding: 8px;">Time Period in Years</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>For example:</p>
-                <p>If you invested ₹1,00,000 (PV) and its value grew to ₹10,00,000 (FV) in 5 years (n), the CAGR would be:</p>
-                <p><strong>CAGR = (10,00,000 / 1,00,000) ^ (1 / 5) – 1 = 0.589 or 58.9% annually.</strong></p>
-                <h3>How to Use Ashiana Housing’s Online CAGR Calculator</h3>
-                <p>Using our calculator is simple and free:</p>
-                <ol>
-                    <li>Enter the initial investment amount (Present Value).</li>
-                    <li>Input the expected future value of the investment (Future Value).</li>
-                    <li>Specify the time period for which you want to calculate CAGR.</li>
-                </ol>
-                <p>Our calculator will instantly provide the CAGR percentage, saving you time and effort.</p>
-                <h3>Why Choose Ashiana Housing’s CAGR Calculator?</h3>
-                <ul>
-                    <li><strong>Accurate Results:</strong>  Get precise insights into your investment growth.</li>
-                    <li><strong>User-Friendly Interface:</strong>Effortlessly calculate CAGR with just a few inputs.</li>
-                    <li><strong>Free & Secure:</strong>Use the tool without any cost or data security concerns.</li>
-                    <li><strong>Plan Smarter Investments:</strong>Compare multiple options to maximize returns.</li>
-                    <li><strong>Real Estate Expertise:</strong>Specifically designed for real estate investors and homebuyers.</li>
-                </ul>
-                <h3>Plan Your Financial Growth with Ashiana Housing</h3>
-                <p>Our CAGR Calculator is part of a suite of financial tools designed to help you make smarter, data-driven investment decisions. Whether you’re planning to buy your dream home or grow your investment portfolio, Ashiana Housing empowers you to take control of your finances.</p>
-                <p>Explore our calculators today and step confidently toward your financial goals!</p>
-                <h3>Conclusion</h3>
-                <p>Ashiana Housing’s online CAGR Calculator is an essential tool for homeowners, real estate investors, and businesses aiming to understand and enhance their financial growth. By providing accurate, user-friendly insights into your investment’s growth rate, it empowers you to make informed decisions, plan for the future, and maximize returns. Whether you’re assessing the growth of your real estate investments or comparing different financial options, our tool helps simplify the process, ensuring you are always on track toward your financial goals. Take control of your financial future with Ashiana Housing today!</p>
-            </section>
+              </div>
+            </div>
 
+            <!-- Dynamic Range Bar -->
+            <div class="result-bar-container">
+              <div class="result-bar">
+                <div class="result-filled" id="cagrProgress"></div>
+              </div>
+            </div>
+          </div>
 
-            </section>
+          <section class="description-section">
+            <h3>Description</h3>
+            <p>
+              The <strong>CAGR (Compound Annual Growth Rate)</strong> is an
+              essential tool for assessing the growth of your investments or
+              business over time. For homeowners, real estate investors, and
+              businesses alike, understanding your financial growth rate helps
+              you make informed decisions. Ashiana Housing's online<strong>
+                CAGR Calculator </strong
+              >is here to make the process simple, accurate, and user-friendly.
+            </p>
+            <h3>What is CAGR?</h3>
+            <p>
+              CAGR represents the average annual growth rate of an investment
+              over a specified period, assuming consistent reinvestment of
+              returns. Unlike absolute returns, CAGR accounts for the time
+              factor, offering a better understanding of your financial
+              progress.
+            </p>
+            <h3>Benefits of Ashiana Housing’s CAGR Calculator</h3>
+            <p>Using our CAGR Calculator allows you to:</p>
+            <ol>
+              <li>
+                <strong>Evaluate Investment Growth:</strong> Measure the growth
+                of your real estate investments over time.
+              </li>
+              <li>
+                <strong>Compare Investment Options:</strong>Determine which
+                property or financial option offers better returns.
+              </li>
+              <li>
+                <strong>Track Business Growth:</strong>Analyze how your profits
+                are being reinvested and the overall growth of your ventures.
+              </li>
+              <li>
+                <strong>Plan Future Investments:</strong>Develop a roadmap for
+                long-term capital planning based on accurate insights.
+              </li>
+            </ol>
+            <h3>How to Calculate CAGR?</h3>
+            <p>The CAGR formula is:</p>
+            <p><strong>CAGR = (FV / PV) ^ (1 / n) – 1</strong></p>
+            <p>Where:</p>
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid black;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>FV:</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Future Value
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>PV:</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Present Value
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>n:</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Time Period in Years
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>For example:</p>
+            <p>
+              If you invested ₹1,00,000 (PV) and its value grew to ₹10,00,000
+              (FV) in 5 years (n), the CAGR would be:
+            </p>
+            <p>
+              <strong
+                >CAGR = (10,00,000 / 1,00,000) ^ (1 / 5) – 1 = 0.589 or 58.9%
+                annually.</strong
+              >
+            </p>
+            <h3>How to Use Ashiana Housing’s Online CAGR Calculator</h3>
+            <p>Using our calculator is simple and free:</p>
+            <ol>
+              <li>Enter the initial investment amount (Present Value).</li>
+              <li>
+                Input the expected future value of the investment (Future
+                Value).
+              </li>
+              <li>
+                Specify the time period for which you want to calculate CAGR.
+              </li>
+            </ol>
+            <p>
+              Our calculator will instantly provide the CAGR percentage, saving
+              you time and effort.
+            </p>
+            <h3>Why Choose Ashiana Housing’s CAGR Calculator?</h3>
+            <ul>
+              <li>
+                <strong>Accurate Results:</strong> Get precise insights into
+                your investment growth.
+              </li>
+              <li>
+                <strong>User-Friendly Interface:</strong>Effortlessly calculate
+                CAGR with just a few inputs.
+              </li>
+              <li>
+                <strong>Free & Secure:</strong>Use the tool without any cost or
+                data security concerns.
+              </li>
+              <li>
+                <strong>Plan Smarter Investments:</strong>Compare multiple
+                options to maximize returns.
+              </li>
+              <li>
+                <strong>Real Estate Expertise:</strong>Specifically designed for
+                real estate investors and homebuyers.
+              </li>
+            </ul>
+            <h3>Plan Your Financial Growth with Ashiana Housing</h3>
+            <p>
+              Our CAGR Calculator is part of a suite of financial tools designed
+              to help you make smarter, data-driven investment decisions.
+              Whether you’re planning to buy your dream home or grow your
+              investment portfolio, Ashiana Housing empowers you to take control
+              of your finances.
+            </p>
+            <p>
+              Explore our calculators today and step confidently toward your
+              financial goals!
+            </p>
+            <h3>Conclusion</h3>
+            <p>
+              Ashiana Housing’s online CAGR Calculator is an essential tool for
+              homeowners, real estate investors, and businesses aiming to
+              understand and enhance their financial growth. By providing
+              accurate, user-friendly insights into your investment’s growth
+              rate, it empowers you to make informed decisions, plan for the
+              future, and maximize returns. Whether you’re assessing the growth
+              of your real estate investments or comparing different financial
+              options, our tool helps simplify the process, ensuring you are
+              always on track toward your financial goals. Take control of your
+              financial future with Ashiana Housing today!
+            </p>
+          </section>
+        </section>
 
-            <!-- Right Section -->
-            <aside class="right-section">
-                <div class="image-banner">
-                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-                </div>
-                <div class="cta-links">
-                    <a href="../index.html">Calculator Page</a>  
-                     <a href="../Pages/cagrIndex.html">CAGR Calculator</a>  
-                    <a href="../Pages/emiIndex.html">EMI Calculator</a>   
-                    <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
-                    <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                    <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                    <a href="../Pages/PPFindex.html">PPF Calculator</a>
-                </div>
-            </aside>
-
-        </div>
+        <!-- Right Section -->
+        <aside class="right-section">
+          <div class="image-banner">
+            <img
+              src="../assets/img/calculator image.jpg"
+              alt="Image Banner for CTA"
+            />
+          </div>
+          <div class="cta-links">
+            <a href="../index.html" style="margin-top: 20px">Calculator Page</a>
+            <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+            <a href="../Pages/emiIndex.html">EMI Calculator</a>
+            <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+            <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+            <a href="../Pages/HRAindex.html">HRA Calculator</a>
+            <a href="../Pages/PPFindex.html" style="margin-bottom: 20px"
+              >PPF Calculator</a
+            >
+          </div>
+        </aside>
+      </div>
     </main>
     <section class="faq-section">
-            <h1 style="text-align: center;">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What is CAGR return?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>CAGR (Compound Annual Growth Rate) is a financial metric used to measure the average annual growth rate of an investment over a specified time period, assuming the profits are reinvested at the end of each period. It provides a smoothed rate of return, eliminating the effects of market volatility, and is widely used to compare the performance of investments.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Does CAGR reflect investment risks?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, CAGR (Compound Annual Growth Rate) does not reflect investment risks. While CAGR provides a clear and simplified measure of average annual growth over a specified period, it does not account for the fluctuations, volatility, or uncertainty that occurred during that time. This limitation makes it essential to consider other metrics and factors alongside CAGR when evaluating an investment.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Is calculating CAGR a better idea than working on IRR?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>While CAGR (Compound Annual Growth Rate) and IRR (Internal Rate of Return) both measure investment performance, CAGR can often be a more reliable indicator of overall financial health and stability under specific circumstances.</p>
-                </div>
-            </div>
-</section>
-    <section class="blogs">
-        <h2>Blogs</h2>
-        <div class="blog-carousel">
-            <div class="blog-card">
-                <img src="https://www.ashianahousing.com/real-estate-blog/wp-content/uploads/2024/06/How-to-Use-EPF-for-Home-Loan-AHL.jpg" alt="Blog Image">
-                <h3>How to Use EPF for Home Loan?</h3>
-                <a href="https://www.ashianahousing.com/real-estate-blog/how-to-use-epf-for-home-loan/">Read More</a>
-            </div>
-           <div class="blog-card">
-                <img src="https://www.ashianahousing.com/real-estate-blog/wp-content/uploads/2024/10/What-is-Repo-Rate-and-Its-Impact-on-Real-Estate-AHL.jpg" alt="Blog Image">
-                <h3>What is Repo Rate and Its Impact on Real Estate?</h3>
-                <a href="https://www.ashianahousing.com/real-estate-blog/how-to-use-epf-for-home-loan/">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="https://www.ashianahousing.com/real-estate-blog/wp-content/uploads/2024/06/How-to-Use-EPF-for-Home-Loan-AHL.jpg" alt="Blog Image">
-                <h3>Home Loans for Under Construction Properties: Benefits and Eligibility</h3>
-                <a href="https://www.ashianahousing.com/real-estate-blog/how-to-use-epf-for-home-loan/">Read More</a>
-            </div>
+      <h1 style="text-align: center">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What is CAGR return?</h3>
+          <span class="faq-toggle">+</span>
         </div>
+        <div class="faq-answer">
+          <p>
+            CAGR (Compound Annual Growth Rate) is a financial metric used to
+            measure the average annual growth rate of an investment over a
+            specified time period, assuming the profits are reinvested at the
+            end of each period. It provides a smoothed rate of return,
+            eliminating the effects of market volatility, and is widely used to
+            compare the performance of investments.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does CAGR reflect investment risks?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            No, CAGR (Compound Annual Growth Rate) does not reflect investment
+            risks. While CAGR provides a clear and simplified measure of average
+            annual growth over a specified period, it does not account for the
+            fluctuations, volatility, or uncertainty that occurred during that
+            time. This limitation makes it essential to consider other metrics
+            and factors alongside CAGR when evaluating an investment.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Is calculating CAGR a better idea than working on IRR?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            While CAGR (Compound Annual Growth Rate) and IRR (Internal Rate of
+            Return) both measure investment performance, CAGR can often be a
+            more reliable indicator of overall financial health and stability
+            under specific circumstances.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="blogs">
+      <h2>Blogs</h2>
+      <div class="blog-carousel">
+        <div class="blog-card">
+          <img
+            src="https://www.ashianahousing.com/real-estate-blog/wp-content/uploads/2024/06/How-to-Use-EPF-for-Home-Loan-AHL.jpg"
+            alt="Blog Image"
+          />
+          <h3>How to Use EPF for Home Loan?</h3>
+          <a
+            href="https://www.ashianahousing.com/real-estate-blog/how-to-use-epf-for-home-loan/"
+            >Read More</a
+          >
+        </div>
+        <div class="blog-card">
+          <img
+            src="https://www.ashianahousing.com/real-estate-blog/wp-content/uploads/2024/10/What-is-Repo-Rate-and-Its-Impact-on-Real-Estate-AHL.jpg"
+            alt="Blog Image"
+          />
+          <h3>What is Repo Rate and Its Impact on Real Estate?</h3>
+          <a
+            href="https://www.ashianahousing.com/real-estate-blog/how-to-use-epf-for-home-loan/"
+            >Read More</a
+          >
+        </div>
+        <div class="blog-card">
+          <img
+            src="https://www.ashianahousing.com/real-estate-blog/wp-content/uploads/2024/06/How-to-Use-EPF-for-Home-Loan-AHL.jpg"
+            alt="Blog Image"
+          />
+          <h3>
+            Home Loans for Under Construction Properties: Benefits and
+            Eligibility
+          </h3>
+          <a
+            href="https://www.ashianahousing.com/real-estate-blog/how-to-use-epf-for-home-loan/"
+            >Read More</a
+          >
+        </div>
+      </div>
     </section>
     <footer>
-        <p>Footer Content</p>
+      <p>Footer Content</p>
     </footer>
     <script src="../assets/cagrScript.js"></script>
-</body>
+  </body>
 </html>

@@ -9,71 +9,79 @@ document.addEventListener("DOMContentLoaded", () => {
   calculateResults();
 
   // Event listeners for input changes
-  document
-    .getElementById("deposit")
-    .addEventListener("input", (e) =>
-      syncRange("depositRange", e.target.value)
-    );
-  document
-    .getElementById("depositRange")
-    .addEventListener("input", (e) => syncInput("deposit", e.target.value));
+  document.getElementById("deposit").addEventListener("input", (e) => {
+    syncRange("depositRange", e.target.value);
+  });
+  document.getElementById("depositRange").addEventListener("input", (e) => {
+    syncInput("deposit", e.target.value);
+  });
 
+  document.getElementById("tenure").addEventListener("input", (e) => {
+    syncRange("tenureRange", e.target.value);
+  });
+  document.getElementById("tenureRange").addEventListener("input", (e) => {
+    syncInput("tenure", e.target.value);
+  });
+
+  // Handle Range Bar UI Updates for all range inputs
   document
-    .getElementById("tenure")
-    .addEventListener("input", (e) => syncRange("tenureRange", e.target.value));
-  document
-    .getElementById("tenureRange")
-    .addEventListener("input", (e) => syncInput("tenure", e.target.value));
+    .querySelectorAll(".input-field input[type='range']")
+    .forEach((input) => {
+      input.addEventListener("input", function () {
+        let min = this.min;
+        let max = this.max;
+        let val = this.value;
+        let percentage = ((val - min) / (max - min)) * 100;
+
+        // Apply dynamic progress color
+        this.style.setProperty("--progress", percentage + "%");
+      });
+
+      // Initialize on page load
+      input.dispatchEvent(new Event("input"));
+    });
+
+  // Handle FAQ toggle behavior
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    item.querySelector(".faq-question").addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      document
+        .querySelectorAll(".faq-item")
+        .forEach((i) => i.classList.remove("active"));
+      if (!isActive) item.classList.add("active");
+    });
+  });
 });
 
+// Function to sync range slider with number input
 function syncInput(inputId, value) {
   const inputElement = document.getElementById(inputId);
   inputElement.value = value; // Update the linked input
   calculateResults();
 }
 
+// Function to sync number input with range slider
 function syncRange(rangeId, value) {
   const rangeElement = document.getElementById(rangeId);
   rangeElement.value = value; // Update the linked range
   calculateResults();
 }
-document
-  .querySelectorAll(".input-field input[type='range']")
-  .forEach((input) => {
-    input.addEventListener("input", function () {
-      let min = this.min;
-      let max = this.max;
-      let val = this.value;
-      let percentage = ((val - min) / (max - min)) * 100;
 
-      // This applies the progress color dynamically
-      this.style.setProperty("--progress", percentage + "%");
-    });
-
-    // Initialize on page load
-    input.dispatchEvent(new Event("input"));
-  });
-
+// Function to calculate results and update UI
 function calculateResults() {
   const deposit = parseFloat(document.getElementById("deposit").value) || 10000;
-  const interestRate = 7.1 / 100;
+  const interestRate = 7.1 / 100; // Fixed interest rate
   const tenure = parseInt(document.getElementById("tenure").value) || 15;
 
+  // Validation: Check if values meet minimum requirements
   if (deposit < 500 || tenure < 15) {
-    document.getElementById("result").innerHTML = `
-      <div class="result-item">
-        <span>Invested amount: </span><span>₹0</span>
-      </div>
-      <div class="result-item">
-        <span>Total interest: </span><span>₹0</span>
-      </div>
-      <div class="result-item">
-        <span>Maturity value: </span><span>₹0</span>
-      </div>
-    `;
+    document.getElementById("investedAmount").innerText = "₹0";
+    document.getElementById("totalInterest").innerText = "₹0";
+    document.getElementById("maturityValue").innerText = "₹0";
     return;
   }
 
+  // Maturity Amount Formula
   const maturityAmount = Math.round(
     deposit *
       (((1 + interestRate) ** tenure - 1) / interestRate) *
@@ -83,25 +91,14 @@ function calculateResults() {
   const totalInterest = Math.round(maturityAmount - deposit * tenure);
   const investedAmount = Math.round(deposit * tenure);
 
-  document.getElementById("result").innerHTML = `
-    <p><strong>Invested amount: </strong> ₹${investedAmount.toLocaleString(
-      "en-IN"
-    )}</p>
-    <p><strong>Total interest: </strong> ₹${totalInterest.toLocaleString(
-      "en-IN"
-    )}</p>
-    <p><strong>Maturity value: </strong> ₹${maturityAmount.toLocaleString(
-      "en-IN"
-    )}</p>
-  `;
+  // ✅ Update UI Elements with calculated values
+  document.getElementById(
+    "investedAmount"
+  ).innerText = `₹${investedAmount.toLocaleString("en-IN")}`;
+  document.getElementById(
+    "totalInterest"
+  ).innerText = `₹${totalInterest.toLocaleString("en-IN")}`;
+  document.getElementById(
+    "maturityValue"
+  ).innerText = `₹${maturityAmount.toLocaleString("en-IN")}`;
 }
-
-document.querySelectorAll(".faq-item").forEach((item) => {
-  item.querySelector(".faq-question").addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
-    document
-      .querySelectorAll(".faq-item")
-      .forEach((i) => i.classList.remove("active"));
-    if (!isActive) item.classList.add("active");
-  });
-});

@@ -1,218 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="Gratuity Calculator- Calculate Your Gratuity Easily with Ashiana Housing" content="Calculate your gratuity amount instantly with Ashiana Housing's Gratuity Calculator. Simplify gratuity calculations for private employees, understand eligibility, and plan for a secure financial future. Try it now!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="Gratuity Calculator- Calculate Your Gratuity Easily with Ashiana Housing"
+      content="Calculate your gratuity amount instantly with Ashiana Housing's Gratuity Calculator. Simplify gratuity calculations for private employees, understand eligibility, and plan for a secure financial future. Try it now!"
+    />
     <title>Gratuity Calculator</title>
-    <link rel="stylesheet" href="../assets/style.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content" style="text-decoration: none;color:inherit;">
-            <div class="logo">
-               <a href="../AHL CALCI/index.html"> <!-- Replace 'index.html' with your homepage URL -->
-                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
-            </a>
+      <div class="header-content" style="text-decoration: none; color: inherit">
+        <div class="logo">
+          <a href="../AHL CALCI/index.html">
+            <!-- Replace 'index.html' with your homepage URL -->
+            <img
+              src="../assets/img/Ashiana Corporate Logo.pdf.png"
+              alt="LOGO"
+            />
+          </a>
         </div>
+      </div>
     </header>
 
-    <h1 style="text-align: center;">Gratuity Calculator</h1>
+    <h1 style="text-align: center">Gratuity Calculator</h1>
     <main>
-        <div class="main-container">
-            <!-- Left Section -->
-            <section class="left-section">
-                <div class="calculator-section">
-                    <form id="gratuityForm">
-                    <div class="input-field">
-                        <label for="monthlySalary">Monthly Salary (Basic+DA) (₹):</label>
-                        <input type="number" id="monthlySalary" placeholder="Enter your monthly salary" min="10000" value="60000" required oninput="syncRange('monthlySalary', 'monthlySalaryRange')">
-                        <input type="range" id="monthlySalaryRange" min="10000" max="1000000" step="1000" value="60000" oninput="syncInput('monthlySalaryRange', 'monthlySalary')">
-                    </div>
-                    <div class="input-field">
-                        <label for="yearsOfservice">Years of Service:</label>
-                        <input type="number" id="yearsOfservice" placeholder="Enter Years of Service" min="5" value="20" required oninput="syncRange('yearsOfservice', 'yearsOfserviceRange')">
-                        <input type="range" id="yearsOfserviceRange" min="5" max="100" step="1" value="20" oninput="syncInput('yearsOfserviceRange', 'yearsOfservice')">
-                    </div>
-                    </form>
-                </div>
-                <div class="result-section">
-                        <!-- Title: Your CAGR Percentage -->
-                        <h3 class="result-title">Your Gratuity Amount  <span id="gratuityValue">0%</span></h3>
+      <div class="main-container">
+        <!-- Left Section -->
+        <section class="left-section">
+          <div class="calculator-section">
+            <form id="gratuityForm">
+              <div class="input-field">
+                <label for="monthlySalary"
+                  >Monthly Salary (Basic+DA) (₹):</label
+                >
+                <input
+                  type="number"
+                  id="monthlySalary"
+                  placeholder="Enter your monthly salary"
+                  min="10000"
+                  value="60000"
+                  required
+                  oninput="syncRange('monthlySalary', 'monthlySalaryRange')"
+                />
+                <input
+                  type="range"
+                  id="monthlySalaryRange"
+                  min="10000"
+                  max="1000000"
+                  step="1000"
+                  value="60000"
+                  oninput="syncInput('monthlySalaryRange', 'monthlySalary')"
+                />
+              </div>
+              <div class="input-field">
+                <label for="yearsOfservice">Years of Service:</label>
+                <input
+                  type="number"
+                  id="yearsOfservice"
+                  placeholder="Enter Years of Service"
+                  min="5"
+                  value="20"
+                  required
+                  oninput="syncRange('yearsOfservice', 'yearsOfserviceRange')"
+                />
+                <input
+                  type="range"
+                  id="yearsOfserviceRange"
+                  min="5"
+                  max="100"
+                  step="1"
+                  value="20"
+                  oninput="syncInput('yearsOfserviceRange', 'yearsOfservice')"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="result-section">
+            <!-- Title: Your CAGR Percentage -->
+            <h3 class="result-title">
+              Your Gratuity Amount <span id="gratuityValue">0%</span>
+            </h3>
 
-                        <!-- Horizontal Line -->
-                        <hr class="divider">
+            <!-- Horizontal Line -->
+            <hr class="divider" />
 
-                        <!-- Beginning & Ending Value Section -->
-                        <div class="value-details">
-                            <div class="left">
-                                <p><strong>Monthly Salary:</strong> <span id="displayMonthlySalary">0</span></p>
-                            </div>
-                            <div class="right">
-                                <p><strong>Years of Service:</strong> <span id="displayYearsOfService">0</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <section class="description-section">
-                        <h3>Description</h3>
-                        <p>If you're an employee of a private company in India, you're eligible to receive gratuity under the Payment of Gratuity Act 1972 after completing five years of service. However, in certain circumstances such as injury or disability due to an accident or disease, you may be eligible for gratuity even before five years. The gratuity amount is calculated based on your last drawn salary, including basic salary and Dearness Allowance (DA), and the number of years you have worked in the company.</p>
-                        <h3>How to Use the Gratuity Calculator by Ashiana Housing</h3>
-                        <p>To help you calculate your gratuity amount, Ashiana Housing offers a free gratuity calculator. This tool is essential for employees who wish to determine how much gratuity they are eligible for. By simply entering your last drawn salary and the number of years you have worked, you can quickly find out the gratuity amount you are entitled to.</p>
-                        <h3>Gratuity Calculation Formula</h3>
-                        <p>The gratuity calculation formula used by Ashiana Housing’s online tool is:</p>
-                        <p><strong>G = n × b × 15 / 26</strong></p>
-                        <p>Where:</p>
-                        <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
-                            <tbody>
-                                <tr>
-                                    <td style="border: 1px solid black; padding: 8px;"><strong>n</strong></td>
-                                    <td style="border: 1px solid black; padding: 8px;">Number of years of service</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid black; padding: 8px;"><strong>b</strong></td>
-                                    <td style="border: 1px solid black; padding: 8px;">Last drawn basic salary + Dearness Allowance (DA)</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid black; padding: 8px;"><strong>15</strong></td>
-                                    <td style="border: 1px solid black; padding: 8px;">Constant factor</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid black; padding: 8px;"><strong>26</strong></td>
-                                    <td style="border: 1px solid black; padding: 8px;">Total working days in a month</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid black; padding: 8px;"><strong>G</strong></td>
-                                    <td style="border: 1px solid black; padding: 8px;">Gratuity amount</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <!-- Beginning & Ending Value Section -->
+            <div class="value-details">
+              <div class="left">
+                <p>
+                  <strong>Monthly Salary:</strong>
+                  <span id="displayMonthlySalary">0</span>
+                </p>
+              </div>
+              <div class="right">
+                <p>
+                  <strong>Years of Service:</strong>
+                  <span id="displayYearsOfService">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <section class="description-section">
+            <h3>Description</h3>
+            <p>
+              If you're an employee of a private company in India, you're
+              eligible to receive gratuity under the Payment of Gratuity Act
+              1972 after completing five years of service. However, in certain
+              circumstances such as injury or disability due to an accident or
+              disease, you may be eligible for gratuity even before five years.
+              The gratuity amount is calculated based on your last drawn salary,
+              including basic salary and Dearness Allowance (DA), and the number
+              of years you have worked in the company.
+            </p>
+            <h3>How to Use the Gratuity Calculator by Ashiana Housing</h3>
+            <p>
+              To help you calculate your gratuity amount, Ashiana Housing offers
+              a free gratuity calculator. This tool is essential for employees
+              who wish to determine how much gratuity they are eligible for. By
+              simply entering your last drawn salary and the number of years you
+              have worked, you can quickly find out the gratuity amount you are
+              entitled to.
+            </p>
+            <h3>Gratuity Calculation Formula</h3>
+            <p>
+              The gratuity calculation formula used by Ashiana Housing’s online
+              tool is:
+            </p>
+            <p><strong>G = n × b × 15 / 26</strong></p>
+            <p>Where:</p>
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid black;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>n</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Number of years of service
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>b</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Last drawn basic salary + Dearness Allowance (DA)
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>15</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Constant factor
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>26</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Total working days in a month
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>G</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Gratuity amount
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-                        <p>For instance, if you’ve worked for 5 years with a monthly salary (including DA) of Rs. 30,000, the gratuity amount would be:</p>
-                        <p><strong>G = 5 × 30,000 × 15 / 26 = Rs. 86,538.46</strong></p>
-                        <h3>Key Factors of Gratuity</h3>
-                        <ul>
-                            <li>Your gratuity cannot exceed Rs. 10 lakh, with any amount above this considered <strong>ex gratia.</strong></li>
-                            <li>For work periods beyond 5 years, fractions like 17 years and 6 months will be rounded off to 18 years.</li>
-                        </ul>
+            <p>
+              For instance, if you’ve worked for 5 years with a monthly salary
+              (including DA) of Rs. 30,000, the gratuity amount would be:
+            </p>
+            <p><strong>G = 5 × 30,000 × 15 / 26 = Rs. 86,538.46</strong></p>
+            <h3>Key Factors of Gratuity</h3>
+            <ul>
+              <li>
+                Your gratuity cannot exceed Rs. 10 lakh, with any amount above
+                this considered <strong>ex gratia.</strong>
+              </li>
+              <li>
+                For work periods beyond 5 years, fractions like 17 years and 6
+                months will be rounded off to 18 years.
+              </li>
+            </ul>
 
-                        <h3>How the Gratuity Calculator Helps You</h3>
-                        <p>The <strong>gratuity calculator</strong> is a great tool because it:</p>
-                        <ul>
-                            <li><strong></strong> Saves time by providing instant calculations.</li>
-                            <li><strong>Helps with long-term financial planning</strong> by providing clarity on the amount you’ll receive.</li>
-                            <li>Is available <strong>online</strong>, so you can access it from anywhere in India, including cities like <strong>Bangalore, Pune,</strong> and <strong>Mumbai.</strong></li>
-                        </ul>
+            <h3>How the Gratuity Calculator Helps You</h3>
+            <p>
+              The <strong>gratuity calculator</strong> is a great tool because
+              it:
+            </p>
+            <ul>
+              <li>
+                <strong></strong> Saves time by providing instant calculations.
+              </li>
+              <li>
+                <strong>Helps with long-term financial planning</strong> by
+                providing clarity on the amount you’ll receive.
+              </li>
+              <li>
+                Is available <strong>online</strong>, so you can access it from
+                anywhere in India, including cities like
+                <strong>Bangalore, Pune,</strong> and <strong>Mumbai.</strong>
+              </li>
+            </ul>
 
-                        <h3>Advantages of the Gratuity Calculator by Ashiana Housing</h3>
-                        <ul>
-                            <li><strong>Easy to use:</strong>No technical expertise needed.</li>
-                            <li><strong>Secure: </strong>Our servers ensure your data is safe.</li>
-                            <li><strong>Accurate: </strong>You can trust our <strong>gratuity calculator for private employees</strong> to provide precise results.</li>
-                        </ul>
+            <h3>Advantages of the Gratuity Calculator by Ashiana Housing</h3>
+            <ul>
+              <li>
+                <strong>Easy to use:</strong>No technical expertise needed.
+              </li>
+              <li>
+                <strong>Secure: </strong>Our servers ensure your data is safe.
+              </li>
+              <li>
+                <strong>Accurate: </strong>You can trust our
+                <strong>gratuity calculator for private employees</strong> to
+                provide precise results.
+              </li>
+            </ul>
 
-                        <h3>Eligibility for Gratuity</h3>
-                        <p>To be eligible for gratuity, you must meet the following criteria under the <strong>Payment of Gratuity Act 1972:</strong></p>
-                        <ul>
-                            <li>You should have <strong>completed at least 5 years</strong> of service with your employer.</li>
-                            <li>You are eligible for gratuity if you're near the <strong>age of superannuation</strong>, have <strong>worked continuously</strong>, and have no other full-time employer.</li>
-                        </ul>
-                        <p>If you meet these criteria, use our <strong>free online calculator</strong> to determine how much gratuity you are entitled to.</p>
+            <h3>Eligibility for Gratuity</h3>
+            <p>
+              To be eligible for gratuity, you must meet the following criteria
+              under the <strong>Payment of Gratuity Act 1972:</strong>
+            </p>
+            <ul>
+              <li>
+                You should have <strong>completed at least 5 years</strong> of
+                service with your employer.
+              </li>
+              <li>
+                You are eligible for gratuity if you're near the
+                <strong>age of superannuation</strong>, have
+                <strong>worked continuously</strong>, and have no other
+                full-time employer.
+              </li>
+            </ul>
+            <p>
+              If you meet these criteria, use our
+              <strong>free online calculator</strong> to determine how much
+              gratuity you are entitled to.
+            </p>
 
-                        <h3><strong>Gratuity Taxation</strong></h3>
-                        <p>The taxation on gratuity depends on the type of employee:</p>
-                        <ul>
-                            <li><strong>Government employees: </strong> Gratuity is exempt from tax.</li>
-                            <li><strong>Private-sector employees: </strong> The tax-exempt gratuity amount depends on several factors, with a lifetime limit of <strong></strong>Rs. 20 lakh.</li>
-                        </ul>
+            <h3><strong>Gratuity Taxation</strong></h3>
+            <p>The taxation on gratuity depends on the type of employee:</p>
+            <ul>
+              <li>
+                <strong>Government employees: </strong> Gratuity is exempt from
+                tax.
+              </li>
+              <li>
+                <strong>Private-sector employees: </strong> The tax-exempt
+                gratuity amount depends on several factors, with a lifetime
+                limit of <strong></strong>Rs. 20 lakh.
+              </li>
+            </ul>
 
-                        <h3>How to Use the Gratuity Calculator</h3>
-                        <ol>
-                            <li>Gather essential details about your employment, such as your <strong>last drawn salary</strong> and <strong>years of service.</strong></li>
-                            <li>Enter the data into the <strong>gratuity calculator online</strong> to instantly calculate your gratuity.</li>
-                        </ol>
-                        <h3>Conclusion</h3>
-                        Ashiana Housing’s Gratuity Calculator is an invaluable tool for private-sector employees looking to understand and calculate their gratuity entitlement. By simplifying the process, this user-friendly calculator helps you determine the gratuity amount based on your years of service and last drawn salary. With its accurate and instant results, the calculator assists in effective financial planning, giving you clarity on your future benefits. Whether you are nearing retirement or assessing your eligibility for gratuity, Ashiana Housing ensures that you have the right tools to secure your financial future with ease.</p>
-                    </section>
-                </section>
-           
+            <h3>How to Use the Gratuity Calculator</h3>
+            <ol>
+              <li>
+                Gather essential details about your employment, such as your
+                <strong>last drawn salary</strong> and
+                <strong>years of service.</strong>
+              </li>
+              <li>
+                Enter the data into the
+                <strong>gratuity calculator online</strong> to instantly
+                calculate your gratuity.
+              </li>
+            </ol>
+            <h3>Conclusion</h3>
+            <p>
+              Ashiana Housing’s Gratuity Calculator is an invaluable tool for
+              private-sector employees looking to understand and calculate their
+              gratuity entitlement. By simplifying the process, this
+              user-friendly calculator helps you determine the gratuity amount
+              based on your years of service and last drawn salary. With its
+              accurate and instant results, the calculator assists in effective
+              financial planning, giving you clarity on your future benefits.
+              Whether you are nearing retirement or assessing your eligibility
+              for gratuity, Ashiana Housing ensures that you have the right
+              tools to secure your financial future with ease.
+            </p>
+          </section>
+        </section>
 
-            <!-- Right Section -->
-            <aside class="right-section">
-                <div class="image-banner">
-                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-                </div>
-                <div class="cta-links">
-                  <a href="../index.html">Calculator Page</a>
-                  <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
-                  <a href="../Pages/emiIndex.html">EMI Calculator</a>
-                  <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
-                  <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                  <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                  <a href="../Pages/PPFindex.html">PPF Calculator</a>
-                </div>
-            </aside>
-        </div>
+        <!-- Right Section -->
+        <aside class="right-section">
+          <div class="image-banner">
+            <img
+              src="../assets/img/calculator image.jpg"
+              alt="Image Banner for CTA"
+            />
+          </div>
+          <div class="cta-links">
+            <a href="../index.html" style="margin-top: 20px">Calculator Page</a>
+            <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+            <a href="../Pages/emiIndex.html">EMI Calculator</a>
+            <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+            <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+            <a href="../Pages/HRAindex.html">HRA Calculator</a>
+            <a href="../Pages/PPFindex.html" style="margin-bottom: 20px"
+              >PPF Calculator</a
+            >
+          </div>
+        </aside>
+      </div>
     </main>
 
     <section class="faq-section">
-            <h1 style="text-align: center;">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What is gratuity calculator?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>A gratuity calculator is an online tool designed to estimate the gratuity amount an employee is entitled to receive from their employer upon leaving a job after completing at least five years of continuous service.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Who is eligible for gratuity?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Any employee who has completed at least five continuous years of service in a company can use the calculator to estimate their gratuity amount.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How does a gratuity calculator work?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>It uses the following formula for gratuity under the Payment of Gratuity Act, 1972: (Last Drawn Salary × 15 × Years of Service) ÷ 26.<br>
-                        Here: Last Drawn Salary includes basic pay and dearness allowance (DA).
-                        Tenure of Service is the total number of years worked (rounded down).
-                    </p>
-                </div>
-            </div>
+      <h1 style="text-align: center">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What is gratuity calculator?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            A gratuity calculator is an online tool designed to estimate the
+            gratuity amount an employee is entitled to receive from their
+            employer upon leaving a job after completing at least five years of
+            continuous service.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Who is eligible for gratuity?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Any employee who has completed at least five continuous years of
+            service in a company can use the calculator to estimate their
+            gratuity amount.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How does a gratuity calculator work?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            It uses the following formula for gratuity under the Payment of
+            Gratuity Act, 1972: (Last Drawn Salary × 15 × Years of Service) ÷
+            26.<br />
+            Here: Last Drawn Salary includes basic pay and dearness allowance
+            (DA). Tenure of Service is the total number of years worked (rounded
+            down).
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="blogs">
-        <h2>Blogs</h2>
-        <div class="blog-carousel">
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Understanding Gratuity</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Gratuity Rules Simplified</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Benefits of Gratuity</h3>
-                <a href="#">Read More</a>
-            </div>
+      <h2>Blogs</h2>
+      <div class="blog-carousel">
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Understanding Gratuity</h3>
+          <a href="#">Read More</a>
         </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Gratuity Rules Simplified</h3>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Benefits of Gratuity</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <p>Footer Content</p>
+      <p>Footer Content</p>
     </footer>
 
     <script src="../assets/gratuityScript.js"></script>
-</body>
+  </body>
 </html>

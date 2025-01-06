@@ -246,7 +246,13 @@ button#calculateButton:hover {
     border: 1px solid white;
     margin: 10px auto;
 }
-
+.divider1 {
+    width: 100%; /* Adjust width to make it look balanced */
+    height: 1px; /* Make it a thin line */
+    background-color: rgba(255, 255, 255, 0.3); /* Light, subtle color */
+    border: none; /* Remove default border */
+    margin: 5px auto; /* Reduce top and bottom margin for a compact look */
+}
 /* Beginning & Ending Year */
 .year-details {
     display: flex;
@@ -324,11 +330,14 @@ button#calculateButton:hover {
   text-decoration: none;
   text-align: left;
   color: #ffff;
-  padding: 10px;
+  padding:  10px;
   background-color: #0000;
   transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
-
+.cta-links a:last-child {
+  border-bottom: none; /* Removes the border from the last link */
+}
 .cta-links a:hover {
   background-color: #ffff;
   color: black;

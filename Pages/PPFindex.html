@@ -1,355 +1,659 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="PPF Calculator - Simplify Your Public Provident Fund Calculations with Ashiana" content="Calculate your PPF returns effortlessly with Ashiana Housing's PPF Calculator. Plan your savings, track interest, and estimate maturity amounts for a secure financial future. Try it now!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="PPF Calculator - Simplify Your Public Provident Fund Calculations with Ashiana"
+      content="Calculate your PPF returns effortlessly with Ashiana Housing's PPF Calculator. Plan your savings, track interest, and estimate maturity amounts for a secure financial future. Try it now!"
+    />
     <title>PPF Calculator</title>
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content" style="text-decoration: none;color:inherit;">
-            <div class="logo">
-               <a href="../AHL CALCI/index.html"> <!-- Replace 'index.html' with your homepage URL -->
-                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
-            </a>
+      <div class="header-content" style="text-decoration: none; color: inherit">
+        <div class="logo">
+          <a href="../AHL CALCI/index.html">
+            <!-- Replace 'index.html' with your homepage URL -->
+            <img
+              src="../assets/img/Ashiana Corporate Logo.pdf.png"
+              alt="LOGO"
+            />
+          </a>
         </div>
+      </div>
     </header>
-    <h1 style="text-align: center;">PPF Calculator</h1>
+    <h1 style="text-align: center">PPF Calculator</h1>
     <main>
-        <div class="main-container">
-            <!-- Left Section -->
-            <section class="left-section">
-                <div class="calculator-section">
-                        <form id="ppfForm">
-                          <div class="input-field">
-                          <label for="deposit">Yearly Deposit (₹):</label>
-                          <input
-                            type="number"
-                            id="deposit"
-                            placeholder="Enter yearly deposit"
-                            min="500"
-                            value="10000"
-                            required
-                          />
-                          <input
-                            type="range"
-                            id="depositRange"
-                            min="500"
-                            max="150000"
-                            step="500"
-                            value="10000"
-                          />
-                        </div>
-                        <div class="input-field">
-                          <label for="interestRate">Interest Rate (%):</label>
-                          <input type="number" id="interestRate" value="7.1" readonly />
-                        </div>
-                        <div class="input-field">
-                          <label for="tenure">Tenure (Years):</label>
-                          <input
-                            type="number"
-                            id="tenure"
-                            placeholder="Enter tenure"
-                            min="15"
-                            value="15"
-                            required
-                          />
-                          <input
-                            type="range"
-                            id="tenureRange"
-                            min="15"
-                            max="50"
-                            step="1"
-                            value="15"
-                          />
-                        </div>
-                      </form>
-                    </div>
-
-                            <div class="result-section">
-                    <h2>Results</h2>
-                    <div class="calculated-result">
-                        <p id="result">Your result will appear here.</p>
-                    </div>
-                </div>  
-                <section class="description-section">
-                    <h3>Description</h3>
-                    <p>If you're looking to save for the future in a <strong>risk-free</strong> manner, a <strong>Public Provident Fund (PPF)</strong> account is a great option. The PPF offers guaranteed returns, making it an attractive investment for <strong>new employees</strong>, <strong>parents</strong> planning for their children's future, or anyone aiming to build savings over time. Calculating the returns on your PPF account can be tricky, but with the right tools, you can easily figure out how much you will earn. One such tool is the <strong>PPF calculator</strong>, which helps you compute interest and returns accurately.</p>
-
-                    <h3>What is a PPF Account?</h3>
-                    <p>A <strong>Public Provident Fund (PPF)</strong> account is a long-term savings scheme offered by the government of India that provides attractive interest rates and tax benefits. This government-backed savings option encourages individuals to invest for the future in a <strong>risk-free</strong> manner. PPF accounts are commonly offered by banks like <strong>SBI, HDFC, ICICI</strong>, and others, as well as post offices.</p>
-
-                    <h3>How Can the PPF Calculator Help You?</h3>
-                    <p>The <strong>PPF calculator</strong> simplifies the process of calculating the maturity amount and interest earned from your PPF account. With this financial tool, you can easily track how much your investment will grow over time, based on different interest rates. The PPF interest rate changes periodically, so using the <strong>PPF calculator</strong> can help you adjust your plans according to current market conditions.</p>
-                    <p>Here’s how the <strong>PPF calculator</strong> works: It takes into account factors like the annual contribution, tenure of investment, and applicable interest rates to calculate the maturity amount. You can also use the <strong>PPF interest calculator</strong> to check both monthly and yearly contributions.</p>
-
-                    <h3>PPF Interest Rate and Calculation Formula</h3>
-                    <p>The PPF interest rate varies each year, and currently, it is set at 7.1% (subject to change). The interest is compounded annually. The PPF calculator uses the following formula to calculate your returns:</p>
-                    <p><strong>F = P [({(1 + i) ^n} - 1) / i]</strong>
-                      
-                    </p>
-                    <p>Where:</p>
-                    <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
-                      <tbody>
-                          <tr>
-                              <td style="border: 1px solid black; padding: 8px;"><strong>F</strong></td>
-                              <td style="border: 1px solid black; padding: 8px;">Maturity amount</td>
-                          </tr>
-                          <tr>
-                              <td style="border: 1px solid black; padding: 8px;"><strong>P</strong></td>
-                              <td style="border: 1px solid black; padding: 8px;">Annual deposit amount</td>
-                          </tr>
-                          <tr>
-                              <td style="border: 1px solid black; padding: 8px;"><strong>i</strong></td>
-                              <td style="border: 1px solid black; padding: 8px;">Interest rate</td>
-                          </tr>
-                          <tr>
-                              <td style="border: 1px solid black; padding: 8px;"><strong>n</strong></td>
-                              <td style="border: 1px solid black; padding: 8px;">Number of years</td>
-                          </tr>
-                      </tbody>
-                  </table>
-                    <h3>Example: How to Use the PPF Calculator</h3>
-                    <p>Let's assume an individual invests ₹1,50,000 annually in their PPF account for a tenure of 15 years at an interest rate of 7.1%. Using the PPF account calculator, the maturity sum after 15 years will be ₹40,68,209.</p>
-                    <p>The table below shows the growth of the investment:</p>
-
-                    <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
-                        <thead>
-                          <tr>
-                            <th style="border: 1px solid black; padding: 8px;">Year</th>
-                            <th style="border: 1px solid black; padding: 8px;">Opening Balance</th>
-                            <th style="border: 1px solid black; padding: 8px;">Annual Deposit</th>
-                            <th style="border: 1px solid black; padding: 8px;">Interest Earned</th>
-                            <th style="border: 1px solid black; padding: 8px;">Closing Balance</th>
-                            <th style="border: 1px solid black; padding: 8px;">Loan</th>
-                            <th style="border: 1px solid black; padding: 8px;">Amount Withdrawn</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">1</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.11400</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.161400</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">2</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.161400</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.23666</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.335066</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">3</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.335066</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.36865</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.521931</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.40350</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">4</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.521931</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.51067</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.722998</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.83767</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">5</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.722998</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.66348</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.939346</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.130483</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">6</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.939346</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.82790</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1172136</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.180750</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">7</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1172136</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.100482</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1422618</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.260966</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">8</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1422618</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.119519</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1692137</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.361499</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">9</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1692137</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.140002</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1982139</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.469673</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">10</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.1982139</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.162043</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.2294182</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.586068</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">11</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.2294182</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.185758</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.2629940</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.711309</td>
-                          </tr>
-                          <tr>
-                            <td style="border: 1px solid black; padding: 8px;">12</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.2629940</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.150000</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.211275</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.2991215</td>
-                            <td style="border: 1px solid black; padding: 8px;">0</td>
-                            <td style="border: 1px solid black; padding: 8px;">Rs.846069</td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                    <h3>How to Use the PPF Calculator?</h3>
-                    <p>Using the <strong>PPF calculator</strong> online is simple. Here's how you can calculate your returns:</p>
-                    <ul>
-                      <li><strong>Enter</strong> the annual deposit amount: This is the total sum you plan to invest in your PPF account every year.</li>
-                      <li><strong>Select</strong> the investment tenure: Specify the number of years you wish to keep your funds invested.</li>
-                      <li><strong>Input</strong> the current PPF interest rate: The rate changes annually, so ensure you use the latest rate for accurate calculations.</li>
-                      <li><strong>Get</strong> your maturity amount: The calculator will display the maturity amount you will receive at the end of the investment tenure.</li>
-                    </ul>
-                    <p>For those making monthly deposits, you can use the <strong>PPF calculator monthly</strong> to calculate the returns based on your monthly contribution.</p>
-
-                    <h3>Advantages of Using the PPF Calculator</h3>
-                    <p>The <strong>PPF interest calculator</strong> offers several benefits:</p>
-                    <ul>
-                      <li><strong>Accurate Calculations</strong>: It provides precise calculations based on your inputs, helping you plan for the future.</li>
-                      <li><strong>Track Interest Changes</strong>: You can keep track of the interest rate changes and see how they impact your investment.</li>
-                      <li><strong>Investment Planning</strong>: The calculator helps you estimate the total amount invested and how much you will earn from interest.</li>
-                      <li><strong>Tax Benefits</strong>: PPF accounts offer tax exemptions under Section 80C, and using the <strong>PPF account calculator</strong> ensures you are optimizing your tax savings.</li>
-                    </ul>
-
-                    <h3>Key Terms Related to PPF:</h3>
-                    <ul>
-                      <li><strong>What is PPF Account</strong>: A government-backed long-term savings scheme offering tax benefits.</li>
-                      <li><strong>PPF Account Interest Rate</strong>: The interest rate at which your PPF investment grows.</li>
-                      <li><strong>PPF Return Calculator</strong>: A tool to estimate returns based on your contribution and the current interest rate.</li>
-                      <li><strong>PPF Scheme</strong>: The official program under which PPF accounts are managed by the government.</li>
-                      <li><strong>PPF Interest Rate 2024</strong>: The current interest rate applicable to PPF accounts for the year 2024.</li>
-                    </ul>
-
-                    <h3>Conclusion</h3>
-                    <p>With the help of Ashiana Housing's <strong>PPF calculator</strong>, you can easily calculate the returns on your Public Provident Fund investment, making it easier to plan for the future. Whether you're investing annually or monthly, this tool ensures accurate and reliable results. Start planning your future today with a PPF account, and watch your savings grow over time.</p>
-                  </section>
-            </section>
-
-           <aside class="right-section">
-              <div class="image-banner">
-                  <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
+      <div class="main-container">
+        <!-- Left Section -->
+        <section class="left-section">
+          <div class="calculator-section">
+            <form id="ppfForm">
+              <div class="input-field">
+                <label for="deposit">Yearly Deposit (₹):</label>
+                <input
+                  type="number"
+                  id="deposit"
+                  placeholder="Enter yearly deposit"
+                  min="500"
+                  value="10000"
+                  required
+                />
+                <input
+                  type="range"
+                  id="depositRange"
+                  min="500"
+                  max="150000"
+                  step="500"
+                  value="10000"
+                />
               </div>
-              <div class="cta-links">
-                  <a href="../index.html">Calculator Page</a>
-                  <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
-                  <a href="../Pages/emiIndex.html">EMI Calculator</a>
-                  <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
-                  <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                  <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                  <a href="../Pages/PPFindex.html">PPF Calculator</a>
+              <div class="input-field">
+                <label for="interestRate">Interest Rate (%):</label>
+                <input type="number" id="interestRate" value="7.1" readonly />
               </div>
-          </aside>
+              <div class="input-field">
+                <label for="tenure">Tenure (Years):</label>
+                <input
+                  type="number"
+                  id="tenure"
+                  placeholder="Enter tenure"
+                  min="15"
+                  value="15"
+                  required
+                />
+                <input
+                  type="range"
+                  id="tenureRange"
+                  min="15"
+                  max="50"
+                  step="1"
+                  value="15"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="result-section">
+            <!-- Title: Your Monthly EMI -->
+            <h3 class="result-title">
+              Maturity Value <span id="maturityValue">₹0</span>
+            </h3>
 
+            <!-- Horizontal Line -->
+            <hr class="divider" />
+
+            <!-- Principal Amount & Total Interest Section -->
+            <div class="value-details">
+              <div class="left">
+                <p>
+                  <strong>Invested Amount</strong><br />
+                  <span id="investedAmount">0</span>
+                </p>
+              </div>
+              <div class="right">
+                <p>
+                  <strong>Total Intrest</strong><br />
+                  <span id="totalInterest">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <section class="description-section">
+            <h3>Description</h3>
+            <p>
+              If you're looking to save for the future in a
+              <strong>risk-free</strong> manner, a
+              <strong>Public Provident Fund (PPF)</strong> account is a great
+              option. The PPF offers guaranteed returns, making it an attractive
+              investment for <strong>new employees</strong>,
+              <strong>parents</strong> planning for their children's future, or
+              anyone aiming to build savings over time. Calculating the returns
+              on your PPF account can be tricky, but with the right tools, you
+              can easily figure out how much you will earn. One such tool is the
+              <strong>PPF calculator</strong>, which helps you compute interest
+              and returns accurately.
+            </p>
+
+            <h3>What is a PPF Account?</h3>
+            <p>
+              A <strong>Public Provident Fund (PPF)</strong> account is a
+              long-term savings scheme offered by the government of India that
+              provides attractive interest rates and tax benefits. This
+              government-backed savings option encourages individuals to invest
+              for the future in a <strong>risk-free</strong> manner. PPF
+              accounts are commonly offered by banks like
+              <strong>SBI, HDFC, ICICI</strong>, and others, as well as post
+              offices.
+            </p>
+
+            <h3>How Can the PPF Calculator Help You?</h3>
+            <p>
+              The <strong>PPF calculator</strong> simplifies the process of
+              calculating the maturity amount and interest earned from your PPF
+              account. With this financial tool, you can easily track how much
+              your investment will grow over time, based on different interest
+              rates. The PPF interest rate changes periodically, so using the
+              <strong>PPF calculator</strong> can help you adjust your plans
+              according to current market conditions.
+            </p>
+            <p>
+              Here’s how the <strong>PPF calculator</strong> works: It takes
+              into account factors like the annual contribution, tenure of
+              investment, and applicable interest rates to calculate the
+              maturity amount. You can also use the
+              <strong>PPF interest calculator</strong> to check both monthly and
+              yearly contributions.
+            </p>
+
+            <h3>PPF Interest Rate and Calculation Formula</h3>
+            <p>
+              The PPF interest rate varies each year, and currently, it is set
+              at 7.1% (subject to change). The interest is compounded annually.
+              The PPF calculator uses the following formula to calculate your
+              returns:
+            </p>
+            <p><strong>F = P [({(1 + i) ^n} - 1) / i]</strong></p>
+            <p>Where:</p>
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid black;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>F</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Maturity amount
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>P</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Annual deposit amount
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>i</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Interest rate
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>n</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Number of years
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>Example: How to Use the PPF Calculator</h3>
+            <p>
+              Let's assume an individual invests ₹1,50,000 annually in their PPF
+              account for a tenure of 15 years at an interest rate of 7.1%.
+              Using the PPF account calculator, the maturity sum after 15 years
+              will be ₹40,68,209.
+            </p>
+            <p>The table below shows the growth of the investment:</p>
+
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid black;
+              "
+            >
+              <thead>
+                <tr>
+                  <th style="border: 1px solid black; padding: 8px">Year</th>
+                  <th style="border: 1px solid black; padding: 8px">
+                    Opening Balance
+                  </th>
+                  <th style="border: 1px solid black; padding: 8px">
+                    Annual Deposit
+                  </th>
+                  <th style="border: 1px solid black; padding: 8px">
+                    Interest Earned
+                  </th>
+                  <th style="border: 1px solid black; padding: 8px">
+                    Closing Balance
+                  </th>
+                  <th style="border: 1px solid black; padding: 8px">Loan</th>
+                  <th style="border: 1px solid black; padding: 8px">
+                    Amount Withdrawn
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">1</td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.11400
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.161400
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">2</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.161400
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.23666
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.335066
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">3</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.335066
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.36865
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.521931
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.40350
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">4</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.521931
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.51067
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.722998
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.83767
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">5</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.722998
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.66348
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.939346
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.130483
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">6</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.939346
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.82790
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1172136
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.180750
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">7</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1172136
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.100482
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1422618
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.260966
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">8</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1422618
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.119519
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1692137
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.361499
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">9</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1692137
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.140002
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1982139
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.469673
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">10</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.1982139
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.162043
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.2294182
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.586068
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">11</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.2294182
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.185758
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.2629940
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.711309
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">12</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.2629940
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.150000
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.211275
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.2991215
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">0</td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rs.846069
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>How to Use the PPF Calculator?</h3>
+            <p>
+              Using the <strong>PPF calculator</strong> online is simple. Here's
+              how you can calculate your returns:
+            </p>
+            <ul>
+              <li>
+                <strong>Enter</strong> the annual deposit amount: This is the
+                total sum you plan to invest in your PPF account every year.
+              </li>
+              <li>
+                <strong>Select</strong> the investment tenure: Specify the
+                number of years you wish to keep your funds invested.
+              </li>
+              <li>
+                <strong>Input</strong> the current PPF interest rate: The rate
+                changes annually, so ensure you use the latest rate for accurate
+                calculations.
+              </li>
+              <li>
+                <strong>Get</strong> your maturity amount: The calculator will
+                display the maturity amount you will receive at the end of the
+                investment tenure.
+              </li>
+            </ul>
+            <p>
+              For those making monthly deposits, you can use the
+              <strong>PPF calculator monthly</strong> to calculate the returns
+              based on your monthly contribution.
+            </p>
+
+            <h3>Advantages of Using the PPF Calculator</h3>
+            <p>
+              The <strong>PPF interest calculator</strong> offers several
+              benefits:
+            </p>
+            <ul>
+              <li>
+                <strong>Accurate Calculations</strong>: It provides precise
+                calculations based on your inputs, helping you plan for the
+                future.
+              </li>
+              <li>
+                <strong>Track Interest Changes</strong>: You can keep track of
+                the interest rate changes and see how they impact your
+                investment.
+              </li>
+              <li>
+                <strong>Investment Planning</strong>: The calculator helps you
+                estimate the total amount invested and how much you will earn
+                from interest.
+              </li>
+              <li>
+                <strong>Tax Benefits</strong>: PPF accounts offer tax exemptions
+                under Section 80C, and using the
+                <strong>PPF account calculator</strong> ensures you are
+                optimizing your tax savings.
+              </li>
+            </ul>
+
+            <h3>Key Terms Related to PPF:</h3>
+            <ul>
+              <li>
+                <strong>What is PPF Account</strong>: A government-backed
+                long-term savings scheme offering tax benefits.
+              </li>
+              <li>
+                <strong>PPF Account Interest Rate</strong>: The interest rate at
+                which your PPF investment grows.
+              </li>
+              <li>
+                <strong>PPF Return Calculator</strong>: A tool to estimate
+                returns based on your contribution and the current interest
+                rate.
+              </li>
+              <li>
+                <strong>PPF Scheme</strong>: The official program under which
+                PPF accounts are managed by the government.
+              </li>
+              <li>
+                <strong>PPF Interest Rate 2024</strong>: The current interest
+                rate applicable to PPF accounts for the year 2024.
+              </li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>
+              With the help of Ashiana Housing's
+              <strong>PPF calculator</strong>, you can easily calculate the
+              returns on your Public Provident Fund investment, making it easier
+              to plan for the future. Whether you're investing annually or
+              monthly, this tool ensures accurate and reliable results. Start
+              planning your future today with a PPF account, and watch your
+              savings grow over time.
+            </p>
+          </section>
+        </section>
+        <aside class="right-section">
+          <div class="image-banner">
+            <img
+              src="../assets/img/calculator image.jpg"
+              alt="Image Banner for CTA"
+            />
+          </div>
+          <div class="cta-links">
+            <a href="../index.html" style="margin-top: 20px">Calculator Page</a>
+            <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+            <a href="../Pages/emiIndex.html">EMI Calculator</a>
+            <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+            <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+            <a href="../Pages/HRAindex.html">HRA Calculator</a>
+            <a href="../Pages/PPFindex.html" style="margin-bottom: 20px"
+              >PPF Calculator</a
+            >
+          </div>
+        </aside>
+      </div>
     </main>
     <section class="faq-section">
-            <h1 style="text-align: center;">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Who can use a PPF calculator?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Anyone planning to invest in a PPF account or already holding one can use the calculator to estimate their future savings and plan their investments.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What is the minimum and maximum amount I can invest in PPF?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The minimum contribution is ₹500 per financial year, and the maximum is ₹1.5 lakh per financial year.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How much interest rate can I get on my PPF account?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The interest rate is mainly determined by the Central Government periodically. At present, the interest rate is 7.1% per annum.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>When is my investment going to mature?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>In PPF accounts, maturity can be attained after 15 years. After this period, you are liable to withdraw the entire amount.</p>
-                </div>
-            </div>
+      <h1 style="text-align: center">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Who can use a PPF calculator?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Anyone planning to invest in a PPF account or already holding one
+            can use the calculator to estimate their future savings and plan
+            their investments.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What is the minimum and maximum amount I can invest in PPF?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            The minimum contribution is ₹500 per financial year, and the maximum
+            is ₹1.5 lakh per financial year.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How much interest rate can I get on my PPF account?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            The interest rate is mainly determined by the Central Government
+            periodically. At present, the interest rate is 7.1% per annum.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>When is my investment going to mature?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            In PPF accounts, maturity can be attained after 15 years. After this
+            period, you are liable to withdraw the entire amount.
+          </p>
+        </div>
+      </div>
     </section>
     <section class="blogs">
-        <h2>Blogs</h2>
-        <div class="blog-carousel">
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>How to Save Effectively?</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Maximizing PPF Returns</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Top Tax Saving Tips</h3>
-                <a href="#">Read More</a>
-            </div>
+      <h2>Blogs</h2>
+      <div class="blog-carousel">
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>How to Save Effectively?</h3>
+          <a href="#">Read More</a>
         </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Maximizing PPF Returns</h3>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Top Tax Saving Tips</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
     </section>
     <footer>
-        <p>Footer Content</p>
+      <p>Footer Content</p>
     </footer>
 
     <script src="../assets/PPFscript.js"></script>
-</body>
+  </body>
 </html>

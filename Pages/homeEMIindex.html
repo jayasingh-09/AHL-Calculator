@@ -1,221 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name=" Home Loan EMI Calculator – Plan Your Housing Loan Payments Easily" content="Calculate your home loan EMI with Ashiana Housing's EMI calculator. Plan your budget accurately and explore tools like home loan eligibility, interest, and prepayment calculators. Try it now!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name=" Home Loan EMI Calculator – Plan Your Housing Loan Payments Easily"
+      content="Calculate your home loan EMI with Ashiana Housing's EMI calculator. Plan your budget accurately and explore tools like home loan eligibility, interest, and prepayment calculators. Try it now!"
+    />
     <title>Home Loan EMI Calculator</title>
-    <link rel="stylesheet" href="../assets/style.css">
-    
-</head>
-<body>
-   <header>
-        <div class="header-content" style="text-decoration: none;color:inherit;">
-            <div class="logo">
-               <a href="../AHL CALCI/index.html"> <!-- Replace 'index.html' with your homepage URL -->
-                <img src="../assets/img/Ashiana Corporate Logo.pdf.png" alt="LOGO">
-            </a>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content" style="text-decoration: none; color: inherit">
+        <div class="logo">
+          <a href="../AHL CALCI/index.html">
+            <!-- Replace 'index.html' with your homepage URL -->
+            <img
+              src="../assets/img/Ashiana Corporate Logo.pdf.png"
+              alt="LOGO"
+            />
+          </a>
         </div>
+      </div>
     </header>
-    <h1 style="text-align: center;">Home Loan EMI Calculator</h1>
+    <h1 style="text-align: center">Home Loan EMI Calculator</h1>
     <main>
-        <div class="main-container">
-            <!-- Left Section -->
-            <section class="left-section">
-                <div class="calculator-section">
-                    <form id="emiForm">
-                        <div class="input-field">
-                            <label for="loan">Loan Amount (₹):</label>
-                            <input type="number" id="loan" placeholder="Enter Loan Amount" min="100000" value="1000000" required oninput="syncInput('loan', 'loanRange')">
-                            <input type="range" id="loanRange" min="1000" max="1000000" step="1000" value="1000000" oninput="syncInput('loanRange', 'loan')">
-                        </div>
-                        <div class="input-field">
-                            <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" placeholder="Enter Interest Rate" min="1" max="100" value="6.5" required oninput="syncInput('interestRate', 'interestRateRange')">
-                            <input type="range" id="interestRateRange" min="1" max="100" step="0.1" value="6.5" oninput="syncInput('interestRateRange', 'interestRate')">
-                        </div>
-                        <div class="input-field">
-                            <label for="tenure">Tenure (Years):</label>
-                            <input type="number" id="tenure" placeholder="Enter Tenure" min="1" max="30" value="5" required oninput="syncInput('tenure', 'tenureRange')">
-                            <input type="range" id="tenureRange" min="1" max="30" step="1" value="5" oninput="syncInput('tenureRange', 'tenure')">
-                        </div>
-                    </form>
-                </div>
-                <div class="result-section">
-                    <h2 style="color:#d31f26;">Results</h2>
-                    <div class="calculated-result">
-                        <p id="result"></p>
-                    </div>
-                </div>          
-           <section class="description-section">
-                <h3>Description</h3>
-                <p>In India, with the increasing cost of real estate, purchasing a home is becoming more challenging for prospective buyers. To meet this challenge, many are turning to home loans as a means of financing their dream homes. The demand for housing credit has grown significantly, with housing loans increasing by over <strong>16%</strong> in FY18 alone. If you are considering applying for a home loan, understanding your <strong>EMI</strong> (Equated Monthly Installment) is crucial to effectively plan your finances.</p>
+      <div class="main-container">
+        <!-- Left Section -->
+        <section class="left-section">
+          <div class="calculator-section">
+            <form id="emiForm">
+              <div class="input-field">
+                <label for="loan">Loan Amount (₹):</label>
+                <input
+                  type="number"
+                  id="loan"
+                  placeholder="Enter Loan Amount"
+                  min="100000"
+                  value="1000000"
+                  required
+                  oninput="syncInput('loan', 'loanRange')"
+                />
+                <input
+                  type="range"
+                  id="loanRange"
+                  min="1000"
+                  max="1000000"
+                  step="1000"
+                  value="1000000"
+                  oninput="syncInput('loanRange', 'loan')"
+                />
+              </div>
+              <div class="input-field">
+                <label for="interestRate">Interest Rate (%):</label>
+                <input
+                  type="number"
+                  id="interestRate"
+                  placeholder="Enter Interest Rate"
+                  min="1"
+                  max="100"
+                  value="6.5"
+                  required
+                  oninput="syncInput('interestRate', 'interestRateRange')"
+                />
+                <input
+                  type="range"
+                  id="interestRateRange"
+                  min="1"
+                  max="100"
+                  step="0.1"
+                  value="6.5"
+                  oninput="syncInput('interestRateRange', 'interestRate')"
+                />
+              </div>
+              <div class="input-field">
+                <label for="tenure">Tenure (Years):</label>
+                <input
+                  type="number"
+                  id="tenure"
+                  placeholder="Enter Tenure"
+                  min="1"
+                  max="30"
+                  value="5"
+                  required
+                  oninput="syncInput('tenure', 'tenureRange')"
+                />
+                <input
+                  type="range"
+                  id="tenureRange"
+                  min="1"
+                  max="30"
+                  step="1"
+                  value="5"
+                  oninput="syncInput('tenureRange', 'tenure')"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="result-section">
+            <!-- Title: Your Monthly EMI -->
+            <h3 class="result-title">
+              Your Monthly EMI is: <span id="emiValue">₹0</span>
+            </h3>
 
-                <p>One of the best ways to estimate your home loan <strong>EMI</strong> is by using an online home loan <strong>EMI calculator</strong>. This tool helps you determine the exact amount you need to pay monthly for the loan, making it easier to budget your finances.</p>
+            <!-- Horizontal Line -->
+            <hr class="divider" />
 
-                <h3>How Can a Home Loan EMI Calculator Help You?</h3>
-                <p><strong>Equated Monthly Installment (EMI)</strong> is the fixed monthly payment a borrower makes to the lender until the loan is paid off. Calculating the EMI for a home loan can be complex, especially for first-time home buyers. A home loan <strong>EMI calculator</strong> simplifies this task, providing you with accurate results in seconds.</p>
-                
-                <p>Here’s how the home loan calculator can help you:</p>
-                <ul>
-                    <li><strong>Time-Saving:</strong> Performing EMI calculations manually can be time-consuming and error-prone. An online loan EMI calculator saves you valuable time.</li>
-                    <li><strong>Accurate Results:</strong> The calculator gives you precise figures to help with your financial planning, reducing the risk of errors.</li>
-                    <li><strong>Specific for Home Loans:</strong> The home loan EMI calculation differs from other loans like personal loans. This home loan EMI calculator focuses specifically on housing loans.</li>
-                    <li><strong>Free and Unlimited Use:</strong> You can use the calculator as many times as you want to test different loan amounts, interest rates, and tenures to find what suits your budget.</li>
-                </ul>
+            <!-- Principal Amount & Total Interest Section -->
+            <div class="value-details">
+              <div class="left">
+                <p>
+                  <strong>Principal Amount:</strong><br />
+                  <span id="displayPrincipalAmount">0</span>
+                </p>
+              </div>
+              <div class="center">
+                <p>
+                  <strong>Total Interest:</strong> <br /><span
+                    id="displayTotalInterest"
+                    >0</span
+                  >
+                </p>
+              </div>
+              <div class="right">
+                <p>
+                  <strong>Total Amount:</strong><br />
+                  <span id="displayTotalAmount">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
 
-                <h3>EMI Formula for Home Loan</h3>
-                <p>To calculate the EMI for a home loan, a standard formula is used:</p>
-                <p><strong>EMI = [P x R x (1+R) ^ N] / [(1+R) ^ N - 1]</strong></p>
-                <p>Where:</p>
-                <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
-                    <tbody>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;"><strong>P</strong></td>
-                            <td style="border: 1px solid black; padding: 8px;">Principal loan amount</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;"><strong>R</strong></td>
-                            <td style="border: 1px solid black; padding: 8px;">Rate of interest per month</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;"><strong>N</strong></td>
-                            <td style="border: 1px solid black; padding: 8px;">Loan tenure (in months)</td>
-                        </tr>
-                    </tbody>
-                </table>
+          <section class="description-section">
+            <h3>Description</h3>
+            <p>
+              In India, with the increasing cost of real estate, purchasing a
+              home is becoming more challenging for prospective buyers. To meet
+              this challenge, many are turning to home loans as a means of
+              financing their dream homes. The demand for housing credit has
+              grown significantly, with housing loans increasing by over
+              <strong>16%</strong> in FY18 alone. If you are considering
+              applying for a home loan, understanding your
+              <strong>EMI</strong> (Equated Monthly Installment) is crucial to
+              effectively plan your finances.
+            </p>
 
-                <p>Let’s take an example: If you avail a home loan of ₹1 crore for a tenure of 15 years at an interest rate of 12%, using this formula, the EMI would be approximately ₹1,10,108.</p>
+            <p>
+              One of the best ways to estimate your home loan
+              <strong>EMI</strong> is by using an online home loan
+              <strong>EMI calculator</strong>. This tool helps you determine the
+              exact amount you need to pay monthly for the loan, making it
+              easier to budget your finances.
+            </p>
 
-                <p>It’s important to note that the EMI has two components: the principal and the interest. Initially, the interest component is higher, and as you continue paying off your loan, the principal component gradually increases, while the interest component decreases.</p>
+            <h3>How Can a Home Loan EMI Calculator Help You?</h3>
+            <p>
+              <strong>Equated Monthly Installment (EMI)</strong> is the fixed
+              monthly payment a borrower makes to the lender until the loan is
+              paid off. Calculating the EMI for a home loan can be complex,
+              especially for first-time home buyers. A home loan
+              <strong>EMI calculator</strong> simplifies this task, providing
+              you with accurate results in seconds.
+            </p>
 
-                <h3>How to Use Ashiana Housing’s Online Home Loan EMI Calculator</h3>
-                <p>Using the home loan EMI calculator from Ashiana Housing is simple:</p>
-                <ul>
-                    <li><strong>Enter Your Loan Details:</strong> Input the loan amount, interest rate, and loan tenure.</li>
-                    <li><strong>Get Your EMI:</strong> The exact EMI amount will be calculated instantly, helping you plan your finances accordingly.</li>
-                </ul>
+            <p>Here’s how the home loan calculator can help you:</p>
+            <ul>
+              <li>
+                <strong>Time-Saving:</strong> Performing EMI calculations
+                manually can be time-consuming and error-prone. An online loan
+                EMI calculator saves you valuable time.
+              </li>
+              <li>
+                <strong>Accurate Results:</strong> The calculator gives you
+                precise figures to help with your financial planning, reducing
+                the risk of errors.
+              </li>
+              <li>
+                <strong>Specific for Home Loans:</strong> The home loan EMI
+                calculation differs from other loans like personal loans. This
+                home loan EMI calculator focuses specifically on housing loans.
+              </li>
+              <li>
+                <strong>Free and Unlimited Use:</strong> You can use the
+                calculator as many times as you want to test different loan
+                amounts, interest rates, and tenures to find what suits your
+                budget.
+              </li>
+            </ul>
 
-                <h3>Benefits of Using Ashiana Housing’s Home Loan EMI Calculator</h3>
-                <ul>
-                    <li><strong>User-Friendly:</strong> The tool is straightforward and doesn’t require any technical knowledge to use.</li>
-                    <li><strong>Free:</strong> No registration or subscription is needed to use the calculator.</li>
-                    <li><strong>Unlimited Usage:</strong> You can check your EMI for various loan amounts and terms as often as needed.</li>
-                    <li><strong>Instant Results:</strong> You get the exact EMI amount within seconds.</li>
-                </ul>
+            <h3>EMI Formula for Home Loan</h3>
+            <p>
+              To calculate the EMI for a home loan, a standard formula is used:
+            </p>
+            <p><strong>EMI = [P x R x (1+R) ^ N] / [(1+R) ^ N - 1]</strong></p>
+            <p>Where:</p>
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid black;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>P</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Principal loan amount
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>R</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Rate of interest per month
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid black; padding: 8px">
+                    <strong>N</strong>
+                  </td>
+                  <td style="border: 1px solid black; padding: 8px">
+                    Loan tenure (in months)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-                <h3>Additional Tools for Home Loan Planning</h3>
-                <p>Along with the home loan EMI calculator, Ashiana Housing offers other calculators that can help you in your home-buying journey:</p>
-                <ul>
-                    <li><strong>Home Loan Eligibility Calculator:</strong> This tool helps you determine if you qualify for a home loan based on your income, age, and other factors.</li>
-                    <li><strong>Home Loan Interest Calculator:</strong> Calculate the total interest payable on your loan and compare different home loan interest rates to choose the best deal.</li>
-                    <li><strong>Prepayment Calculator:</strong> Understand how early loan repayment can reduce your overall interest burden.</li>
-                    <li><strong>Down Payment Calculator:</strong> Estimate the down payment you’ll need for your loan and how it affects your monthly EMI.</li>
-                    <li><strong>Loan Amount Calculator:</strong> Helps you estimate the loan amount you can afford based on your EMI preference and tenure.</li>
-                </ul>
+            <p>
+              Let’s take an example: If you avail a home loan of ₹1 crore for a
+              tenure of 15 years at an interest rate of 12%, using this formula,
+              the EMI would be approximately ₹1,10,108.
+            </p>
 
-                <h3>Why Choose Ashiana Housing’s EMI Calculator?</h3>
-                <ul>
-                    <li><strong>Accuracy:</strong> Get precise calculations for your housing loan EMI using our formula and tools.</li>
-                    <li><strong>Comprehensive:</strong> From house loan calculators to loan prepayment calculators, Ashiana Housing offers a complete suite of tools to assist you.</li>
-                    <li><strong>Free and Unlimited Access:</strong> Use the online loan calculator as many times as you need to plan your finances better.</li>
-                    <li><strong>Home Loan Tenure Calculator:</strong> Adjust the tenure and see how it impacts your EMI amount.</li>
-                </ul>
+            <p>
+              It’s important to note that the EMI has two components: the
+              principal and the interest. Initially, the interest component is
+              higher, and as you continue paying off your loan, the principal
+              component gradually increases, while the interest component
+              decreases.
+            </p>
 
-                <h3>Conclusion</h3>
-                <p>Whether you are a first-time buyer or a seasoned property investor, understanding the financial implications of your home loan is essential. By using Ashiana Housing’s home loan EMI calculator, you can ensure that your monthly payments are in line with your budget. Try our EMI calculator online today and take the first step towards owning your dream home.</p>
-            </section>
+            <h3>
+              How to Use Ashiana Housing’s Online Home Loan EMI Calculator
+            </h3>
+            <p>
+              Using the home loan EMI calculator from Ashiana Housing is simple:
+            </p>
+            <ul>
+              <li>
+                <strong>Enter Your Loan Details:</strong> Input the loan amount,
+                interest rate, and loan tenure.
+              </li>
+              <li>
+                <strong>Get Your EMI:</strong> The exact EMI amount will be
+                calculated instantly, helping you plan your finances
+                accordingly.
+              </li>
+            </ul>
 
+            <h3>
+              Benefits of Using Ashiana Housing’s Home Loan EMI Calculator
+            </h3>
+            <ul>
+              <li>
+                <strong>User-Friendly:</strong> The tool is straightforward and
+                doesn’t require any technical knowledge to use.
+              </li>
+              <li>
+                <strong>Free:</strong> No registration or subscription is needed
+                to use the calculator.
+              </li>
+              <li>
+                <strong>Unlimited Usage:</strong> You can check your EMI for
+                various loan amounts and terms as often as needed.
+              </li>
+              <li>
+                <strong>Instant Results:</strong> You get the exact EMI amount
+                within seconds.
+              </li>
+            </ul>
 
+            <h3>Additional Tools for Home Loan Planning</h3>
+            <p>
+              Along with the home loan EMI calculator, Ashiana Housing offers
+              other calculators that can help you in your home-buying journey:
+            </p>
+            <ul>
+              <li>
+                <strong>Home Loan Eligibility Calculator:</strong> This tool
+                helps you determine if you qualify for a home loan based on your
+                income, age, and other factors.
+              </li>
+              <li>
+                <strong>Home Loan Interest Calculator:</strong> Calculate the
+                total interest payable on your loan and compare different home
+                loan interest rates to choose the best deal.
+              </li>
+              <li>
+                <strong>Prepayment Calculator:</strong> Understand how early
+                loan repayment can reduce your overall interest burden.
+              </li>
+              <li>
+                <strong>Down Payment Calculator:</strong> Estimate the down
+                payment you’ll need for your loan and how it affects your
+                monthly EMI.
+              </li>
+              <li>
+                <strong>Loan Amount Calculator:</strong> Helps you estimate the
+                loan amount you can afford based on your EMI preference and
+                tenure.
+              </li>
+            </ul>
 
+            <h3>Why Choose Ashiana Housing’s EMI Calculator?</h3>
+            <ul>
+              <li>
+                <strong>Accuracy:</strong> Get precise calculations for your
+                housing loan EMI using our formula and tools.
+              </li>
+              <li>
+                <strong>Comprehensive:</strong> From house loan calculators to
+                loan prepayment calculators, Ashiana Housing offers a complete
+                suite of tools to assist you.
+              </li>
+              <li>
+                <strong>Free and Unlimited Access:</strong> Use the online loan
+                calculator as many times as you need to plan your finances
+                better.
+              </li>
+              <li>
+                <strong>Home Loan Tenure Calculator:</strong> Adjust the tenure
+                and see how it impacts your EMI amount.
+              </li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>
+              Whether you are a first-time buyer or a seasoned property
+              investor, understanding the financial implications of your home
+              loan is essential. By using Ashiana Housing’s home loan EMI
+              calculator, you can ensure that your monthly payments are in line
+              with your budget. Try our EMI calculator online today and take the
+              first step towards owning your dream home.
+            </p>
+          </section>
         </section>
         <!-- Right Section -->
         <aside class="right-section">
-                <div class="image-banner">
-                    <img src="../assets/img/calculator image.jpg" alt="Image Banner for CTA">
-                </div>
-                <div class="cta-links">
-                  <a href="../index.html">Calculator Page</a>
-                  <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
-                  <a href="../Pages/emiIndex.html">EMI Calculator</a>
-                  <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
-                  <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
-                  <a href="../Pages/HRAindex.html">HRA Calculator</a>
-                  <a href="../Pages/PPFindex.html">PPF Calculator</a>
-                </div>
-            </aside>
-        </div>
+          <div class="image-banner">
+            <img
+              src="../assets/img/calculator image.jpg"
+              alt="Image Banner for CTA"
+            />
+          </div>
+          <div class="cta-links">
+            <a href="../index.html" style="margin-top: 20px">Calculator Page</a>
+            <a href="../Pages/cagrIndex.html">CAGR Calculator</a>
+            <a href="../Pages/emiIndex.html">EMI Calculator</a>
+            <a href="../Pages/gratuityIndex.html">Gratuity Calculator</a>
+            <a href="../Pages/homeEMIindex.html">Home Loan EMI Calculator</a>
+            <a href="../Pages/HRAindex.html">HRA Calculator</a>
+            <a href="../Pages/PPFindex.html" style="margin-bottom: 20px"
+              >PPF Calculator</a
+            >
+          </div>
+        </aside>
+      </div>
     </main>
     <section class="faq-section">
-            <h1 style="text-align: center;">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What is the purpose of a home loan EMI calculator?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>It helps borrowers estimate their monthly repayment amount based on the loan terms, ensuring better financial planning.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Does the calculator include processing fees?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, most EMI calculators do not account for additional charges like processing fees or taxes.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Can I use the calculator for floating interest rates?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The calculator provides an estimate based on a fixed rate. For floating rates, you may need to recalculate when the rate changes.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Is the EMI fixed for the entire tenure?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>For fixed interest rate loans, the EMI remains constant. For floating rates, it may vary.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Does a longer tenure mean a cheaper loan?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, a longer tenure reduces the EMI but increases the total interest paid over the loan term.</p>
-                </div>
-            </div>
+      <h1 style="text-align: center">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What is the purpose of a home loan EMI calculator?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            It helps borrowers estimate their monthly repayment amount based on
+            the loan terms, ensuring better financial planning.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does the calculator include processing fees?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            No, most EMI calculators do not account for additional charges like
+            processing fees or taxes.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Can I use the calculator for floating interest rates?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            The calculator provides an estimate based on a fixed rate. For
+            floating rates, you may need to recalculate when the rate changes.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Is the EMI fixed for the entire tenure?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            For fixed interest rate loans, the EMI remains constant. For
+            floating rates, it may vary.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Does a longer tenure mean a cheaper loan?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            No, a longer tenure reduces the EMI but increases the total interest
+            paid over the loan term.
+          </p>
+        </div>
+      </div>
     </section>
     <section class="blogs">
-        <h2>Blogs</h2>
-        <div class="blog-carousel">
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>How to Save Effectively?</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Maximizing PPF Returns</h3>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <img src="placeholder.png" alt="Blog Image">
-                <h3>Top Tax Saving Tips</h3>
-                <a href="#">Read More</a>
-            </div>
+      <h2>Blogs</h2>
+      <div class="blog-carousel">
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>How to Save Effectively?</h3>
+          <a href="#">Read More</a>
         </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Maximizing PPF Returns</h3>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <img src="placeholder.png" alt="Blog Image" />
+          <h3>Top Tax Saving Tips</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
     </section>
     <footer>
-        <p>Footer Content</p>
+      <p>Footer Content</p>
     </footer>
     <script src="../assets/homeEMIScript.js"></script>
-</body>
+  </body>
 </html>
