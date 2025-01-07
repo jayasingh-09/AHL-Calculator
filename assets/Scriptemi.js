@@ -21,11 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Default values based on loan type
   const loanTypes = {
-    //home: { loan: 100000, interestRate: 6.5, tenure: 5 },
+    home: { loan: 100000, interestRate: 6.5, tenure: 5 },
     car: { loan: 400000, interestRate: 8.5, tenure: 5 },
-    bike: { loan: 300000, interestRate: 10.5, tenure: 2 },
     personal: { loan: 750000, interestRate: 11, tenure: 3 },
-    consumer: { loan: 100000, interestRate: 6, tenure: 5 },
   };
 
   // Ensure a default selected loan type exists
@@ -118,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     input.addEventListener("input", (event) => {
       const rangeId = `${event.target.id}Range`;
       syncInput(event.target.id, rangeId);
-      updateRangeProgress();
+      updateRangeProgress()
     });
   });
 
@@ -127,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     range.addEventListener("input", (event) => {
       const inputId = event.target.id.replace("Range", "");
       syncInput(event.target.id, inputId);
-      updateRangeProgress();
+      updateRangeProgress()
     });
   });
 

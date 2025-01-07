@@ -114,7 +114,7 @@ header h1 {
 }
 
 .description-section h3 {
-  color: #0c457c;
+  color: black;
 }
 .calculator-section h2,
 .result-section h2 {
@@ -125,7 +125,7 @@ header h1 {
 .description-section h2 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #0c457c;
+  color: black;
 }
 
 .input-field {
@@ -177,7 +177,7 @@ header h1 {
   appearance: none;
   width: 18px; /* Size of the thumb */
   height: 18px;
-  border: 3px solid #0c457c; /* Blue border */
+  border: 3px solid #346858; /* Blue border */
   background-color: white; /* White center */
   border-radius: 50%; /* Makes it circular */
   cursor: pointer;
@@ -186,49 +186,25 @@ header h1 {
 .input-field input[type="range"]::-moz-range-thumb {
   width: 18px;
   height: 18px;
-  border: 3px solid #0c457c;
+  border: 3px solid #346858;
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
 }
 .input-field input[type="range"] {
-  background: linear-gradient(to right, #0c457c 0%, #0c457c var(--progress), #ddd var(--progress), #ddd 100%);
+  background: linear-gradient(to right, #346858 0%, #346858 var(--progress), #ddd var(--progress), #ddd 100%);
   transition: background 0.15s ease-in-out;
 }
 
 /* Hover and active effects */
 .input-field input[type="range"]:hover::-webkit-slider-thumb {
-  border-color: #083b6c; /* Slightly darker blue on hover */
+  border-color: #346858; /* Slightly darker blue on hover */
 }
 
 .input-field input[type="range"]:active::-webkit-slider-thumb {
   transform: scale(1.1); /* Slightly enlarges the thumb on active */
 }
 
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button#calculateButton {
-  padding: 10px 20px;
-  background-color: white;
-  color: #0c457c;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
-  border: none;
-  text-align: center;
-}
-
-button#calculateButton:hover {
-  background-color: #0c457c;
-  color: white;
-  border: 1px solid white;
-}
 
 /* Result Section */
 
@@ -325,6 +301,18 @@ button#calculateButton:hover {
   background-color: #F5ECD5;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
 }
+.cta-links h3 {
+  font-size: 18px;
+  font-weight: bold;
+  /* margin-bottom: 15px; */
+  color: #202020;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding-bottom: 8px; 
+  border-bottom: 4px solid #555;
+}
+
 
 .cta-links a {
   text-decoration: none;
@@ -333,8 +321,9 @@ button#calculateButton:hover {
   padding:  10px;
   background-color: #0000;
   transition: background-color 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+  border-bottom: 2px solid #555; 
 }
+
 .cta-links a:last-child {
   border-bottom: none; /* Removes the border from the last link */
 }
@@ -530,3 +519,33 @@ input[type="number"] {
   font-size: 12px;
   margin-top: 5px;
 }
+.tab-container {
+      display: flex;
+      margin-bottom:9px;
+      border-bottom: 2px solid #ddd;
+}
+
+  .tab-container input {
+      display: none; /* Hide the default radio button */
+  }
+
+  .tab-label {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #f1f1f1;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      text-align: center;
+      flex: 1;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: background 0.3s, font-weight 0.3s;
+  }
+
+  /* Change color for the selected radio button */
+  .tab-container input:checked + .tab-label {
+      background: #346858; /* Blue background for selected radio */
+      color: white; /* White text */
+      font-weight: bold;
+      border-bottom: 2px solid black;
+  }

@@ -97,7 +97,7 @@ header h1 {
 .calculators h2 {
     font-size: 30px;
     margin-bottom: 20px;
-    color: #0c457c;
+    color: black;
     /* //margin: 0;#d31f26; */
     text-align: center;
     text-decoration: none;
@@ -137,13 +137,13 @@ header h1 {
 .calculator-content i {
     font-size: 58px;
     margin:1px;
-    color:#0c457c;
+    color:black;
 }
 
 /* Right: Title */
 .calculator-title {
     font-size: 20px;
-    color: #0c457c;
+    color: black;
     margin: 0;
     align-items:right;
     text-decoration: none;
@@ -158,7 +158,7 @@ header h1 {
 .calculate-now {
     display: block;
     font-size: 14px;
-    color: #0c457c;
+    color: #346858;
     font-weight: bold;
     text-decoration: none;
     text-align: right;
