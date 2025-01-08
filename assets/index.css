@@ -132,6 +132,7 @@ header h1 {
 .calculator-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
 }
 
 .calculator-content img {
@@ -140,8 +141,12 @@ header h1 {
     height: auto;
     max-height: 100px; /* ✅ Adjusts height proportionally */
     object-fit: contain;
+    opacity: 0.5; /* 👈 Default opacity (adjust as needed) */
+    transition: opacity 0.3s ease-in-out; /* 👈 Smooth transition effect */
 }
-
+.calculator-box:hover .calculator-content img {
+    opacity: 1; /* 👈 Fully visible when .calculator-box is hovered */
+}
 
 /* Right: Title */
 .calculator-title {
