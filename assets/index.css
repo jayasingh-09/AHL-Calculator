@@ -134,11 +134,14 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.calculator-content i {
-    font-size: 58px;
-    margin:1px;
-    color:black;
+.calculator-content img {
+    width: auto;
+    max-width: 100px;  /* ✅ Maximum size */
+    height: auto;
+    max-height: 100px; /* ✅ Adjusts height proportionally */
+    object-fit: contain;
 }
+
 
 /* Right: Title */
 .calculator-title {
